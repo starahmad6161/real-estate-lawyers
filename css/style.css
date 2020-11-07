@@ -148,23 +148,6 @@ main
     position: absolute;
     
 }
-/*
-.location-section .img-container .img-card-cont
-{
-    position: absolute;
-    width: fit-content;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(-15%);
-}
-.location-section .img-container .image-marker
-{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
-*/
 
 .location-section .img-container .card
 {
@@ -199,6 +182,133 @@ main
 }
 /*End location-section*/
 
+
+
+
+/*Start hire-us-section*/
+.hire-us-section textarea
+{
+    height: 150px;
+    resize: none;
+}
+.hire-us-section .agreement-container
+{
+    background-color: #fafafa;
+    border: 1px dashed #ddd;
+}
+.hire-us-section .agreement-container .in-file
+{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+}
+.hire-us-section .agreement-container .inner-content .icon
+{
+    color: #787c95;
+}
+.hire-us-section .agreement-container .inner-content
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.hire-us-section .agreement-container .inner-content .text
+{
+    font-weight: 600;
+    color: #525254;
+}
+.hire-us-section .captcha-img
+{
+    height: 50px;
+}
+.hire-us-section .btn-send
+{
+    background-color:#f0474e;
+}
+.hire-us-section .right-section .box .inner-box
+{
+    background-color: #f3f4f8;
+    transition: .2s;
+}
+.hire-us-section .right-section .box .icon
+{
+    font-size: 2rem;
+    color: #ea4335;
+}
+.hire-us-section .right-section .box .icon::after
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ea4335;
+    opacity: .15;
+    transition: .2s;
+    transform: translate(-30%, -55%);
+    z-index: 1;
+}
+.hire-us-section .right-section .box .checkbox-container
+{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.hire-us-section .right-section .box .checkbox-container .in-check
+{
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+}
+.hire-us-section .right-section .box .checkbox-container .icon-check
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .8rem;
+    transition: .2s;
+}
+.hire-us-section .right-section .box.selected .inner-box
+{
+    background-color: #f0474e;
+    color: #fff;
+}
+
+.hire-us-section .right-section .box.selected .icon::after
+{
+    background-color: #f36c72;
+    opacity: 1;
+}
+.hire-us-section .right-section .box.selected .icon
+{
+    color: #fff;
+}
+.hire-us-section .right-section .box.selected .icon svg
+{
+    position: relative;
+    z-index: 2;
+}
+.hire-us-section .right-section .box.selected .checkbox-container
+{
+    border-color: #fff;
+    background-color: transparent;
+}
+/*End hire-us-section*/
 
 
 /*Start upper-footer-section*/
