@@ -12,6 +12,22 @@
 
 <body>
 
+    <!--Start global search box-->
+    <div class="search-box-overlay">
+        <div class="container pt-5">
+            <div class="in-group d-flex align-items-center position-relative">
+                <input class="form-control py-4 mr-2" type="text"
+                placeholder="Enter postal code or enter your city">
+                <label class="search-txt font-weight-bold pointer position-absolute px-2 bg-white">
+                    Search 
+                    <span class="fas fa-arrow-right"></span> 
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--End global search box-->
+
+
 
     <!--Start Home-->
     <div class="home">
@@ -38,7 +54,7 @@
                                     <button class="dropdown-item" type="button">EN</button>
                                 </div>
                             </div>
-                            <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer"></span>
+                            <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
                         </div>
                     </div>
                 </div>
@@ -98,7 +114,7 @@
                                         <button class="dropdown-item" type="button">EN</button>
                                     </div>
                                 </div>
-                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer"></span>
+                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
                             </div>
                         </div>
                     </div>
@@ -205,98 +221,108 @@
         <div class="container-fluid">
             <div class="row">
                 <!--Left Section-->
-                <div class="col-md-5 px-md-5">
-                    <div class="container">
-                        <div class="in-group position-relative">
-                            <input class="form-control py-4" type="text"
-                                placeholder="Enter postal code or enter your city">
-                            <label class="search-txt px-2 font-weight-bold pointer bg-white">Search <span
-                                    class="fas fa-arrow-right"></span> </label>
-                        </div>
-                        <h2 class="font-weight-bold mt-4">Locations</h2>
-                        <ul class="list-items list-unstyled justify-content-between row mt-4">
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer active">
-                                <span class="txt text-capitalize">Toronto</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Ottawa</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Etobicoke</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Stouffville</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">North York</span>
-                                <span class="num">(2)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Aurora</span>
-                                <span class="num">(2)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Scarborought</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Barrie</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Markham</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Picking</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Toronto</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Ottawa</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Etobicoke</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Stouffville</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">North York</span>
-                                <span class="num">(2)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Aurora</span>
-                                <span class="num">(2)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Scarborought</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Barrie</span>
-                                <span class="num">(1)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Markham</span>
-                                <span class="num">(5)</span>
-                            </li>
-                            <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
-                                <span class="txt text-capitalize">Picking</span>
-                                <span class="num">(5)</span>
-                            </li>
-                        </ul>
+                <div class="col-md-5 pr-md-5">
+                    <div class="in-group position-relative">
+                        <input class="form-control py-4" type="text"
+                            placeholder="Enter postal code or enter your city">
+                        <label class="search-txt px-2 font-weight-bold pointer bg-white">Search <span
+                                class="fas fa-arrow-right"></span> </label>
                     </div>
+                    <h2 class="font-weight-bold mt-4">Locations</h2>
+                    <ul class="list-items list-unstyled justify-content-between row mt-4">
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer active">
+                            <span class="txt text-capitalize">Toronto</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Ottawa</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Etobicoke</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Stouffville</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">North York</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Aurora</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Scarborought</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Barrie</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Markham</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Picking</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Richmond Hill</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Ajax</span>
+                            <span class="num">(5)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Vaughan</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Whitby</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Mississauga</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Kitchener</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Brampton</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">London</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Oakville</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Waterloo</span>
+                            <span class="num">(2)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Burlington</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Windsor</span>
+                            <span class="num">(1)</span>
+                        </li>
+                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
+                            <span class="txt text-capitalize">Hamilton</span>
+                            <span class="num">(2)</span>
+                        </li>
+                    </ul>
                 </div>
                 <!--Right Navbar-->
                 <div class="col-md-7 mt-5 mt-md-0">
@@ -349,7 +375,7 @@
 
     <!--Start head-office-section-->
     <section class="head-office-section py-2">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="font-weight-bold mb-5">Head Office</h2>
             <div class="row justify-content-between no-gutters">
                 <!--Left Section [Image]-->
@@ -412,7 +438,7 @@
 
     <!--Start upper-footer-->
     <section class="upper-footer-section py-4">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-between">
                 <!--Col #1-->
                 <div class="col-6 col-lg-3 mb-3">
@@ -482,31 +508,67 @@
                             <a href="#">Toronto</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Etobicoke</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">North York</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Scarborought</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Markham</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Richmond Hill</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Mississauga</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Vaughan</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Brampton</a>
                         </li>
                         <li class="office-list-item d-inline-block position-relative px-1 mb-2">
-                            <a href="#">Toronto</a>
+                            <a href="#">Oakville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Burlington</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ottawa</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Aurora</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Barrie</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Picking</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ajax</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Kitchener</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">London</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Windsor</a>
                         </li>
                     </ul>
                     <div class="row">
@@ -526,13 +588,13 @@
         </div>
     </section>
     <!--End upper-footer-->
-    <div class="container">
+    <div class="container-fluid">
         <hr>
     </div>
 
     <!--Start footer-->
     <footer class="footer pt-4">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-6 col-lg-2 md-4">
                     <ul class="list-unstyled list-items text-muted">
@@ -558,31 +620,6 @@
                             <a href="#">Brantford</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Burlington</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 md-4">
-                    <ul class="list-unstyled list-items text-muted">
-                        <li class="list-item mb-3">
-                            <a href="#">Ajax</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Aurora</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Peterborough</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Barrie</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Bowmanville</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Brampton</a>
-                        </li>
-                        <li class="list-item mb-3">
                             <a href="#">Brantford</a>
                         </li>
                         <li class="list-item mb-3">
@@ -593,112 +630,155 @@
                 <div class="col-6 col-lg-2 md-4">
                     <ul class="list-unstyled list-items text-muted">
                         <li class="list-item mb-3">
-                            <a href="#">Ajax</a>
+                            <a href="#">Chatham</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Aurora</a>
+                            <a href="#">Cambridge</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Peterborough</a>
+                            <a href="#">Clarington</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Barrie</a>
+                            <a href="#">Cooksville</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Bowmanville</a>
+                            <a href="#">Durham Region</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brampton</a>
+                            <a href="#">GTA</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brantford</a>
+                            <a href="#">Guelph</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Burlington</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 md-4">
-                    <ul class="list-unstyled list-items text-muted">
-                        <li class="list-item mb-3">
-                            <a href="#">Ajax</a>
+                            <a href="#">Halton Region</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Aurora</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Peterborough</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Barrie</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Bowmanville</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Brampton</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Brantford</a>
-                        </li>
-                        <li class="list-item mb-3">
-                            <a href="#">Burlington</a>
+                            <a href="#">Hamilton</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 md-4">
                     <ul class="list-unstyled list-items text-muted">
                         <li class="list-item mb-3">
-                            <a href="#">Ajax</a>
+                            <a href="#">Charham</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Aurora</a>
+                            <a href="#">Kingston</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Peterborough</a>
+                            <a href="#">Kitchener</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Barrie</a>
+                            <a href="#">London</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Bowmanville</a>
+                            <a href="#">Markham Region</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brampton</a>
+                            <a href="#">Milton</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brantford</a>
+                            <a href="#">Mississauga</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Burlington</a>
+                            <a href="#">Muskoka</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Newmarket</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 md-4">
                     <ul class="list-unstyled list-items text-muted">
                         <li class="list-item mb-3">
-                            <a href="#">Ajax</a>
+                            <a href="#">Niagara</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Aurora</a>
+                            <a href="#">North York</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Peterborough</a>
+                            <a href="#">Oakville</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Barrie</a>
+                            <a href="#">Ottawa</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Bowmanville</a>
+                            <a href="#">Peel Region</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brampton</a>
+                            <a href="#">Pickering</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Brantford</a>
+                            <a href="#">Richmond</a>
                         </li>
                         <li class="list-item mb-3">
-                            <a href="#">Burlington</a>
+                            <a href="#">Hill</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ste Marie</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Scarborought</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Saint Catherines</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sudbury</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Thunder Bay</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Toronto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Unionville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Uxbridge</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Vaughan</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Windsor</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">York</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ontario</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">International</a>
                         </li>
                     </ul>
                 </div>
@@ -722,17 +802,31 @@
     <!--End Home-->
 
 
-    <script src="js/libs/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/all.min.js"></script>
     <script>
-        $('.navbar .nav-item').on('click', function() {
-            $(this).addClass('active').siblings().removeClass("active");
+
+        $(function () {
+            $('.navbar .nav-item').on('click', function() {
+                $(this).addClass('active').siblings().removeClass("active");
+            });
+            $('.location-section .list-items .list_item').on('click', function() {
+                $(this).addClass('active').siblings().removeClass("active");
+            });
+
+            $('.search-box-overlay .in-group').on('click', function(e) {
+                e.stopPropagation();
+            });
+            $('.search-box-overlay').on('click', function(e) {
+                $(this).fadeOut();
+            });
+            $('.search-icon').on('click', function() {
+                $('.search-box-overlay').fadeIn();
+            });
         });
-        $('.location-section .list-items .list_item').on('click', function() {
-            $(this).addClass('active').siblings().removeClass("active");
-        });
+    
     </script>
     
 </body>
