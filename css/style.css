@@ -1,0 +1,238 @@
+
+
+
+/*Start Global Classes*/
+button:hover,
+button:active,
+button:focus
+{
+    box-shadow: none;
+    outline: none;
+}
+.btn.focus, .btn:focus
+{
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+input.form-control:active,
+input.form-control:focus
+{
+    box-shadow: none;
+    outline: none;
+    border-color: #ced4da;
+}
+
+.bg-main
+{
+    background-color:#FF153E;
+}
+.main-color
+{
+    color:#F0474E;
+}
+main
+{
+    font-size: 1.5rem;
+}
+.pointer
+{
+    cursor: pointer;
+}
+/*End Global Classes*/
+
+/*Start navbar*/
+.home .navbar .nav-item .nav-link::after
+{
+    content: "";
+    display: block;
+    height: .1rem;
+    background-color: #F0474E;
+    transform: scaleX(0);
+    transition: .3s;
+}
+.home .navbar .nav-item.active .nav-link::after,
+.home .navbar .nav-item:hover .nav-link::after
+{
+    transform: scaleX(1);
+}
+.home .navbar .nav-item.active .nav-link,
+.home .navbar .nav-item:hover .nav-link
+{
+    color: #F0474E;
+}
+.home .navbar .contact-info
+{
+    overflow-wrap: anywhere;
+}
+@media (max-width: 768px) {
+    .home .navbar-brand
+    {
+        width: 150px;
+    }
+}
+/*End navbar*/
+
+
+
+
+/*Start location-section*/
+.location-section .search-txt
+{
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
+}
+@media (max-width: 768px) {
+    .location-section .search-txt
+    {
+        font-size: .8rem;
+    }
+}
+.location-section .list-items .list_item .num
+{
+    color: #b9b8bd;
+}
+.location-section .list-items .list_item::before
+{
+    content: "\f054";
+    font-weight: 600;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 50%;
+    transform: translate(-120%, -50%);
+    color:#F0474E;
+    display: none;
+}
+.location-section .list-items .list_item.active::before
+{
+    display: block;
+}
+.location-section .list-items .list_item.active
+{
+    font-weight: bold;
+}
+.location-section .list-items .list_item.active .num
+{
+    color: #222;
+}
+.location-section .img-container .image-map
+{
+    position: absolute;
+    
+}
+/*
+.location-section .img-container .img-card-cont
+{
+    position: absolute;
+    width: fit-content;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-15%);
+}
+.location-section .img-container .image-marker
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+*/
+
+.location-section .img-container .card
+{
+    box-shadow: 0px 10px 10px -3px #ddd;
+    max-width: 15rem;
+    transform: translateY(-10%);
+    font-size: .8rem;
+}
+.location-section .img-container .card-overlay .card-text
+{
+    font-size: .9rem;
+}
+.location-section .img-container .card-overlay
+{
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    
+}
+.location-section .img-container .card-overlay .icon
+{
+    color: #F0474E;
+}
+.location-section .img-container .image-marker
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+/*End location-section*/
+
+
+
+/*Start upper-footer-section*/
+.upper-footer-section a
+{
+    color: inherit;
+}
+.upper-footer-section .list-items .office-list-item::after
+{
+    content: "|";
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: -5px;
+}
+.upper-footer-section .list-items .office-list-item:last-of-type::after
+{
+    display: none;
+}
+.upper-footer-section .search-txt
+{
+    white-space: nowrap;
+}
+
+.social-item svg
+{
+    transition: .2s;
+}
+.social-item:hover .fa-linkedin-in
+{
+    color: #0077b5;
+}
+.social-item:hover .fa-youtube
+{
+    color: #ff0000;
+}
+.social-item:hover .fa-twitter
+{
+    color: #1da1f2;
+}
+.social-item:hover .fa-facebook-f
+{
+    color: #3b5998;
+}
+.social-item:hover .fa-google
+{
+    color: #ea4335;
+}
+
+/*End upper-footer-section*/
+
+/*Start Footer*/
+.footer a
+{
+    color: inherit;
+}
+@media (max-width:575px) {
+    .footer .bottom-bar
+    {
+        font-size: .9rem;
+    }
+}
+/*End Footer*/
