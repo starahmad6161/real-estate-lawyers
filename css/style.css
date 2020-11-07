@@ -2,6 +2,10 @@
 
 
 /*Start Global Classes*/
+.text-wrap
+{
+    overflow-wrap: anywhere;
+}
 button:hover,
 button:active,
 button:focus
