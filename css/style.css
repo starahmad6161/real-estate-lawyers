@@ -407,6 +407,31 @@ main
 .btn-about-us .icon
 {
     background-color: #db4349;
+    position: relative;
+    overflow: hidden;
+}
+.btn-about-us .icon svg
+{
+    transition: .2s;
+}
+.btn-about-us:hover .icon svg
+{
+    transform: translateX(200%);
+}
+.btn-about-us .icon::after
+{
+    content: "\f061";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-250%, -50%);
+    transition: .2s;
+}
+.btn-about-us:hover .icon::after
+{
+    transform: translate(-50%, -50%);
 }
 .about-us-header .right-section .inner-content
 {
