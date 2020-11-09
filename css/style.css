@@ -736,6 +736,88 @@ main
 }
 /*End top-reviews*/
 
+
+/*Start info-section*/
+.info-section .box
+{
+    background-color: #e6e6e8;
+}
+/*
+.info-section .inner-content
+{
+    box-shadow: 0 0 10px #e6e6e8;
+}
+*/
+.info-section .image .left-img
+{
+    margin-left: -30px;
+}
+
+@media (max-width: 1199px) {
+    .info-section .inner-content
+    {
+        background-color: #e6e6e8;
+    }
+    .info-section .image .left-img
+    {
+        height: 100%;
+    } 
+}
+/*
+.info-section .box
+{
+    background: url("../imgs/home-page/info.png") -50px center no-repeat;
+    background-color: #e6e6e8;
+    background-size: cover;
+}
+*/
+.info-section .box a
+{
+    color: inherit;
+    text-decoration: none;
+}
+.info-section .old-price
+{
+    color: #5b5b5d;
+    line-height: 1.1;
+}
+.info-section .old-price .line-throw
+{
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.info-section .current-price
+{
+    color: #ee474e;
+    line-height: 1.1;
+}
+.info-section .current-price .special-num
+{
+    font-size: 1.4rem;
+}
+.info-section .current-price .info-txt
+{
+    font-size: .8rem;
+}
+.info-section .info-img
+{
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+.info-section .right-txt
+{
+    font-size: 1.2rem;
+}
+.info-section .book-icon
+{
+    width: 1.3rem;
+}
+/*End info-section*/
+
+
+
 /*
 *   
 *  End Home page style
