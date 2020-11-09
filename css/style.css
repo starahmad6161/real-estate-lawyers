@@ -37,7 +37,7 @@ input.form-control:focus
 }
 .main-color
 {
-    color:#F0474E;
+    color:#F0474E !important;
 }
 main
 {
@@ -650,6 +650,7 @@ main
     background-size: 100% 100%;
     position: relative;
     margin-bottom: 2%;
+    width: 90%;
 }
 
 .home-header .top-content .bottom-img
@@ -706,6 +707,10 @@ main
 
 
 /*Start top-reviews*/
+.top-reviews .g-img
+{
+    width: 150px;
+}
 .top-reviews .google-side::after
 {
     content: "";
@@ -742,12 +747,6 @@ main
 {
     background-color: #e6e6e8;
 }
-/*
-.info-section .inner-content
-{
-    box-shadow: 0 0 10px #e6e6e8;
-}
-*/
 .info-section .image .left-img
 {
     margin-left: -30px;
@@ -763,14 +762,6 @@ main
         height: 100%;
     } 
 }
-/*
-.info-section .box
-{
-    background: url("../imgs/home-page/info.png") -50px center no-repeat;
-    background-color: #e6e6e8;
-    background-size: cover;
-}
-*/
 .info-section .box a
 {
     color: inherit;
@@ -817,6 +808,131 @@ main
 /*End info-section*/
 
 
+
+/*Start Find office*/
+.find-office .search-txt
+{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.find-office .map-card
+{
+    position: absolute;
+    bottom: 32%;
+    right: 8%;
+    
+}
+/*End Find office*/
+
+/*Start details-section*/
+.details-section a
+{
+    color: inherit;
+}
+.details-section .box
+{
+    background-color: #f1f1f3;
+}
+.details-section .image
+{
+    max-width: 60%;
+}
+@media (max-width: 767px) {
+    .details-section .title
+    {
+        font-size: 1.7rem;
+    }
+    .details-section .image.buy-img
+    {
+        width: 100%;
+    }
+}
+/*End details-section*/
+
+
+/*Start home-hire-us-section*/
+.home-hire-us-section
+{
+    background: url("") center center no-repeat;
+}
+.home-hire-us-section .overlay
+{
+    background-color: rgba(255,255,255,.8);
+}
+.home-hire-us-section .box-item
+{
+    transition: .2s;
+    border-radius: .3rem;
+    border: 1px solid transparent;
+}
+.home-hire-us-section .box-item:hover
+{
+    border-color: #f0474e;
+}
+.home-hire-us-section a
+{
+    color: inherit;
+}
+/*End home-hire-us-section*/
+
+
+/*Start Quote Section*/
+.quote-section
+{
+    background-color: #232b3e;
+}
+.quote-section .text
+{
+    color: rgba(255,255,255,.8);
+}
+.quote-section .image
+{
+    width: 90%;
+}
+@media (max-width: 767px) {
+    .quote-section .image
+    {
+        width: 100%;
+    }
+}
+/*End Quote Section*/
+
+
+
+/*Start blog-section*/
+.blog-section
+{
+    
+}
+.blog-section a
+{
+    color: #222
+}
+/*End blog-section*/
+
+
+
+/*Start find-office-2*/
+.find-office-2
+{
+    background: url("../imgs/home-page/find.png") center center no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.find-office-2 .hint
+{
+    font-size: .9rem;
+}
+.find-office-2 .search-txt
+{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+/*End find-office-2*/
 
 /*
 *   
