@@ -619,7 +619,7 @@ main
 {
     background: url("../imgs/home-page/banner.png") center center no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 500px;
 }
 .home-header .overlay
 {
@@ -855,7 +855,8 @@ main
 /*Start home-hire-us-section*/
 .home-hire-us-section
 {
-    background: url("") center center no-repeat;
+    background: url("../imgs/home-page/hireus-bg.png") center center no-repeat;
+    background-size: center center;
 }
 .home-hire-us-section .overlay
 {
