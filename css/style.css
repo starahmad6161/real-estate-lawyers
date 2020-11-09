@@ -260,6 +260,12 @@ main
 
 
 
+/*
+*   
+*  Start HireUs page style
+*
+*/
+
 
 /*Start hire-us-section*/
 .hire-us-section textarea
@@ -387,6 +393,20 @@ main
 /*End hire-us-section*/
 
 
+/*
+*   
+*  End HireUs page style
+*
+*/
+
+
+
+
+/*
+*   
+*  Start About Us page style
+*
+*/
 
 
 /*Start About Us page*/
@@ -399,26 +419,26 @@ main
 {
     background: linear-gradient(90deg, #fff,rgba(255,255,255,.8), transparent) ;
 }
-.btn-about-us
+.btn-icon-main
 {
     background-color: #ef474d;
     font-size: .85rem;
 }
-.btn-about-us .icon
+.btn-icon-main .icon
 {
     background-color: #db4349;
     position: relative;
     overflow: hidden;
 }
-.btn-about-us .icon svg
+.btn-icon-main .icon svg
 {
     transition: .2s;
 }
-.btn-about-us:hover .icon svg
+.btn-icon-main:hover .icon svg
 {
-    transform: translateX(200%);
+    transform: translateX(300%);
 }
-.btn-about-us .icon::after
+.btn-icon-main .icon::after
 {
     content: "\f061";
     font-weight: 900;
@@ -426,10 +446,10 @@ main
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-250%, -50%);
+    transform: translate(-300%, -50%);
     transition: .2s;
 }
-.btn-about-us:hover .icon::after
+.btn-icon-main:hover .icon::after
 {
     transform: translate(-50%, -50%);
 }
@@ -581,3 +601,143 @@ main
     color: #000;
 }
 /*End reviews-section*/
+/*
+*   
+*  End About Us page style
+*
+*/
+
+
+
+
+/*
+*   
+*  Start Home page style
+*
+*/
+.home-header
+{
+    background: url("../imgs/home-page/banner.png") center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.home-header .overlay
+{
+    background: linear-gradient(180deg, #fff, transparent, transparent);
+    width: 100%;
+    height: 100%;
+}
+
+.home-header .box
+{
+    background: linear-gradient(180deg, #434343, #141517);
+    width: 11vw;
+    height: 11vw;
+    box-shadow: 0 10px 0 -3px #141517;
+}
+.home-header .box .icon
+{
+    font-size: 2vw;
+}
+.home-header .box .icon-text
+{
+    font-size: 1vw;
+}
+
+.home-header .top-content
+{
+    background: url("../imgs/home-page/header1.png") center center no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin-bottom: 2%;
+}
+
+.home-header .top-content .bottom-img
+{
+    width: 120%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    filter: drop-shadow(2px 9px 13px #aaa);
+}
+
+@media (max-width: 992px) {
+    .home-header
+    {
+        height: auto;
+    }
+    .home-header .top-content
+    {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .home-header .lap-title
+    {
+        font-size: 1rem;
+    }
+    .home-header .lap-text
+    {
+        font-size: .8rem;
+    }
+    .home-header .box
+    {
+        width: 16vw;
+        height: 16vw;
+    }
+    .home-header .box .icon
+    {
+        font-size: 4vw;
+    }
+    .home-header .box .icon-text
+    {
+        font-size: 1.5vw;
+    }
+    .home-header .top-content
+    {
+        width: 90%;
+    }
+}
+
+
+
+/*Start top-reviews*/
+.top-reviews .google-side::after
+{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.top-reviews .stars svg
+{
+    color: #ffc000;
+    
+}
+.top-reviews .g-stars
+{
+    font-size: .5rem;
+}
+.top-reviews .box
+{
+    font-size: 2rem;
+    background-color: #1977f3;
+}
+.top-reviews .fb-text
+{
+    color: #1977f3;
+}
+/*End top-reviews*/
+
+/*
+*   
+*  End Home page style
+*
+*/
