@@ -1526,37 +1526,7 @@
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/all.min.js"></script>
-    <script>
-
-        $(function () {
-            $('.navbar .nav-item').on('click', function() {
-                $(this).addClass('active').siblings().removeClass("active");
-            });
-            $('.hire-us-section .right-section .box .checkbox-container .in-check').on('change', function(e) {
-                let checkState = e.target.checked;
-                $(this).parents('.box').toggleClass('selected');
-                
-                /*
-                if (checkState) {
-                    $(this).parents('.box').addClass('selected');
-                } else {
-                    $(this).parents('.box').removeClass('selected');
-                }
-                */
-            });
-
-            $('.search-box-overlay .in-group').on('click', function(e) {
-                e.stopPropagation();
-            });
-            $('.search-box-overlay').on('click', function(e) {
-                $(this).fadeOut();
-            });
-            $('.search-icon').on('click', function() {
-                $('.search-box-overlay').fadeIn();
-            });
-        });
-    
-    </script>
+    <script src="js/custom.js"></script>
     
 </body>
 
