@@ -380,15 +380,34 @@ main
 {
     color: #fff;
 }
-.hire-us-section .right-section .box.selected .icon svg
-{
-    position: relative;
-    z-index: 2;
-}
 .hire-us-section .right-section .box.selected .checkbox-container
 {
     border-color: #fff;
     background-color: transparent;
+}
+
+.hire-us-section .right-section .icon .main-icon
+{
+    transition: .2s;
+}
+.hire-us-section .right-section .icon .white-icon
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .2s;
+    opacity: 0;
+    z-index: 2;
+}
+
+.hire-us-section .right-section .box.selected .main-icon
+{
+    opacity: 0;
+}
+.hire-us-section .right-section .box.selected .white-icon
+{
+    opacity: 1;
 }
 /*End hire-us-section*/
 
