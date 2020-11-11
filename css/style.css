@@ -737,6 +737,10 @@ main
 
 
 /*Start top-reviews*/
+.top-reviews a
+{
+    color: inherit;
+}
 .top-reviews .g-img
 {
     width: 150px;
