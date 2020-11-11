@@ -640,6 +640,10 @@ main
     background-size: cover;
     height: 500px;
 }
+.home-header a
+{
+    color: inherit;
+}
 .home-header .overlay
 {
     background: linear-gradient(180deg, #fff, transparent, transparent);
@@ -723,6 +727,13 @@ main
     }
 }
 
+@media (min-width: 1500px) {
+    .home-header
+    {
+        height: 31vw;
+        margin-bottom: 2vw;
+    }
+}
 
 
 /*Start top-reviews*/
