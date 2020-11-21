@@ -974,3 +974,227 @@ main
 *  End Home page style
 *
 */
+
+
+
+
+
+
+/*
+*   
+*  Start Quote Page
+*
+*/
+
+/*Start Quote Section*/
+.quote-quote-section ._1st-bg
+{
+    background-color: #32CDC7;
+}
+.quote-quote-section ._2nd-bg
+{
+    background-color: #FE80C0;
+}
+.quote-quote-section ._3rd-bg
+{
+    background-color: #77BCFF;
+}
+.quote-quote-section ._4th-bg
+{
+    background-color: #F1C40F;
+}
+.quote-quote-section ._5th-bg
+{
+    background-color: #8D708E;
+}
+.quote-quote-section ._6th-bg
+{
+    background-color: #E84C3D;
+}
+.quote-quote-section ._7th-bg
+{
+    background-color: #16A086;
+}
+.quote-quote-section ._8th-bg
+{
+    background-color: #9B58B5;
+}
+
+
+
+.quote-quote-section .gray-btn
+{
+    background-color: #606060;
+}
+.quote-quote-section .gray-btn:hover
+{
+    background-color: #EF474D;
+}
+.quote-quote-section .red-btn
+{
+    background-color: #EF474D;
+}
+.quote-quote-section .red-text
+{
+    color: #EF474D;
+}
+
+
+
+
+.quote-quote-section .btn
+{
+    transition: .2s;
+    font-size: 1.3rem;
+}
+.quote-quote-section .hint
+{
+    font-size: .8rem;
+}
+
+.quote-quote-section .title
+{
+    color: #3893C2;
+}
+.quote-quote-section .title .num
+{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #3893C2;
+}
+
+.quote-quote-section .rows-container::before
+{
+    content: "";
+    height: 100%;
+    border: .01rem dotted #ddd;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: -1;
+}
+
+.quote-quote-section .overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.quote-quote-section .box-item .icon
+{
+    opacity: .5;
+    transition: .2s;
+    border: 1px solid transparent;
+    font-size: 5rem;
+}
+@media (max-width: 991px) {
+    .quote-quote-section .box-item .icon
+    {
+        font-size: 3rem;
+    }
+}
+.quote-quote-section .box-item .box-title
+{
+    color: #999b9e;
+    transition: .2s;
+}
+.quote-quote-section .box-item.active .box-title
+{
+    color: #222;
+}
+
+.quote-quote-section .box-item.active .icon,
+.quote-quote-section .box-item .icon:hover
+{
+    border: 1px solid #222;
+    opacity: 1;
+}
+.quote-quote-section .inner-content .inner-box
+{
+    display: none;
+}
+.quote-quote-section .inner-content .inner-box.active
+{
+    display: block;
+}
+.quote-quote-section .second-row
+{
+    opacity: .5;
+    transition: .2s;
+}
+.quote-quote-section .second-row.active
+{
+    opacity: 1;
+}
+
+.quote-quote-section .second-row.active .overlay
+{
+    display: none;
+}
+.quote-quote-section .bottom-text
+{
+    font-size: .8rem;
+}
+
+.quote-quote-section .right-section
+{
+    background-color: #969696;
+}
+.bg-gray
+{
+    background-color: gray;
+}
+.quote-quote-section .right-section hr
+{
+    width: 50px;
+    height: .1rem;
+}
+.quote-quote-section .right-section .icon
+{
+    font-size: 3rem;
+}
+
+
+/*Tabs*/
+.quote-quote-section .tab-container .nav-link
+{
+    background-color: #F5F5F5;
+    color: #222;
+    font-weight: 500;
+}
+.quote-quote-section .tab-container .nav-link.active
+{
+    background-color: #B5B5B5;
+    color: #fff;
+}
+.quote-quote-section .tab-container .tab-content
+{
+    border: 1px solid #999;
+}
+.quote-quote-section .tab-container .list-item
+{
+    background-color: #fef6df;
+}
+.quote-quote-section .tab-container .tab-footer
+{
+    background-color: #F4F4F4;
+}
+.quote-quote-section .tab-container .tab-footer .btn-sm
+{
+    font-size: .9rem;
+}
+.quote-quote-section .tab-container .tab-footer .footer-price .txt
+{
+    font-size: .8rem;
+}
+
+/*End Quote Section*/
+/*
+*   
+*  End Quote Page
+*
+*/
