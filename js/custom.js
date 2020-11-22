@@ -23,10 +23,12 @@ $(function () {
     /*Start Quote page */
     let dataFRow;
     let dataSRow;
+    //First Row
     $(".quote-quote-section .first-row .box-item .icon").on('click', function() {
         $(".quote-quote-section .second-row .box-item").removeClass('active');
 
         $('.quote-quote-section .inner-content .inner-box').hide();
+        $('.quote-quote-section .tab-container').hide();
 
         $(this).parents('.box-item').addClass('active').siblings().removeClass('active');
         dataFRow = $(this).data('f-row');
@@ -39,11 +41,11 @@ $(function () {
 
     });
 
-    
+    //Second Row 
     $(".quote-quote-section .second-row .box-item .icon").on('click', function() {
         $(this).parents('.box-item').addClass('active').siblings().removeClass('active');
         dataSRow = $(this).data('s-row');
-
+        $('.quote-quote-section .tab-container').show();
         $(this).parents('.rows-container').find(`.content_${dataFRow}${dataSRow}`).show().siblings('.inner-box').hide();
         
         $("html, body").animate({

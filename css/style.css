@@ -1160,6 +1160,10 @@ main
 
 
 /*Tabs*/
+.quote-quote-section .tab-container
+{
+    display: none;
+}
 .quote-quote-section .tab-container .nav-link
 {
     background-color: #F5F5F5;
