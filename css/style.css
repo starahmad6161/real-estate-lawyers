@@ -1121,6 +1121,14 @@ main
 {
     display: block;
 }
+.quote-quote-section .second-row .second-row-box
+{
+    display: none;
+}
+.quote-quote-section .second-row .second-row-box_1
+{
+    display: block;
+}
 .quote-quote-section .second-row
 {
     opacity: .5;

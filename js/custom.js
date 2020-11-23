@@ -25,20 +25,24 @@ $(function () {
     let dataSRow;
     //First Row
     $(".quote-quote-section .first-row .box-item .icon").on('click', function() {
+        dataFRow = $(this).data('f-row');
+        
+        $(`.quote-quote-section .second-row-box`).hide();
+        $(`.quote-quote-section .second-row-box_${dataFRow}`).show().siblings('.second-row-box').hide();
+
+
+
         $(".quote-quote-section .second-row .box-item").removeClass('active');
 
         $('.quote-quote-section .inner-content .inner-box').hide();
         $('.quote-quote-section .tab-container').hide();
 
         $(this).parents('.box-item').addClass('active').siblings().removeClass('active');
-        dataFRow = $(this).data('f-row');
         $('.quote-quote-section .second-row').addClass('active');
 
         $("html, body").animate({
             scrollTop: $(".quote-quote-section .second-row").offset().top - 50
         }, 500);
-
-
     });
 
     //Second Row 
