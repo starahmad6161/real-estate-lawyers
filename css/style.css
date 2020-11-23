@@ -1042,6 +1042,18 @@ main
 
 
 
+.quote-quote-section .price-input
+{
+    position: relative;
+}
+.quote-quote-section .price-input::after
+{
+    content: "$";
+    position: absolute;
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+}
 .quote-quote-section .btn
 {
     transition: .2s;

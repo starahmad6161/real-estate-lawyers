@@ -23,6 +23,13 @@ $(function () {
     /*Start Quote page */
     let dataFRow;
     let dataSRow;
+
+    /*
+    $('.quote-quote-section .price-input').on('keydown', function() {
+        $(this).val( "$ " + $(this).val());
+    });
+    */
+
     //First Row
     $(".quote-quote-section .first-row .box-item .icon").on('click', function() {
         dataFRow = $(this).data('f-row');
