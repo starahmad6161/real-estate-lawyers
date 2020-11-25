@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- plugin  -->
+    <link rel="stylesheet" href="css/jquery.dm-uploader.min.css">
+    <!-- plugin end  -->
+    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="css/libs/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <!--Start global search box-->
+    <div class="search-box-overlay">
+        <div class="container pt-5">
+            <div class="in-group d-flex align-items-center position-relative">
+                <input class="form-control py-4 mr-2" type="text" placeholder="Enter postal code or enter your city">
+                <label class="search-txt font-weight-bold pointer position-absolute px-2 bg-white">
+                    Search 
+                    <span class="fas fa-arrow-right"></span> 
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--End global search box-->
+
+
+
+    <!--Start Home-->
+    <div class="home">
+        <!--Start Navbar-->
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-md-3 d-flex justify-content-between align-items-center align-items-md-start">
+                    <a class="navbar-brand" href="#">
+                        <img class="w-100" src="imgs/Logo PDF 2.png" alt="logo">
+                    </a>
+                    <div>
+                        <!--
+                            UpperBar 
+                            Show only at mobile (Less than medium screens)
+                        -->
+                        <div class="d-flex px-0 justify-content-end d-md-none">
+                            <div class="btn-group mt-auto mr-3">
+                                <button type="button" class="btn p-0 border-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    EN
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button">EN</button>
+                                    <button class="dropdown-item" type="button">EN</button>
+                                    <button class="dropdown-item" type="button">EN</button>
+                                </div>
+                            </div>
+                            <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!--Start UpperBar-->
+                    <div class="upper-nav py-lg-2 d-none d-md-block">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-xl-3 mb-2">
+                                Call Us
+                                <div class="main-color font-weight-bold"><a  href="tel:+1 (855) 466-3801">+1 (855) 466-3801</a> </div>
+                            </div>
+                            <div class="col-4 col-xl-3 mb-2">
+                                Fax Us
+                                <div class="main-color font-weight-bold">+1 (855) 466-3803</div>
+                            </div>
+                            <div class="col-4 col-xl-3 mb-2">
+                                Email Us
+                                <div class="main-color font-weight-bold text-wrap"> <a href="mailto:info@RealEstateLawyers.ca">info@RealEstateLawyers.ca</a> </div>
+                            </div>
+                            <div class="col-6 col-xl-2 my-3 d-flex">
+                                <ul class="list-unstyled social-media d-flex mb-0 mt-auto">
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-google"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-linkedin-in"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-youtube"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-twitter"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-facebook-f"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-xl-1 my-3 d-flex px-0 justify-content-end">
+                                <div class="btn-group mt-auto mr-3">
+                                    <button type="button" class="btn p-0 border-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        EN
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button">EN</button>
+                                        <button class="dropdown-item" type="button">EN</button>
+                                        <button class="dropdown-item" type="button">EN</button>
+                                    </div>
+                                </div>
+                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-1 d-none d-md-block">
+                    <!--End UpperBar-->
+
+
+                    <!--Start Navbar-->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto font-weight-bold justify-content-between w-100">
+                                <li class="nav-item mb-2 mb-md-0 active">
+                                    <a class="nav-link p-0" href="./hire-us.html">Hire Us</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Free Quote</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="./about-us.html">About</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Services</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="./locations.html">Locations</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Resources</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Make a Payment</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0 d-flex align-items-center">
+                                    <span class="fas fa-user main-color mr-1"></span>
+                                    <a class="nav-link p-0" href="#">Client Login</a>
+                                </li>
+                                <!--
+                                    UpperBar 
+                                    Show only at mobile (Less than medium screens)
+                                -->
+                                <li class="nav-item mt-4 mb-md-0 d-flex align-items-center d-md-none">
+                                    <div class="row font-weight-normal">
+                                        <div class="col-6 col-sm-4 col-xl-3 mb-2">
+                                            Call Us
+                                            <div class="contact-info main-color font-weight-bold">+1 (855) 466-3801</div>
+                                        </div>
+                                        <div class="col-6 col-sm-4 col-xl-3 mb-2">
+                                            Fax Us
+                                            <div class="contact-info main-color font-weight-bold">+1 (855) 466-3803</div>
+                                        </div>
+                                        <div class="col-sm-4 col-xl-3 mb-2">
+                                            Email Us
+                                            <div class="contact-info main-color font-weight-bold">info@RealEstateLawyers.ca</div>
+                                        </div>
+                                        <div class="col-6 mx-auto">
+                                            <ul class="list-unstyled social-media d-flex justify-content-center mb-0 mt-auto">
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-google"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-linkedin-in"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-youtube"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-twitter"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-facebook-f"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--End Navbar-->
+                </div>
+            </div>
+        </div>
+        <!--End Navbar-->
+    </div>
+    <!--End Home-->
+
+    <!--Start ment-->
+
+    <section class="payment">
+        <div class="container">
+            <div class="row">
+                <!-- single item stat here -->
+                <div class="col-lg-6 col-md-8">
+                    <div class="payment-single-item">
+                        <div class="payment-content">
+                            <h1 class="payment-title">Make a Payment</h1>
+                            <h3 class="p-common-title">Invoice details</h3>
+                        </div>
+                        <!--payment-form start here -->
+                        <div class="payment-form">
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="payment-form-single-item">
+                                            <label for="ment-cad" class="common-level">Amount (CAD)</label>
+                                            <input type="text" class="form-control" id="payment-cad" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="payment-single-item">
+                                            <label for="file-number" class="common-level">Enter Your File Number</label>
+                                            <input type="text" class="form-control" id="file-number" name="file-number" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="payment-single-item">
+                                            <label for="invoice-numbe" class="common-level">Invoice Number</label>
+                                            <input type="number" class="form-control note-input-field" id="invoice-number" name="invoice-number" required>
+                                            <small class="custom-small">Please enter all fields. There are no refunds on
+                                            made. All funds are directed to our
+                                            Real Estate Lawyerscs LLP Trust Account</small>
+                                        </div>
+                                    </div>
+                                    <!-- drag and drop  -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="payment-single-item">
+                                            <div class="form-group">
+                                                <label class="common-level">Upload File</label>
+                                                <div class="preview-zone hidden">
+                                                    <div class="box box-solid">
+
+                                                        <div class="box-body"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="dropzone-wrapper">
+                                                    <div class="dropzone-desc">
+                                                        <i class="glyphicon glyphicon-download-alt"></i>
+                                                        <p> <i class="fal fa-arrows"></i> Drag & Drop File Here</p>
+                                                    </div>
+                                                    <input type="file" name="img_logo" class="dropzone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- drag and drop end here  -->
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- form end here -->
+                    </div>
+                </div>
+                <!-- single item end here -->
+                <!-- right single item start here  -->
+                <div class="col-md-4">
+                    <div class="right-single-item">
+                        <div class="payment-img">
+                            <img src="imgs/Page2/payment-group.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- single item end here  -->
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="billing-info">
+        <div class="container">
+            <div class="row">
+                <!-- billing single item start here -->
+
+                <div class="col-md-6">
+                    <div class="billing-title">
+                        <h3 class="p-commmon-title">Credit Card Details</h3>
+                    </div>
+                    <div class="billing-single-item">
+
+
+                        <div class="row">
+                            <div class="col-lg-10 col-md-12 col-sm-10">
+                                <div class="billing-method-single-item">
+                                    <div class="billing-method-item">
+                                        <div class="billing-method-header">
+                                            <span class="ted">We accept</span><span class="billing-icon"><i class="fab fa-cc-visa"></i></span><span class="billing-icon"><i class="fab fa-cc-mastercard" style="color: red;"></i></span>
+                                            <span class="secured"><i class="fas fa-lock" style="color: red;"></i> Highly Secured</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- billing form start here -->
+                                    <div class="col-md-12">
+                                        <div class="billing-form-single-item">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="card-number" class="billing-level"> <small>Your Card Number</small> </label>
+                                                    <input type="text" class="form-control" id="card-number" required>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-lg-6 col-md-12">
+                                                        <label for="date_of_birth" class="billing-level"><small>Expiry Date</small></label>
+                                                        <input class="form-control" id="date_of_birth" placeholder="mm/yyyy" required>
+                                                    </div>
+                                                    <div class="form-group col-lg-6 col-md-12">
+                                                        <label for="inputState" class="billing-level"><small>Security/CCV Code</small></label>
+                                                        <input type="number" class="form-control" id="card-number" required>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </form>
+
+
+                                        </div>
+    
+                                        <!-- billing-checkbox start here -->
+                                        <div class="single-item-captcha text-center">
+                                            <div class="row">
+                                                <div class="col-md-12 col-6 d-md-block d-none">
+                                                    <div class="captcha-single-item">
+
+                                                        <div class="form-check form-check-inline b-checkbox">
+                                                            <input class="form-check-input custom-captcha-ceckbox-b" type="checkbox" id="inlineFormCheck" required>
+                                                            <label class="form-check-label" for="inlineCheckbox2">I'm not a robot</label> <span class="captcha-pay-img"><img src="imgs/Page2/captcha.png" alt=""></span>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="captcha-btn text-center">
+                                            <a href="#" class="common-btn">PAY</a>
+                                        </div>
+                                        <!-- billing-checkbox end here -->
+                                    </div>
+                                    <!-- billing form end here -->
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- billing end here -->
+
+
+                <!-- billing right start here -->
+
+                <div class="col-md-6 col-sm-10">
+                    <div class="billing-title">
+                        <h3 class="p-commmon-title">Billing Address</h3>
+                    </div>
+                    <div class="billing-right-single-item">
+                        <!-- billing right form start here  -->
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <div class="right-form-single-item">
+                                        <label for="inputName" class="common-level">First Name</label>
+                                        <input type="text" class="form-control" id="inputName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <div class="right-form-single-item">
+                                        <label for="lastName" class="common-level">Last Name</label>
+                                        <input type="password" class="form-control" id="lastNamwe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="right-form-single-item">
+                                    <label for="inputName" class="common-level">Street Address</label>
+                                    <input type="text" class="form-control" id="inputName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 col-md-6 col-sm-6">
+                                    <div class="right-form-single-item">
+                                        <label for="inputCity" class="common-level">Postal Code</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-6 col-sm-6">
+                                    <div class="right-form-single-item">
+                                        <label for="inputState" class="common-level">City/State</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <div class="right-form-single-item">
+                                        <label for="inputZip" class="common-level">Country</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-7 col-lg-8 col-md-7 col-sm-6 d-md-none d-block">
+                                    <div class="b-form-captcha">
+                                        <div class="form-check form-check-inline b-checkbox">
+                                            <input class="form-check-input custom-captcha-ceckbox-b" type="checkbox" id="inlineFormCheck" required>
+                                            <label class="form-check-label" for="inlineCheckbox2">I'm not a robot</label> <span class="captcha-img"><img src="imgs/Page2/captcha.png" alt=""></span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- single btn -->
+                                <div class="col-xl-5 col-lg-4 col-md-5 col-sm-6 d-md-none d-block">
+                                    <div class="b-captcha-btn">
+                                        <a href="#" class="common-btn">PAY</a>
+                                    </div>
+                                </div>
+                                <!-- single btn end here -->
+                            </div>
+
+                        </form>
+                        <!-- billing right form end here  -->
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!-- billing right end here  -->
+
+            </div>
+        </div>
+    </section>
+
+    <!--End payment-->
+
+    <!--Start Lawyer-->
+    <section class="lawyer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="lawyer-title">
+                        <h1>Lawyers</h1>
+                    </div>
+                </div>
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon" aria-hidden="true"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Founding & Managing Partner,Lawyer & Notary Publick</p>
+                        </div>
+                        <div class="lawyer-icon">
+                            <p><i class="fa fa-phone common-lawyer-icon" aria-hidden="true"></i> +1(855)466-3801(Toll Free)</p>
+                            <p><i class="far fa-envelope common-lawyer-icon"></i>Rothman@RealEstateLawyers.ca</p>
+                        </div>
+                        <div class="lawyer-btn">
+                            <a href="#" class="common-level">Download Cv Card<i class="fas fa-arrow-right icon-lwayer-btn"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- retired lawyer start here  -->
+
+    <section class="retired-lawyer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="retire-lawyer-content">
+                        <h1>RETIRED LAWYER</h1>
+                        <p>NOTE: The following retired lawyers are no longer in practice and therfore can no longer procvide any legal advice. Kindly conact shayle Rorthman,Managing partner fo any question or concerns relating to any files relating to the
+                            retired lawyers noted below at Rothman@RealEstate.ca or by phoe at +1(855) 466-3801.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- retired lawyer single item start here  -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Lawyer-Retired</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Lawyer-Retired</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Lawyer-Retired</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+                <!-- lawyer single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="lawyer-single-item">
+                        <div class="lawyer-img">
+                            <img src="imgs/Page2/lawyer.png" class="img-fluid" alt="lawyer">
+                        </div>
+                        <div class="lawyer-content">
+                            <h3 class="p-common-title">SHAYLE ROTHMAN</h3>
+                            <p>Lawyer-Retired</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- lawyer single item end here -->
+
+                <!-- retired lawyer single item end here  -->
+            </div>
+        </div>
+    </section>
+    <!-- retired lawyer end here  -->
+    <!--End Lawyer-->
+
+    <!--Start Service-->
+
+    <section class="service">
+
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-10 ">
+                    <div class="service-title">
+                        <h1>Services</h1>
+                    </div>
+                </div>
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="service-single-item">
+                        <a href="#">
+                            <div class="service-img">
+                                <img src="imgs/Page2/1.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Buying <br>Real Estate</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="service-single-item">
+                        <a href="#">
+                            <div class="service-img service-img-2">
+                                <img src="imgs/Page2/2.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Selling <br>Real Estate</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="service-single-item">
+                        <a href="#">
+                            <div class="service-img  service-img-3">
+                                <img src="imgs/Page2/3.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Buying & Selling <br>Real Estate</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img   service-img-4">
+                                <img src="imgs/Page2/4.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Transfer of <br>Ownershipt/Title</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-5">
+                                <img src="imgs/Page2/5.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Mortgage  <br>Transaction</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-6">
+                                <img src="imgs/Page2/6.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Assignment<br>Of Property</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-3">
+                                <img src="imgs/Page2/7.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Wills &<br>Power of Attorney</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-8">
+                                <img src="imgs/Page2/8.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Estates &<br>Probate</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-9">
+                                <img src="imgs/Page2/9.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Incorporations</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="service-single-item">
+                        <a href="#">
+                            <div class="service-img service-img-10">
+                                <img src="imgs/Page2/10.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Joint Venture &<br>Leasse Agrement</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-11">
+                                <img src="imgs/Page2/11.jpg" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Corporate & <br>Commercial Matters</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+                <!-- service single item start here  -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <a href="#">
+                        <div class="service-single-item">
+                            <div class="service-img service-img-12">
+                                <img src="imgs/Page2/12.png" class="img-fluid" alt="service-img">
+                            </div>
+                            <div class="service-content">
+                                <div class="service-common-content">Notarizing & <br>Commissioning Doc.</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- service single item end here  -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--End Service-->
+
+
+    <!--Start Buying-->
+
+    <section class="buying">
+        <div class="container">
+            <div class="row">
+                <!-- buying iteme start here  -->
+                <div class="col-md-9">
+                    <div class="buying-content">
+                        <h1>Buying Real Estate</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dolor minus dolorem vitae inventore, optio facilis dicta distinctio, sint praesentium voluptas eveniet, numquam harum corrupti molestias atque nesciunt. Officia provident
+                            ad cum quibusdam necessitatibus, ut aperiam porro et, iure reprehenderit hic. Modi voluptates sunt architecto, illum dolorum doloribus distinctio iusto.</p>
+                    </div>
+                </div>
+                <!-- buying item end here  -->
+                <div class="col-md-3">
+                    <div class="buying-img">
+                        <img src="imgs/Page2/1.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <!-- buying header sstart here  -->
+                <div class="col-md-12">
+                    <div class="buying-header-content">
+                        <h3 class="p-common-title">Header </h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quidem ut quos necessitatibus voluptas laborum impedit debitis iste qui eius! Aliquam asperiores, quidem laudantium pariatur culpa voluptates laborum dolores eum.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto quaerat voluptatem explicabo, maxime ipsam laboriosam perspiciatis, tenetur ducimus voluptatibus id iusto nulla eius optio.</p>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-9 col-md-10 cols-m-10">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="buying-info">
+                                <p class="common-level">Fax Us:<br>+1(855)466-3803</p>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="buying-info">
+                                <p class="common-level">Call Us:<br>+1(855)466-3803</p>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="buying-info">
+                                <p class="common-level">Email Us:<br>info@RealEstateLawyers.ca</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- buying header end here -->
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- faq start here  -->
+    <section class="faq">
+        <div class="container">
+            <div class="faq-title">
+                <h3 class="p-common-title">FAQ</h3>
+                <!-- faq cllapse start here  -->
+                <div class="accordion" id="accordionExample">
+                    <!-- collapse single item start here  -->
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapse-title collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+                                Why Choose Real Estate Lawyers,ca LLP?
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body collapse-custom-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- collapse single iteme nd here  -->
+                    <!-- collapse single item start here  -->
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapse-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Why is obtaining good title so important?
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body collapse-custom-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- collapse single iteme nd here  -->
+                    <!-- collapse single item start here  -->
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapse-title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                When Is The Right Time To Make A Will?
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body collapse-custom-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- collapse single iteme nd here  -->
+                    <!-- collapse single item start here  -->
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapse-title collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                                Who Should I Appoingt As the Excutor Of My Will?
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body collapse-custom-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- collapse single iteme nd here  -->
+                    <!-- collapse single item start here  -->
+                    <div class="card">
+                        <div class="card-head" id="headingTwo">
+                            <h2 class="mb-0 collapse-title collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                                Do I Need A Will?
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body collapse-custom-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <!-- collapse single iteme nd here  -->
+                </div>
+                <!-- faq collapse end here  -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- hire start here  -->
+    <section class="b-hire">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="b-hire-title">
+                        <h3 class="p-common-title"> Hire Us Now</h3>
+                    </div>
+                </div>
+                <!-- hire form start here  -->
+                <div class="col-md-12">
+                    <form>
+                        <div class="form-row">
+                            <!-- single item form  -->
+                            <div class="form-group col-md-4">
+                                <div class="b-form-single-item">
+                                    <label for="inputName" class="common-level">Full Name</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                            </div>
+                            <!-- single-item form end  -->
+                            <!-- single item form  -->
+                            <div class="form-group col-md-4">
+                                <div class="b-form-single-item">
+                                    <label for="inputPhone" class="common-level">Phone Number</label>
+                                    <input type="tel" class="form-control" id="inputPhone">
+                                </div>
+                            </div>
+                            <!-- single item form end here  -->
+                            <!-- single item start here  -->
+                            <div class="form-group col-md-4">
+                                <div class="b-form-single-item">
+                                    <label for="inputEmail" class="common-level">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                            </div>
+                            <!-- single form item end here  -->
+                        </div>
+                        <div class="form-row">
+
+
+                            <!-- form single item  -->
+                            <div class="form-group col-lg-4 col-md-6">
+                                <div class="b-form-single-item">
+
+                                    <label for="exampleFormControlTextarea1" class="common-level">Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Message" style="margin-bottom: 25px;"></textarea>
+                                    <div class="row e">
+                                        <div class="col-xl-7 col-lg-8 col-md-7 d-md-block d-none">
+                                            <div class="b-form-captcha">
+                                                <div class="form-check form-check-inline b-checkbox">
+                                                    <input class="form-check-input custom-captcha-ceckbox-b" type="checkbox" id="inlineFormCheck" required>
+                                                    <label class="form-check-label" for="inlineCheckbox2">I'm not a robot</label> <span class="captcha-img"><img src="imgs/Page2/captcha.png" alt=""></span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- single btn -->
+                                        <div class="col-xl-5 col-lg-4 col-md-5 d-md-block d-none">
+                                            <div class="b-captcha-btn">
+                                                <a href="#" class="common-btn">SEND</a>
+                                            </div>
+                                        </div>
+                                        <!-- single btn end here -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- form single item end here  -->
+
+
+                            <!-- form single item  -->
+                            <div class="form-group col-lg-8 col-md-6">
+
+                                <div class="b-form-single-item">
+                                    <div class="form-group">
+                                        <label class="common-level">Upload File</label>
+                                        <div class="preview-zone hidden">
+                                            <div class="box box-solid">
+
+                                                <div class="box-body"></div>
+                                            </div>
+                                        </div>
+                                        <div class="dropzone-wrapper">
+                                            <div class="dropzone-desc">
+                                                <i class="glyphicon glyphicon-download-alt"></i>
+                                                <p> <i class="fal fa-arrows"></i> Drag & Drop File Here</p>
+                                            </div>
+                                            <input type="file" name="img_logo" class="dropzone">
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-xl-7 col-lg-8 col-md-7 col-sm-6 d-md-none d-block">
+                                            <div class="b-form-captcha">
+                                                <div class="form-check form-check-inline b-checkbox">
+                                                    <input class="form-check-input custom-captcha-ceckbox-b" type="checkbox" id="inlineFormCheck" required>
+                                                    <label class="form-check-label" for="inlineCheckbox2">I'm not a robot</label> <span class="captcha-img"><img src="imgs/Page2/captcha.png" alt=""></span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- single btn -->
+                                        <div class="col-xl-5 col-lg-4 col-md-5 col-sm-6 d-md-none d-block">
+                                            <div class="b-captcha-btn">
+                                                <a href="#" class="common-btn">SEND</a>
+                                            </div>
+                                        </div>
+                                        <!-- single btn end here -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- form single item end here  -->
+
+                        </div>
+
+                    </form>
+                </div>
+                <!-- hire form end here  -->
+            </div>
+        </div>
+    </section>
+
+    <!-- hire end here  -->
+    <!-- faq end here  -->
+
+
+    <!--End Buying-->
+
+
+
+    <!--Start upper-footer-->
+    <section class="upper-footer-section py-4">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <!--Col #1-->
+
+                <div class="col-6 col-lg-3 mb-3">
+                    <img class="brand-img w-100" src="imgs/Logo PDF 2.png" alt="brand">
+                    <ul class="list-unstyled social-media mt-2 mt-sm-5 d-flex justify-content-between">
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-linkedin-in"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-youtube"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-google"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Col #2-->
+                <div class="col-sm-6 col-lg-3 mb-3">
+                    <h3 class="mb-3 mb-lg-5">Navigation</h3>
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-2">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">
+                                Site Map
+                            </a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Join Us</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Real Estate Agents</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Terms of Use & Disclaimer</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Col #3-->
+                <div class="col-lg-5 mb-3 text-center text-lg-left">
+                    <h3 class="mb-3 mb-lg-5">Find an office near you</h3>
+                    <ul class="list-unstyled list-items">
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Toronto</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Etobicoke</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">North York</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Scarborought</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Markham</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Richmond Hill</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Mississauga</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Vaughan</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Brampton</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Oakville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Burlington</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ottawa</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Aurora</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Barrie</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Picking</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ajax</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Kitchener</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">London</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Windsor</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto mx-lg-0">
+                            <div class="in-group d-flex align-items-center">
+                                <input class="form-control py-4 mr-2" type="text" placeholder="Enter postal code or enter your city">
+                                <label class="search-txt font-weight-bold pointer">
+                                    Search 
+                                    <span class="fas fa-arrow-right"></span> 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End upper-footer-->
+    <div class="container-fluid">
+        <hr>
+    </div>
+
+    <!--Start footer-->
+    <footer class="footer pt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Ajax</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Aurora</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Peterborough</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Barrie</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Bowmanville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brampton</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brantford</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brantford</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Burlington</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Chatham</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Cambridge</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Clarington</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Cooksville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Durham Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">GTA</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Guelph</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Halton Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Hamilton</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Charham</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Kingston</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Kitchener</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">London</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Markham Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Milton</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Mississauga</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Muskoka</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Newmarket</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Niagara</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">North York</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Oakville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ottawa</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Peel Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Pickering</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Richmond</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Hill</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ste Marie</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Scarborought</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Saint Catherines</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sudbury</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Thunder Bay</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Toronto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Unionville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Uxbridge</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Vaughan</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Windsor</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">York</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ontario</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">International</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--bottom-bar (Copyrights)-->
+        <div class="bottom-bar py-3 text-white bg-dark mt-4">
+            <div class="container d-flex justify-content-between">
+                <div class="row w-100">
+                    <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+                        &copy; 2020 Real Estate Lawyers LLP. All Rights Reserved
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        created by "<span class="font-weight-bold">Art of energy from Roman Budaev</span>"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End footer-->
+
+
+
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <!-- plugin -->
+    <script src="js/libs/jquery.dm-uploader.min.js"></script>
+    <!-- plugin end here  -->
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/all.min.js"></script>
+    <script>
+        $(function() {
+            $('.navbar .nav-item').on('click', function() {
+                $(this).addClass('active').siblings().removeClass("active");
+            });
+            $('.location-section .list-items .list_item').on('click', function() {
+                $(this).addClass('active').siblings().removeClass("active");
+            });
+
+            $('.search-box-overlay .in-group').on('click', function(e) {
+                e.stopPropagation();
+            });
+            $('.search-box-overlay').on('click', function(e) {
+                $(this).fadeOut();
+            });
+            $('.search-icon').on('click', function() {
+                $('.search-box-overlay').fadeIn();
+            });
+
+            // drag and drop
+            function readFile(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        var htmlPreview =
+                            '<img width="200" src="' + e.target.result + '" />' +
+                            '<p>' + input.files[0].name + '</p>';
+                        var wrapperZone = $(input).parent();
+                        var previewZone = $(input).parent().parent().find('.preview-zone');
+                        var boxZone = $(input).parent().parent().find('.preview-zone').find('.box').find('.box-body');
+
+                        wrapperZone.removeClass('dragover');
+                        previewZone.removeClass('hidden');
+                        boxZone.empty();
+                        boxZone.append(htmlPreview);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            function reset(e) {
+                e.wrap('<form>').closest('form').get(0).reset();
+                e.unwrap();
+            }
+
+            $(".dropzone").change(function() {
+                readFile(this);
+            });
+
+            $('.dropzone-wrapper').on('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).addClass('dragover');
+            });
+
+            $('.dropzone-wrapper').on('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).removeClass('dragover');
+            });
+
+            $('.remove-preview').on('click', function() {
+                var boxZone = $(this).parents('.preview-zone').find('.box-body');
+                var previewZone = $(this).parents('.preview-zone');
+                var dropzone = $(this).parents('.form-group').find('.dropzone');
+                boxZone.empty();
+                previewZone.addClass('hidden');
+                reset(dropzone);
+            });
+            // drag and end here
+
+            // date picker 
+            $(document).ready(function() {
+                $("#date_of_birth").datepicker();
+            });
+
+            // date picker end 
+
+        });
+    </script>
+
+</body>
+
+</html>

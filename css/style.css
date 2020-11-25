@@ -1234,3 +1234,462 @@ main
 *  End Quote Page
 *
 */
+
+
+
+
+
+
+
+
+
+
+
+
+/* payment start here  */
+
+.payment,
+.billing-info {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.payment-form-single-item {
+    margin-bottom: 25px;
+}
+
+.payment-content {}
+
+.payment-title {}
+
+.p-common-title {
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 16px;
+}
+
+.payment-form-single-item {}
+
+.common-level {
+    font-weight: 700;
+}
+
+.note-input-field {
+    margin-bottom: 25px;
+}
+
+.captcha-pay-img img {
+    width: 51px;
+    margin-left: 70px;
+}
+
+
+/* drop zone start here  */
+
+.box {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+}
+
+.dropzone-wrapper {
+    border: 2px dashed #91b0b3;
+    color: #92b0b3;
+    position: relative;
+    height: 150px;
+}
+
+.dropzone-desc {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 40%;
+    top: 50px;
+    font-size: 16px;
+}
+
+.dropzone,
+.dropzone:focus {
+    position: absolute;
+    outline: none !important;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.dropzone-wrapper:hover,
+.dropzone-wrapper.dragover {
+    background: #ecf0f5;
+}
+
+
+/* drop zone end here  */
+
+.right-single-item {
+    margin-top: 149px;
+}
+
+.payment-img {}
+
+.payment-img img {
+    width: 390px;
+}
+
+
+/* payment end here  */
+
+
+/* billing info start here */
+
+.billing-info {
+    background: #f1e7e7;
+    padding: 60px 0px;
+}
+
+.billing-single-item {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.billing-title {}
+
+.billing-method-item {
+    background: whitesmoke;
+    text-align: center;
+}
+
+.billing-method-single-item {
+    background: white;
+    padding: 25px 16px;
+    border-radius: 15px;
+    -webkit-box-shadow: -4px 4px 63px -9px rgba(176, 143, 176, 1);
+    -moz-box-shadow: -4px 4px 63px -9px rgba(176, 143, 176, 1);
+    box-shadow: -4px 4px 63px -9px rgba(176, 143, 176, 1);
+}
+
+.billing-method-header {
+    background: white;
+}
+
+.accepted {
+    font-weight: 700;
+}
+
+.billing-icon {
+    /* margin: 0px 22px; */
+    font-size: 27px;
+    margin: 0px 11px;
+    color: blue;
+}
+
+.secured {
+    margin-left: 26px;
+    font-weight: 700;
+}
+
+.billing-form-single-item {}
+
+.billing-level {
+    background: white;
+    position: relative;
+    top: 18px;
+    left: 12px;
+}
+
+
+/* cpatcha start here  */
+
+.single-item-captcha {
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.captcha-single-item {
+    padding: 0px 10px;
+}
+
+.custom-captcha-ceckbox {
+    height: 60px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.captcha-logo {
+    margin-left: 48px;
+}
+
+.captcha-logo img {
+    width: 70px;
+    text-align: center;
+}
+
+.captcha-btn {}
+
+.common-btn {
+    color: white;
+    background: #B03439;
+    text-align: center;
+    padding: 4px 109px;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #B03439;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.common-btn:hover {
+    color: #B03439;
+    background: none;
+    border: 1px solid #B03439;
+    text-decoration: none;
+}
+
+.billing-right-single-item {
+    margin-top: 30px;
+}
+
+.right-form-single-item {
+    margin-bottom: 20px;
+}
+
+
+/* captcha end here  */
+
+
+/* billing info end here */
+
+
+/* lawyer start here  */
+
+.lawyer,
+.retired-lawyer {
+    padding: 60px 0px;
+}
+
+.lawyer-title {}
+
+.lawyer-single-item {
+    margin-bottom: 35px;
+}
+
+.lawyer-img {}
+
+.lawyer-img img {}
+
+.lawyer-content {}
+
+.lawyer-content h3 {}
+
+.lawyer-content p {}
+
+.lawyer-icon {}
+
+.common-lawyer-icon {
+    margin-right: 13px;
+    color: #d0bfbf;
+}
+
+.lawyer-btn {}
+
+.lawyer-btn a {
+    color: black;
+}
+
+.icon-lwayer-btn {
+    margin-left: 12px;
+}
+
+
+/* retired lawyer start here  */
+
+.retired-lawyer {
+    background-color: #ebeef7;
+}
+
+.retire-lawyer-content {}
+
+.retire-lawyer-content h3 {}
+
+.retire-lawyer-content p {
+    word-spacing: 1px;
+    padding: 30px 0px;
+}
+
+
+/* retired lawyer end here  */
+
+
+/* lawyer End here  */
+
+
+/* service start here  */
+
+.service {
+    padding: 60px 0px;
+}
+.service a:hover {
+    text-decoration: none;
+}
+
+.service-title {
+    margin-bottom: 40px;
+}
+
+.service-single-item,
+.service-common-content {
+    border: 1px solid #e8d4d4;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.service-single-item:hover {
+    border: 1px solid red;
+}
+
+.service-content {
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.service-common-content {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+}
+
+.service-common-content:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.service-img {
+    text-align: center;
+}
+
+.service-img img {
+    height: 175px;
+}
+
+.service-img-2 img {}
+
+.service-img-3 img {
+    width: 100%;
+}
+
+.service-img-4 img {}
+
+.service-img-5 img {}
+
+.service-img-6 img {}
+
+.service-img-9 img {
+    height: 205px;
+}
+
+.service-img-10 img {}
+
+.service-img-11 img {}
+
+
+}
+
+/* service end here  */
+.buying {
+    padding: 60px 0px;
+}
+.buying-content {}
+.buying-content h1 {}
+.buying-content p {
+    padding: 40px 0px;
+}
+.buying-img {
+    margin-top: 78px;
+}
+.buying-img img {}
+.buying-header-content {}
+.buying-header-content h1 {}
+.buying-header-content p {}
+.buying-info {
+    padding: 30px 0px;
+}
+.buying-info p {}
+
+/* faq start here  */
+
+/* faq collapse start here  */
+.faq {
+    background: #9a9a9a;
+    padding: 45px 0px;
+}
+.faq-title {}
+.accordion {
+    margin-top: 40px;
+}
+.accordion .card {
+    border: none;
+    margin-bottom: 20px;
+}
+.accordion .card h2 {
+    background: url(https://cdn0.iconfinder.com/data/icons/entypo/91/arrow56-512.png) no-repeat calc(100% - 10px) center;
+    background-size: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.accordion .card h2.collapsed {
+    background-image: url(https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/expand2-256.png);
+}
+.collapse-title {
+    padding: 17px 15px;
+}
+.collapse-custom-body {
+    padding: 20px 30px;
+}
+
+/* faq collapase end here  */
+
+/* faq end here  */
+
+/* buying end here  */
+
+/* hire start here  */
+.b-hire {
+    padding: 30px 0px;
+}
+.b-hire-title {
+    padding-bottom: 25px;
+}
+.b-hire-title h1 {}
+.b-form-single-item {}
+.custom-captcha-ceckbox-b {
+    height: 25px;
+    width: 19px;
+}
+.captcha-img img {
+    width: 51px;
+}
+.b-captcha-btn {
+    margin-top: 9px;
+}
+.b-captcha-btn a {
+    padding: 8px 38px;
+}
+.b-captcha-btn a {
+    padding: 9px 43px;
+    font-size: 17px;
+    margin-left: -10px;
+}
+
+/* hire end here  */
