@@ -1558,6 +1558,11 @@ main
     border: 1px solid red;
 }
 
+.service-single-item:hover .service-common-content {
+    color: red;
+    text-decoration: none;
+}
+
 .service-content {
     text-align: center;
     padding: 15px 0px;
@@ -1692,4 +1697,4 @@ main
     margin-left: -10px;
 }
 
-/* hire end here  */
+/* hire end here  */.service-common-content
