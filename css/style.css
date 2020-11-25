@@ -80,6 +80,10 @@ main
 
 
 /*Start navbar*/
+.upper-nav a
+{
+    color: inherit;
+}
 .home .navbar .nav-item .nav-link::after
 {
     content: "";
@@ -196,6 +200,10 @@ main
 
 
 /*Start upper-footer-section*/
+.upper-footer-section
+{
+    background-color: #f3f3f3;
+}
 .upper-footer-section a
 {
     color: inherit;
@@ -639,6 +647,10 @@ main
     background: url("../imgs/home-page/banner.png") center center no-repeat;
     background-size: cover;
     height: 500px;
+}
+.home-header .header-content
+{
+    background-color: rgba(255,255,255,.7);
 }
 .home-header a
 {
