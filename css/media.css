@@ -1,0 +1,235 @@
+/* Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 575.98px) {
+    /* payment start here  */
+    .payment-title {
+        font-size: 30px;
+    }
+    .p-common-title {
+        font-size: 20px;
+    }
+    .right-single-item {
+        margin-top: 39px;
+    }
+    .payment-img {
+        text-align: center;
+    }
+    .payment-img img {
+        width: 200px;
+    }
+    /* payment end here  */
+    /* billing start here  */
+    .accepted {
+        margin-right: 24px;
+    }
+    .captcha-logo img {
+        width: 57px;
+    }
+    .captcha-btn {
+        margin-bottom: 22px;
+    }
+    .custom-captcha-ceckbox {
+        height: 48px;
+    }
+    /* billing end here  */
+    /* lawyer start here  */
+    .lawyer {
+        padding: 30px 0px;
+    }
+    .lawyer-content {
+        text-align: center;
+    }
+    /* lawyer end here  */
+    /* service starat here  */
+    .service-img {
+        width: 100%;
+        text-align: center;
+    }
+    /* service end here */
+    /* buying start here  */
+    .buying {
+        padding: 30px 0px;
+    }
+    .buying-content h1 {
+        font-size: 29px;
+    }
+    .buying-img {
+        margin-top: 0px;
+        text-align: center;
+    }
+    .buying-info {
+        padding: 5px 0px;
+    }
+    element.style {}
+    .accordion .card h2.collapsed {
+        font-size: 18px;
+    }
+    .b-captcha-btn {
+        padding: 20px 10px;
+    }
+    .b-captcha-btn a {
+        padding: 9px 68px;
+        font-size: 17px;
+    }
+    /* buying end here  */
+}
+
+
+/* Small devices (landscape phones, 576px and up)*/
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* paymen start here  */
+    .payment-title {
+        font-size: 30px;
+    }
+    .p-common-title {
+        font-size: 21px;
+    }
+    .right-single-item {
+        margin-top: 39px;
+    }
+    .payment-img {
+        text-align: center;
+    }
+    .payment-img img {
+        width: 260px;
+    }
+    /* payment end here  */
+    /* billing stat here  */
+    .captcha-btn {
+        margin-bottom: 41px;
+    }
+    .captcha-logo img {
+        width: 55px;
+    }
+    .custom-captcha-ceckbox {
+        height: 48px;
+    }
+    /* billing end here  */
+    /* lawyer start here */
+    .lawyer {
+        padding: 30px 0px;
+    }
+    .lawyer-content {
+        text-align: center;
+    }
+    /* lawyer end here  */
+    /* service start here  */
+    /* service end here  */
+    /* buying start here  */
+    .buying {
+        padding: 30px 0px;
+    }
+    .buying-img {
+        margin-top: 18px;
+        text-align: center;
+    }
+    .captcha-img img {
+        width: 47px;
+    }
+    .b-captcha-btn {
+        margin-top: 13px;
+    }
+    .b-captcha-btn a {
+        padding: 10px 65px;
+        font-size: 16px;
+    }
+    /* buying end here  */
+}
+
+
+/* Medium devices (tablets, 768px and up)*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* payment start here  */
+    .captcha-pay-img img {
+        margin-left: 110px;
+    }
+    /* payment end here  */
+    /* captcha start here  */
+    .billing-method-single-item {
+        padding: 25px 11px;
+    }
+    .captcha-logo img {
+        width: 56px;
+    }
+    .captcha-btn a {
+        padding: 4px 102px;
+    }
+    .billing-icon {
+        margin: 0px 3px;
+    }
+    .secured {
+        margin-left: 0px;
+    }
+    .custom-captcha-ceckbox {
+        height: 49px;
+    }
+    /* captcha end here  */
+    /* lawyer start here  */
+    .lawyer-content h3 {
+        font-size: 22px;
+    }
+    /* lawyer end here  */
+    /* service start here  */
+    /* service end here  */
+    /* buying start here  */
+    .captcha-img img {
+        width: 41px;
+    }
+    .b-captcha-btn {
+        margin-top: 8px;
+    }
+    /* buying end here  */
+}
+
+
+/* Large devices (desktops, 992px and up)*/
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* payement start here  */
+    .captcha-pay-img img {
+        width: 46px;
+        /* payment start here  */
+        /* payment end here  */
+        margin-left: 24px;
+    }
+    /* payment ned here  */
+    /* checkbox start here  */
+    .custom-captcha-ceckbox {
+        height: 47px;
+        width: 20px;
+    }
+    .captcha-btn a {
+        padding: 4px 84px;
+    }
+    /* checkbox end here  */
+    /* lawyer start here  */
+    .lawyer-content h3 {
+        font-size: 23px;
+    }
+    /* lawyer end here  */
+    /* service start here  */
+    .service-img-2 {
+        width: 162px;
+    }
+    /* service end here  */
+    /* buyings tart here  */
+    .captcha-img img {
+        width: 46px;
+    }
+    .b-captcha-btn {
+        margin-top: 11px;
+    }
+    .b-captcha-btn a {
+        padding: 11px 34px;
+        font-size: 16px;
+        margin-left: -30px;
+    }
+    /* buying end here  */
+}
+
+
+/* Extra large devices (large desktops, 1200px and up)*/
+
+@media (min-width: 1200px) {}
