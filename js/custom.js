@@ -2,11 +2,27 @@ $(function () {
     $('.navbar .nav-item').on('click', function() {
         $(this).addClass('active').siblings().removeClass("active");
     });
+
+    /*
+    * Locations page
+    * to add class active when click on city near maps
+    */
+    $('.location-section .list-items .list_item').on('click', function() {
+        $(this).addClass('active').siblings().removeClass("active");
+    });
+
+    /*
+    * Trigger When click hire us box
+    */
     $('.hire-us-section .right-section .box .checkbox-container .in-check').on('change', function(e) {
         let checkState = e.target.checked;
         $(this).parents('.box').toggleClass('selected');
     });
 
+    /**
+     * Global search box 
+     * trigger when click search icon on the navbar
+     */
     $('.search-box-overlay .in-group').on('click', function(e) {
         e.stopPropagation();
     });
