@@ -999,60 +999,57 @@ main
 */
 
 /*Start Quote Section*/
-.quote-quote-section ._1st-bg
+
+.text-underline
 {
-    background-color: #32CDC7;
-}
-.quote-quote-section ._2nd-bg
-{
-    background-color: #FE80C0;
-}
-.quote-quote-section ._3rd-bg
-{
-    background-color: #77BCFF;
-}
-.quote-quote-section ._4th-bg
-{
-    background-color: #F1C40F;
-}
-.quote-quote-section ._5th-bg
-{
-    background-color: #8D708E;
-}
-.quote-quote-section ._6th-bg
-{
-    background-color: #E84C3D;
-}
-.quote-quote-section ._7th-bg
-{
-    background-color: #16A086;
-}
-.quote-quote-section ._8th-bg
-{
-    background-color: #9B58B5;
+    text-decoration: underline;
 }
 
-
-
-.quote-quote-section .gray-btn
+.quote-quote-progress
 {
-    background-color: #606060;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .8rem;
+    background-color: #c4c4c4;
+    z-index: 99999;
 }
-.quote-quote-section .gray-btn:hover
+.quote-quote-progress .prog-bar
 {
-    background-color: #EF474D;
+    transition: .5s;
+    background-color: #f0474e;
+    height: 100%;
+    width: 5%;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.quote-quote-section input
+{
+    box-shadow: 0px 0px 20px -3px #ececec;
+}
+.quote-quote-section .btn
+{
+    border: 1px solid #ddd;
+    font-size: 1rem;
 }
 .quote-quote-section .red-btn
 {
     background-color: #EF474D;
+    color: #fff;
+}
+.quote-quote-section .btn:hover,
+.quote-quote-section .btn.selected
+{
+    background-color: #EF474D;
+    border-color: #222;
+    color: #fff;
+    box-shadow: 0 5px 10px 0 #ddd;
 }
 .quote-quote-section .red-text
 {
     color: #EF474D;
 }
-
-
-
 
 .quote-quote-section .price-input
 {
@@ -1065,27 +1062,18 @@ main
     top: 50%;
     left: .5rem;
     transform: translateY(-50%);
-}
-.quote-quote-section .btn
-{
-    transition: .2s;
-    font-size: 1.3rem;
+    color: #888;
 }
 .quote-quote-section .hint
 {
     font-size: .8rem;
-}
-
-.quote-quote-section .title
-{
-    color: #3893C2;
 }
 .quote-quote-section .title .num
 {
     width: 35px;
     height: 35px;
     line-height: 35px;
-    background-color: #3893C2;
+    background-color: #f0474e;
 }
 
 .quote-quote-section .rows-container::before
@@ -1106,14 +1094,39 @@ main
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 9;
+}
+.quote-quote-section .box-item .inner-box-item
+{
+    background-color: #f3f4f8;
+    transition: .2s;
 }
 .quote-quote-section .box-item .icon
 {
-    opacity: .5;
     transition: .2s;
     border: 1px solid transparent;
     font-size: 5rem;
+    position: relative;
+}
+
+.quote-quote-section .box-item .icon::after
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ea4335;
+    opacity: .2;
+    z-index: 1;
+    transform: translate(-30%, -50%);
+}
+.quote-quote-section .box-item .icon img
+{
+    position: relative;
+    z-index: 2;
 }
 @media (max-width: 991px) {
     .quote-quote-section .box-item .icon
@@ -1123,18 +1136,18 @@ main
 }
 .quote-quote-section .box-item .box-title
 {
-    color: #999b9e;
     transition: .2s;
 }
+.quote-quote-section .box-item:hover .box-title,
 .quote-quote-section .box-item.active .box-title
 {
-    color: #222;
+    color: #fff;
 }
 
-.quote-quote-section .box-item.active .icon,
-.quote-quote-section .box-item .icon:hover
+.quote-quote-section .box-item.active .inner-box-item,
+.quote-quote-section .box-item:hover .inner-box-item
 {
-    border: 1px solid #222;
+    background-color: #222;
     opacity: 1;
 }
 .quote-quote-section .inner-content .inner-box
@@ -1198,34 +1211,38 @@ main
 }
 .quote-quote-section .tab-container .nav-link
 {
-    background-color: #F5F5F5;
+    background-color: #e3e3e3;
     color: #222;
     font-weight: 500;
 }
 .quote-quote-section .tab-container .nav-link.active
 {
-    background-color: #B5B5B5;
+    background-color: #222;
     color: #fff;
 }
 .quote-quote-section .tab-container .tab-content
 {
-    border: 1px solid #999;
+    border: 1px solid #d4d4d4;
 }
-.quote-quote-section .tab-container .list-item
+.quote-quote-section .buying-tab .tab-content
 {
-    background-color: #fef6df;
+    box-shadow: 0 2px 10px #bebebe;
 }
-.quote-quote-section .tab-container .tab-footer
+.quote-quote-section .tab-container .tab-head
 {
-    background-color: #F4F4F4;
+    box-shadow: 0 2px 10px #bebebe;
 }
-.quote-quote-section .tab-container .tab-footer .btn-sm
+.quote-quote-section .tab-container .tab-body .tab-list .list-item
 {
-    font-size: .9rem;
+    background-color: #f6f6f6;
 }
-.quote-quote-section .tab-container .tab-footer .footer-price .txt
+.quote-quote-section .tab-container .tab-body .tab-list .list-item.red-color
 {
-    font-size: .8rem;
+    color: #F0474E;
+}
+.quote-quote-section .tab-container .tab-body .tab-btn
+{
+    background-color: #f0474e;
 }
 
 /*End Quote Section*/
