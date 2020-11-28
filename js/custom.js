@@ -152,5 +152,14 @@ $(function () {
         $('.quote-quote-section .tab-container').hide();
     }
 
+    let quoteProgress = $(".quote-quote-progress").offset().top;
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() >= quoteProgress) {
+            $(".quote-quote-progress").css('position', 'fixed')
+        } else {
+            $(".quote-quote-progress").css('position', 'static')
+        }
+    });
+
     /*End Quote page */
 });
