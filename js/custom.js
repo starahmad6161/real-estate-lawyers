@@ -52,6 +52,7 @@ $(function () {
 
         //Hide bottom tabs when click first row 
         $('.quote-quote-section .tab-container').hide();
+        $('.quote-quote-section .loading').hide();
         //Show And hide second row
         $(`.quote-quote-section .second-row-box`).hide();
         let secondRowBox = $(`.quote-quote-section .second-row-box_${dataFRow}`);
@@ -104,6 +105,9 @@ $(function () {
         } else {
             $('.quote-quote-section .selling-tabs').show();
         }
+
+        
+        $('.quote-quote-section .loading').show();
         //$('.quote-quote-section .tab-container').show();
         $(this).parents('.rows-container').find(`.content_${dataFRow}${dataSRow}`).fadeIn(200).siblings('.inner-box').fadeOut(200);
         //animate body to scroll to (next step)

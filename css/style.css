@@ -999,6 +999,10 @@ main
 */
 
 /*Start Quote Section*/
+.loading
+{
+    display: none;
+}
 .loading img
 {
     width: 50px;
