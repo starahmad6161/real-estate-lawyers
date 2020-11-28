@@ -52,7 +52,7 @@ $(function () {
 
         //Hide bottom tabs when click first row 
         $('.quote-quote-section .tab-container').hide();
-        $('.quote-quote-section .loading').hide();
+        //$('.quote-quote-section .loading').hide();
         //Show And hide second row
         $(`.quote-quote-section .second-row-box`).hide();
         let secondRowBox = $(`.quote-quote-section .second-row-box_${dataFRow}`);
@@ -107,7 +107,7 @@ $(function () {
         }
 
         
-        $('.quote-quote-section .loading').show();
+        //$('.quote-quote-section .loading').show();
         //$('.quote-quote-section .tab-container').show();
         $(this).parents('.rows-container').find(`.content_${dataFRow}${dataSRow}`).fadeIn(200).siblings('.inner-box').fadeOut(200);
         //animate body to scroll to (next step)
@@ -187,5 +187,30 @@ $(function () {
         }
     });
 
+
+    /**
+     * For Price 
+     * When price change
+     */
+    $('.price-input').on('input', function() {
+
+        console.log("price changed");
+        
+        //show loading 
+        $('.quote-quote-section .loading').css("display", "block");
+        
+        /**
+         * remove `setTimeOut` function when you send the request
+         * it just for testing  
+         */
+        setTimeout( function() {
+            //hide loading 
+            $('.quote-quote-section .loading').css("display", "none");
+        } ,1000);
+
+    });
+    
+    
+    
     /*End Quote page */
 });
