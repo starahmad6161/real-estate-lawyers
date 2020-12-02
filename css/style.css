@@ -1,4 +1,7 @@
 
+#map {
+    height: 100%;
+}
 
 
 /*Start Global Classes*/
@@ -127,6 +130,10 @@ a:hover
 
 
 /*Start location-section*/
+.location-section .img-container
+{
+    min-height: 400px;
+}
 .location-section .search-txt
 {
     position: absolute;
@@ -150,8 +157,8 @@ a:hover
     font-weight: 600;
     font-family: "Font Awesome 5 Free";
     position: absolute;
-    top: 50%;
-    transform: translate(-120%, -50%);
+    top: 0%;
+    transform: translate(-120%);
     color:#F0474E;
     display: none;
 }
@@ -167,6 +174,20 @@ a:hover
 {
     color: #222;
 }
+.location-section .sub-list
+{
+    display: none;
+}
+.location-section .sub-list .sub-list-item
+{
+    font-size: .90rem;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+}
+.location-section .list-items .list_item.active .sub-list
+{
+    display: block;
+}
 .location-section .img-container .image-map
 {
     position: absolute;
@@ -175,9 +196,13 @@ a:hover
 
 .location-section .img-container .card
 {
+    
+    max-width: 250px;
+    /*
     box-shadow: 0px 10px 10px -3px #ddd;
     max-width: 15rem;
     transform: translateY(-10%);
+    */
     font-size: .8rem;
 }
 .location-section .img-container .card-overlay .card-text
@@ -186,12 +211,13 @@ a:hover
 }
 .location-section .img-container .card-overlay
 {
+    /*
     position: relative;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: fit-content;
-    
+    */
 }
 .location-section .img-container .card-overlay .icon
 {

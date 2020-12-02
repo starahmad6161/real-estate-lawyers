@@ -223,16 +223,24 @@
                 <!--Left Section-->
                 <div class="col-md-5 pr-md-5">
                     <div class="in-group position-relative">
-                        <input class="form-control py-4" type="text"
+                        <input class="form-control py-4" type="text" id="search_input"
                             placeholder="Enter postal code or enter your city">
                         <label class="search-txt px-2 font-weight-bold pointer bg-white">Search <span
                                 class="fas fa-arrow-right"></span> </label>
                     </div>
                     <h2 class="font-weight-bold mt-4">Locations</h2>
-                    <ul class="list-items list-unstyled justify-content-between row mt-4">
-                        <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer active">
-                            <span class="txt text-capitalize">Toronto</span>
-                            <span class="num">(5)</span>
+                    <ul class="list-items list-unstyled justify-content-between row mt-4" id="location-list-items">
+                        <li class="list_item col-5 position-relative">
+                            <div class="d-flex justify-content-between mb-2 pointer">
+                                <span class="txt text-capitalize">Toronto</span>
+                                <span class="num">(5)</span>
+                            </div>
+                            <ul class="sub-list list-unstyled pl-4">
+                                <li class="sub-list-item pointer">toronto #1</li>
+                                <li class="sub-list-item pointer">toronto #2</li>
+                                <li class="sub-list-item pointer">toronto #3</li>
+                                <li class="sub-list-item pointer">toronto #4</li>
+                            </ul>
                         </li>
                         <li class="list_item col-5 position-relative d-flex justify-content-between mb-2 pointer">
                             <span class="txt text-capitalize">Ottawa</span>
@@ -327,45 +335,14 @@
                 <!--Right Navbar-->
                 <div class="col-md-7 mt-5 mt-md-0">
                     <div class="img-container position-relative h-100">
-                        <img class="image-map w-100 h-100" src="./imgs/Mask Group.png" alt="Map">
+                        <div id="map"></div>
                         <!--
+                            <img class="image-map w-100 h-100" src="./imgs/Mask Group.png" alt="Map">
                             <div class="img-card-cont">
                                 <img class="image-card" src="./imgs/Group 1257.png" alt="Card">
                                 <img class="image-marker" src="./imgs/Group 1225.png" alt="Card">
                             </div>
                         -->
-                        <!--Card on the Map image-->
-                        <div class="card-overlay">
-                            <div class="card position-relative">
-                                <img class="card-img-top" src="./imgs/image 65.png" alt="card image" />
-                                <div class="card-body">
-                                    <div class="text">321 Cityview Blvd, Unit 3</div>
-                                    <div class="text">(Hwy 400 & Major Mackenzie)</div>
-                                    <h3 class="h6 card-text my-3 font-weight-bold">Vaughan, Ontario, L4H 3S7</h3>
-                                    <ul class="list-unstyled contact-list fa-ul ml-4">
-                                        <li class="contact-item mb-2">
-                                            <span class="fa-li icon">
-                                                <i class="fas fa-phone fa-rotate-90"></i>
-                                            </span>
-                                            <span class="txt text-muted">(905)477-5151</span>
-                                        </li>
-                                        <li class="contact-item mb-2">
-                                            <span class="fa-li icon">
-                                                <i class="fas fa-fax"></i>
-                                            </span>
-                                            <span class="txt text-muted">(905)477-6778</span>
-                                        </li>
-                                        <li class="contact-item mb-2">
-                                            <span class="fa-li icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </span>
-                                            <span class="txt text-muted">vaughan@RealEstateLawyers</span>
-                                        </li>
-                                    </ul>
-                                    <img class="image-marker" src="./imgs/Group 1225.png" alt="Marker">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -799,11 +776,24 @@
     <!--End Home-->
 
 
+
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbx_3jzjrH6vsTSZ46lG7j4f9zit8GPDc&callback=initMap&libraries=places&v=weekly"
+    defer
+  ></script>
+
     <script src="js/libs/jquery-3.3.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/all.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/mapApi.js"></script>
+    
+    
+
+    
+    
     
 </body>
 

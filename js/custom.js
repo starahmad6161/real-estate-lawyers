@@ -7,8 +7,11 @@ $(function () {
     * Locations page
     * to add class active when click on city near maps
     */
-    $('.location-section .list-items .list_item').on('click', function() {
+    $(document).on('click', '.location-section .list-items .list_item' ,function() {
         $(this).addClass('active').siblings().removeClass("active");
+    });
+    $(document).on('click', '.location-section .sub-list .sub-list-item' ,function() {
+        $(this).addClass('font-weight-bold').siblings().removeClass("font-weight-bold");
     });
 
     /*
@@ -178,12 +181,13 @@ $(function () {
     /**
      * When Scrolling set progress bar 'position fixed'
      */
-    let quoteProgress = $(".quote-quote-progress").offset().top;
     $(window).on('scroll', function () {
-        if ($(window).scrollTop() >= quoteProgress) {
-            $(".quote-quote-progress").css('position', 'fixed')
-        } else {
-            $(".quote-quote-progress").css('position', 'static')
+        if ($(".quote-quote-progress").length != 0) {
+            if ($(window).scrollTop() >= $(".quote-quote-progress").offset().top) {
+                $(".quote-quote-progress").css('position', 'fixed')
+            } else {
+                $(".quote-quote-progress").css('position', 'static')
+            }
         }
     });
 
