@@ -718,7 +718,6 @@ let currentPlacesMarker = [];
 var locations;
 //let map;
 let locationsOnView = [];
-//[[1, 1], [1, 2], [1, 3]] locationsInView
 function addListToDom() {
     let obj = {};
     let parent = ``;
@@ -741,11 +740,9 @@ function addListToDom() {
             ];
         }
     }
-    //console.log(obj);
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             const places = obj[key];
-            //console.log(key,places);
             currentPlacesMarker.push({
                 location: key,
                 places: places,
@@ -766,72 +763,8 @@ function addListToDom() {
         }
     }
     $("#location-list-items").html(parent);
-    /*
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            const places = obj[key];
-            parent += `<li class="list_item col-5 position-relative">
-                        <div class="d-flex justify-content-between mb-2 pointer">
-                            <span class="txt text-capitalize">${key}</span>
-                            <span class="num">(${places.length})</span>
-                        </div>
-                        <ul class="sub-list list-unstyled pl-4">`;
-            for (const place of places) {
-                markerIndex++;
-                parent += `
-                            <li class="sub-list-item pointer my-2" onclick='triggerMarker(${markerIndex})'>${place}</li>`
-            }
-            parent += `</ul>
-                    </li>`;
-        }
-    }
-    $("#location-list-items").html(parent);
-    */
-
-    /*
-    for (const index of locationsOnView) {
-        //console.log(placesInfo[index]);
-        if (placesInfo[index].locationName == txt) {
-            //num++;
-            placesArr[in] = placesInfo[index].firstTitle;
-        } else {
-            txt = placesInfo[index].locationName;
-            locationsArr.push(placesInfo[index].locationName);
-            placesArr.push(placesInfo[index].firstTitle);
-        }
-    }
-    console.log(locationsArr, placesArr);
-    txt = '';
-    let num = 0;
-    let parent = ``;
-    let txt = '';
-    for (const location of viewLocations) {
-        let locations_info = placesInfo.filter(item => item.locationId == location.position[0]);
-        console.log(locations_info);
-        if (locations_info[0].locationName == txt) {
-            continue;
-        } else {
-            //console.log(locations_info);
-            parent += `<li class="list_item col-5 position-relative">
-                        <div class="d-flex justify-content-between mb-2 pointer">
-                            <span class="txt text-capitalize">${locations_info[0].locationName}</span>
-                            <span class="num">(${locations_info.length})</span>
-                        </div>
-                        <ul class="sub-list list-unstyled pl-4">`;
-            for (const place of locations_info) {
-                //console.log(place);
-                parent += `
-                            <li class="sub-list-item pointer my-2" onclick='triggerMarker("")'>${place.firstTitle}</li>`
-            }
-            parent += `</ul>
-                    </li>`;
-        txt = locations_info[0].locationName
-        }
-    }
-    $("#location-list-items").html(parent);
-    */
 }
-
+let gmarkers = [];
 
 function getPlaceCard($this) {
     return `<div class="card-overlay border-0">
@@ -883,45 +816,30 @@ function initMap() {
     const autocomplete = new google.maps.places.Autocomplete(input);
 
     autocomplete.addListener("place_changed", () => {
-        //infowindow.close();
-        //marker.setVisible(false);
         
-        locationsOnView = [];
-        const place = autocomplete.getPlace();
-        if (!place.geometry) {
-            window.alert("No details available for input: '" + place.name + "'");
-            return;
-        }
-
+        //map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        
         $('.search-txt').on('click', function() {
-            
-
+            resetAllMarkers();
+            const place = autocomplete.getPlace();
+            if (!place.geometry) {
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
             if (place.geometry.viewport) {
                 map.fitBounds(place.geometry.viewport);
             } else {
                 map.setCenter(place.geometry.location);
                 map.setZoom(17); // Why 17? Because it looks good.
             }
-    
-            //43.70326567412194, -79.28878370233909
-            //console.log(place.geometry.viewport.contains({ lat: 43.70326567412194, lng: -79.28878370233909 }));
-    
-            //marker.setPosition(place.geometry.location);
-            //marker.setVisible(true);
-            //let address = "";
-    
-            //console.log(placesInfo[0].getInfo());
-            let viewLocations = [];
+            locationsOnView = [];
             for (let i = 0; i < placesInfo.length; i++) {
-                //console.log(locations[i][1]);
-                //console.log(place.geometry.viewport.contains({ lat: locations[i][1], lng: locations[i][2] }));
-
-
                 if (place.geometry.viewport.contains(placesInfo[i].location)) {
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(placesInfo[i].location),
                         map: map
                     });
+                    gmarkers.push(marker);
                     placesInfo[i].marker = marker;
                     locationsOnView.push(i);
                     //markers.push(marker);
@@ -935,17 +853,18 @@ function initMap() {
                 }
                 
             }
-            addListToDom();
-            //console.log(locationsOnView);
             const infowindow = new google.maps.InfoWindow({
                 content: "<p>Marker Location:" + marker.getPosition() + "</p>",
             });
             google.maps.event.addListener(marker, "click", () => {
                 infowindow.open(map, marker);
             });
+            addListToDom();
+            
 
-    
         });
+        /*
+        */
     });
 }
 
@@ -953,7 +872,7 @@ function initMap() {
 function triggerMarker(key, index) {
     //google.maps.event.trigger({lat: 43.70737785820043, lng: -79.39938632070653}, 'click');
     //console.log(locationLatLng.lat);
-    console.log(currentPlacesMarker);
+    //console.log(currentPlacesMarker);
     let filteredPlace = currentPlacesMarker.filter(item => item.location == key);
     let targetMarker = (filteredPlace[0].places[index])[0];
     google.maps.event.trigger(targetMarker, 'click');
@@ -964,4 +883,13 @@ function triggerMarker(key, index) {
     */
     //google.maps.event.trigger(e, 'click', map);
     //google.maps.event.trigger(markers[5], 'click');
+}
+
+function resetAllMarkers() {
+    for(i=0; i<gmarkers.length; i++){
+        gmarkers[i].setMap(null);
+    }
+    for (const location of placesInfo) {
+        location.marker = null;
+    }
 }
