@@ -684,7 +684,7 @@ var placesInfo = [
     {
         locationId: 30,
         placeId: 1,
-        locationName: '',
+        locationName: 'Orangeville',
         img: 'image 65.png',
         firstTitle: '10 Zina Street (Nearest Major Intersection: Zina St. & First St.)',
         secondTitle: 'Orangeville, Ontario, L9W 1E1',
@@ -806,39 +806,67 @@ function getPlaceCard($this) {
 }
 var map;
 var marker;
+var infowindow;
 var markers = [];
 function initMap() {
-    
-    const mapOptions = {
-        zoom: 8,
-        center: { lat: 43.854681047026794, lng: -79.55105215192812 },
-    };
-    
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    const input = document.getElementById("search_input");
-    const autocomplete = new google.maps.places.Autocomplete(input);
-    loadAllLocations();
-    autocomplete.addListener("place_changed", () => {
-        if (($('#search_input').val()).trim() == '') { //that mean the input is empty
-            loadAllLocations();
 
-        } else {
-            $('.search-txt').on('click', function() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 43.854681047026794, lng: -79.55105215192812 }, 
+        zoom: 8,
+    });
+    const card = document.getElementById("pac-card");
+    const input = document.getElementById("search_input");
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+    const autocomplete = new google.maps.places.Autocomplete(input);
+    // Bind the map's bounds (viewport) property to the autocomplete object,
+    // so that the autocomplete requests use the current map bounds for the
+    // bounds option in the request.
+    //autocomplete.bindTo("bounds", map);
+    // Set the data fields to return when the user selects a place.
+    //autocomplete.setFields(["address_components", "geometry", "icon", "name"]);
+    infowindow = new google.maps.InfoWindow();
+    marker = new google.maps.Marker({
+        map,
+        anchorPoint: new google.maps.Point(0, -29),
+        position: { lat: 43.854681047026794, lng: -79.55105215192812 }
+    });
+    loadAllLocationsWithHeadOffice();
+    /*
+    infowindow.setContent(placesInfo[11].getInfo());
+    infowindow.open(map, marker);
+    */
+    autocomplete.addListener("place_changed", () => {
+        //map.setOptions({zoom: 8});
+        $('.search-txt').on('click', function() {
+
+            if (($("#search_input").val()).trim() == '') {
+                loadAllLocationsWithHeadOffice();
+            } else {
+                infowindow.close();
+                marker.setVisible(false);
                 resetAllMarkers();
                 const place = autocomplete.getPlace();
                 if (!place.geometry) {
+                    // User entered the name of a Place that was not suggested and
+                    // pressed the Enter key, or the Place Details request failed.
                     window.alert("No details available for input: '" + place.name + "'");
                     return;
                 }
+                map.setZoom(8);
+                // If the place has a geometry, then present it on a map.
                 if (place.geometry.viewport) {
                     map.fitBounds(place.geometry.viewport);
+                    map.setZoom(10);
                 } else {
                     map.setCenter(place.geometry.location);
-                    map.setZoom(17); // Why 17? Because it looks good.
+                    map.setZoom(10); // Why 17? Because it looks good.
                 }
+                let currentPlaceLocation = {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()}
                 locationsOnView = [];
                 for (let i = 0; i < placesInfo.length; i++) {
-                    if (place.geometry.viewport.contains(placesInfo[i].location)) {
+                    //console.log(arePointsNear(placesInfo[i].location, currentPlaceLocation));
+                    if (arePointsNear(placesInfo[i].location, currentPlaceLocation)) {
+                        //console.log(place.geometry.viewport);
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(placesInfo[i].location),
                             map: map
@@ -846,8 +874,6 @@ function initMap() {
                         gmarkers.push(marker);
                         placesInfo[i].marker = marker;
                         locationsOnView.push(i);
-                        //markers.push(marker);
-            
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
                             return function () {
                                 infowindow.setContent(placesInfo[i].getInfo());
@@ -857,25 +883,38 @@ function initMap() {
                     }
                     
                 }
-                if (locationsOnView.length != 0) {
-                    const infowindow = new google.maps.InfoWindow({
-                        content: "<p>Marker Location:" + marker.getPosition() + "</p>",
-                    });
-                    google.maps.event.addListener(marker, "click", () => {
-                        infowindow.open(map, marker);
-                    });
-                    addListToDom();
+                if (locationsOnView.length == 0) {
+                    $("#location-list-items").html(`<div class="font-weight-bold px-2">Sorry, No result found</div>`);
                 } else {
-                    $("#location-list-items").html(`<div class="px-2 font-weight-bold"> Sorry, No result found</div>`);
+                    addListToDom();
                 }
-            });
-        }
-
+            }
+            
+            
+            
+            /*
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+    
+            google.maps.event.addListener(marker, 'click', (function (marker) {
+                return function () {
+                    infowindow.setContent(placesInfo[0].getInfo());
+                    infowindow.open(map, marker);
+                }
+            })(marker));
+            */
+        });
+        
     });
+
+    // Sets a listener on a radio button to change the filter type on Places
+    // Autocomplete.
 }
 
-
-function loadAllLocations() {
+function loadAllLocationsWithHeadOffice() {
+    //resetAllMarkers();
+    infowindow.close();
+    marker.setVisible(false);
     resetAllMarkers();
     locationsOnView = [];
     for (let i = 0; i < placesInfo.length; i++) {
@@ -886,8 +925,6 @@ function loadAllLocations() {
         gmarkers.push(marker);
         placesInfo[i].marker = marker;
         locationsOnView.push(i);
-        //markers.push(marker);
-
         google.maps.event.addListener(marker, 'click', (function (marker, i) {
             return function () {
                 infowindow.setContent(placesInfo[i].getInfo());
@@ -895,18 +932,83 @@ function loadAllLocations() {
             }
         })(marker, i));
     }
-    if (locationsOnView.length != 0) {
-        const infowindow = new google.maps.InfoWindow({
-            content: "<p>Marker Location:" + marker.getPosition() + "</p>",
-        });
-        google.maps.event.addListener(marker, "click", () => {
+    /*
+    */
+    infowindow.setContent(placesInfo[11].getInfo());
+    marker.setPosition({ lat: 43.854681047026794, lng: -79.55105215192812 });
+    infowindow.open(map, marker);
+
+
+
+
+    /*
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng({ lat: 43.854681047026794, lng: -79.55105215192812 }),
+        map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function (marker) {
+        return function () {
+            infowindow.setContent(placesInfo[11].getInfo());
             infowindow.open(map, marker);
-        });
-        addListToDom();
-    } else {
-        $("#location-list-items").html(`<div class="px-2 font-weight-bold"> Sorry, No result found</div>`);
-    }
+            
+            console.log(place.geometry.viewport);
+        }
+    })(marker));
+    */
+    
+    
+    
+    /*
+    marker = new google.maps.Marker({
+        position: new google.maps.LatLng({ lat: 43.854681047026794, lng: -79.55105215192812 }),
+        map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function (marker) {
+        return function () {
+            infowindow.setContent("content from function");
+            infowindow.open(map, marker);
+        }
+    })(marker));
+    */
+    //marker.setPosition(myLatlng);
+    addListToDom();
 }
+
+
+function arePointsNear(checkPoint, centerPoint, km = 30) {
+    let ky = 40000 / 360;
+    let kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+    let dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
+    let dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
+    return Math.sqrt(dx * dx + dy * dy) <= km;
+}
+/*
+let checkPoint = { lat: 43.73651491980686, lng: -79.37049451731369 }; 
+let centerPoint = {lat: 43.64877591724139, lng: -79.3810036077403};
+
+let n = arePointsNear(vasteras, stockholm, 10);
+
+console.log(n);
+
+
+new google.maps.Circle({
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+    map,
+    center: {lat: 43.64877591724139, lng: -79.3810036077403},
+    radius: Math.sqrt(2714856) * 5,
+})
+*/
+
+
+function clickMarker(ele) {
+    console.log(ele);
+}
+
+
 
 function triggerMarker(key, index) {
     //google.maps.event.trigger({lat: 43.70737785820043, lng: -79.39938632070653}, 'click');
@@ -932,7 +1034,3 @@ function resetAllMarkers() {
         location.marker = null;
     }
 }
-
-$(function () {
-    'use strict';
-});
