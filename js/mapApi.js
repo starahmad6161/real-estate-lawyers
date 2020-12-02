@@ -719,6 +719,7 @@ var locations;
 //let map;
 let locationsOnView = [];
 function addListToDom() {
+
     let obj = {};
     let parent = ``;
     let txt = '';
@@ -763,6 +764,8 @@ function addListToDom() {
         }
     }
     $("#location-list-items").html(parent);
+    
+    
 }
 let gmarkers = [];
 
@@ -814,60 +817,96 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
     const input = document.getElementById("search_input");
     const autocomplete = new google.maps.places.Autocomplete(input);
-
+    loadAllLocations();
     autocomplete.addListener("place_changed", () => {
-        
-        //map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        
-        $('.search-txt').on('click', function() {
-            resetAllMarkers();
-            const place = autocomplete.getPlace();
-            if (!place.geometry) {
-                window.alert("No details available for input: '" + place.name + "'");
-                return;
-            }
-            if (place.geometry.viewport) {
-                map.fitBounds(place.geometry.viewport);
-            } else {
-                map.setCenter(place.geometry.location);
-                map.setZoom(17); // Why 17? Because it looks good.
-            }
-            locationsOnView = [];
-            for (let i = 0; i < placesInfo.length; i++) {
-                if (place.geometry.viewport.contains(placesInfo[i].location)) {
-                    marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(placesInfo[i].location),
-                        map: map
-                    });
-                    gmarkers.push(marker);
-                    placesInfo[i].marker = marker;
-                    locationsOnView.push(i);
-                    //markers.push(marker);
-        
-                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                        return function () {
-                            infowindow.setContent(placesInfo[i].getInfo());
-                            infowindow.open(map, marker);
-                        }
-                    })(marker, i));
-                }
-                
-            }
-            const infowindow = new google.maps.InfoWindow({
-                content: "<p>Marker Location:" + marker.getPosition() + "</p>",
-            });
-            google.maps.event.addListener(marker, "click", () => {
-                infowindow.open(map, marker);
-            });
-            addListToDom();
-            
+        if (($('#search_input').val()).trim() == '') { //that mean the input is empty
+            loadAllLocations();
 
-        });
-        /*
-        */
+        } else {
+            $('.search-txt').on('click', function() {
+                resetAllMarkers();
+                const place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    window.alert("No details available for input: '" + place.name + "'");
+                    return;
+                }
+                if (place.geometry.viewport) {
+                    map.fitBounds(place.geometry.viewport);
+                } else {
+                    map.setCenter(place.geometry.location);
+                    map.setZoom(17); // Why 17? Because it looks good.
+                }
+                locationsOnView = [];
+                for (let i = 0; i < placesInfo.length; i++) {
+                    if (place.geometry.viewport.contains(placesInfo[i].location)) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(placesInfo[i].location),
+                            map: map
+                        });
+                        gmarkers.push(marker);
+                        placesInfo[i].marker = marker;
+                        locationsOnView.push(i);
+                        //markers.push(marker);
+            
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent(placesInfo[i].getInfo());
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+                    }
+                    
+                }
+                if (locationsOnView.length != 0) {
+                    const infowindow = new google.maps.InfoWindow({
+                        content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+                    });
+                    google.maps.event.addListener(marker, "click", () => {
+                        infowindow.open(map, marker);
+                    });
+                    addListToDom();
+                } else {
+                    $("#location-list-items").html(`<div class="px-2 font-weight-bold"> Sorry, No result found</div>`);
+                }
+            });
+        }
+
     });
 }
 
+
+function loadAllLocations() {
+    resetAllMarkers();
+    locationsOnView = [];
+    for (let i = 0; i < placesInfo.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(placesInfo[i].location),
+            map: map
+        });
+        gmarkers.push(marker);
+        placesInfo[i].marker = marker;
+        locationsOnView.push(i);
+        //markers.push(marker);
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infowindow.setContent(placesInfo[i].getInfo());
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
+    if (locationsOnView.length != 0) {
+        const infowindow = new google.maps.InfoWindow({
+            content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+        });
+        google.maps.event.addListener(marker, "click", () => {
+            infowindow.open(map, marker);
+        });
+        addListToDom();
+    } else {
+        $("#location-list-items").html(`<div class="px-2 font-weight-bold"> Sorry, No result found</div>`);
+    }
+}
 
 function triggerMarker(key, index) {
     //google.maps.event.trigger({lat: 43.70737785820043, lng: -79.39938632070653}, 'click');
@@ -893,3 +932,7 @@ function resetAllMarkers() {
         location.marker = null;
     }
 }
+
+$(function () {
+    'use strict';
+});
