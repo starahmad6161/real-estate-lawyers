@@ -675,11 +675,11 @@ function addListToDom() {
                             <span class="txt text-capitalize">${key}</span>
                             <span class="num">(${places.length})</span>
                         </div>
-                        <ul class="sub-list list-unstyled pl-4">`;
+                        <ul class="sub-list list-unstyled rounder-lg mb-2">`;
             for (const [index, place] of places.entries()) {
                 //markerIndex++;
                 parent += `
-                            <li class="sub-list-item pointer my-2" onclick='triggerMarker("${key}","${index}")'>${place[1]}</li>`
+                            <li class="sub-list-item pointer px-3 py-2" onclick='triggerMarker("${key}","${index}")'>${place[1]}</li>`
             }
             parent += `</ul>
                     </li>`;

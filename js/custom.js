@@ -11,7 +11,8 @@ $(function () {
         $(this).addClass('active').siblings().removeClass("active");
     });
     $(document).on('click', '.location-section .sub-list .sub-list-item' ,function() {
-        $(this).addClass('font-weight-bold').siblings().removeClass("font-weight-bold");
+        $('.location-section .sub-list .sub-list-item').removeClass('font-weight-bold active')
+        $(this).addClass('font-weight-bold active');
     });
 
     /*
