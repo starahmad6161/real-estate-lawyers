@@ -199,7 +199,7 @@ a:hover
 .location-section .sub-list .sub-list-item
 {
     font-size: .90rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #bdbdbd;
     font-weight: normal;
     transition: color .2s, background-color .2s;
     background-color: #e0e0e0;
