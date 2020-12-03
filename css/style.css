@@ -202,6 +202,7 @@ a:hover
     border-bottom: 1px solid #ddd;
     font-weight: normal;
     transition: color .2s, background-color .2s;
+    background-color: #e0e0e0;
 }
 .location-section .sub-list .sub-list-item:hover,
 .location-section .sub-list .sub-list-item.active
