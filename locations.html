@@ -54,7 +54,9 @@
                                     <button class="dropdown-item" type="button">EN</button>
                                 </div>
                             </div>
-                            <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                            <a href="/locations.html#search_input">
+                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -114,7 +116,9 @@
                                         <button class="dropdown-item" type="button">EN</button>
                                     </div>
                                 </div>
-                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                                <a href="/locations.html#search_input">
+                                    <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -225,9 +229,10 @@
                     <div class="in-group position-relative">
                         <input class="form-control py-4" type="text" id="search_input"
                             placeholder="Enter postal code or enter your city">
-                        <label class="search-txt px-2 font-weight-bold pointer bg-white">Search <span
+                        <label class="search-txt location-search px-2 font-weight-bold pointer bg-white">Search <span
                                 class="fas fa-arrow-right"></span> </label>
                     </div>
+                    <div class="resultNotFound d-none font-weight-bold px-2 alert alert-info mt-2">Sorry, No result found, try another city</div>
                     <h2 class="font-weight-bold mt-4">Locations</h2>
                     <ul class="list-items list-unstyled justify-content-between row mt-4" id="location-list-items">
                         <li class="list_item col-5 position-relative">

@@ -32,9 +32,11 @@ $(function () {
     $('.search-box-overlay').on('click', function(e) {
         $(this).fadeOut();
     });
+    /*
     $('.search-icon').on('click', function() {
         $('.search-box-overlay').fadeIn();
     });
+    */
 
 
 

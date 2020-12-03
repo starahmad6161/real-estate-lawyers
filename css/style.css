@@ -130,6 +130,10 @@ a:hover
 
 
 /*Start location-section*/
+.pac-container
+{
+    z-index: 99999;
+}
 .gm-style-iw.gm-style-iw-c
 {
     max-height: inherit !important;
@@ -214,6 +218,10 @@ a:hover
     transform: translateY(-10%);
     */
     font-size: .8rem;
+}
+.location-section .img-container .card .card-img-top
+{
+    height: 150px;
 }
 .location-section .img-container .card-overlay .card-text
 {
