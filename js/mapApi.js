@@ -640,8 +640,7 @@ let currentPlacesMarker = [];
 var locations;
 //let map;
 let locationsOnView = [];
-function addListToDom() {
-
+function addListToDom(searchTxt = null) {
     let obj = {};
     let parent = ``;
     let txt = '';
@@ -679,17 +678,23 @@ function addListToDom() {
             for (const [index, place] of places.entries()) {
                 //markerIndex++;
                 parent += `
-                            <li class="sub-list-item pointer px-3 py-2" onclick='triggerMarker("${key}","${index}")'>${place[1]}</li>`
+                            <li class="sub-list-item pointer px-3 py-2 map_${key.replace(' ', '-').replace('.', '').toLowerCase()}" onclick='triggerMarker("${key}","${index}")'>${place[1]}</li>`
             }
             parent += `</ul>
                     </li>`;
         }
     }
     $("#location-list-items").html(parent);
-    
-    
+    if (searchTxt) {
+        openSearchedCard(searchTxt);
+    }
 }
 let gmarkers = [];
+
+function openSearchedCard(searchTxt) {
+    let ele = $(`.map_${searchTxt.replace(' ', '-').replace('.', '').toLowerCase()}`);
+    $(ele[0]).trigger('click');
+}
 
 function getPlaceCard($this) {
     return `<div class="card-overlay border-0">
@@ -817,7 +822,7 @@ function initMap() {
                     }, 2000);
                     loadAllLocationsWithHeadOffice();
                 } else {
-                    addListToDom();
+                    addListToDom($("#search_input").val().split(",")[0]);
                 }
             }
             
