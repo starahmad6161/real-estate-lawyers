@@ -916,12 +916,8 @@ function arePointsNear(checkPoint, centerPoint, km = 30) {
 /*
 let checkPoint = { lat: 43.73651491980686, lng: -79.37049451731369 }; 
 let centerPoint = {lat: 43.64877591724139, lng: -79.3810036077403};
-
 let n = arePointsNear(vasteras, stockholm, 10);
-
 console.log(n);
-
-
 new google.maps.Circle({
     strokeColor: "#FF0000",
     strokeOpacity: 0.8,
