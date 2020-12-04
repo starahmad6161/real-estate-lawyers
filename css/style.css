@@ -1279,6 +1279,11 @@ a:hover
 
 
 /*Tabs*/
+.quote-quote-section .tab-container .list-price small
+{
+    font-size: .7em;
+    font-weight: bold;
+}
 .quote-quote-section .tab-container
 {
     display: none;
@@ -1293,10 +1298,6 @@ a:hover
 {
     background-color: #222;
     color: #fff;
-}
-.quote-quote-section .tab-container .tab-content
-{
-    border: 1px solid #d4d4d4;
 }
 .quote-quote-section .buying-tab .tab-content
 {

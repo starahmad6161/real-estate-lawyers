@@ -133,6 +133,7 @@ $(function () {
     $(".quote-quote-section .second-row .box-item").on('click', function() {
         //get custom data value from html `data-s-row`
         dataSRow = $(this).data('s-row');
+        
         //Reset all values
         reset();
         resetPricesAndBtns();
@@ -147,6 +148,7 @@ $(function () {
             //if no more steps, then set progress bar 100%
             progressBar = 100;
             changeProgressBar(0);
+            showOtherTabs();
         }
         //add class active to selected box at 'second row'
         $(this).addClass('active').siblings().removeClass('active');
@@ -246,7 +248,7 @@ $(function () {
      * For Price 
      * When price change
     */
-   let secondTabSameContent = 
+    let secondTabSameContent = 
         `
             <div class="pl-2">
             <p><span style="font-size: 14pt;"><strong>What is included in our Flat Rate Legal Fee:</strong></span></p>
@@ -271,20 +273,325 @@ $(function () {
             </div>
             `
     
-   let tabIncludes = {
-       "11": secondTabSameContent,
-       "12": secondTabSameContent,
-       "13": secondTabSameContent,
-       "14": secondTabSameContent,
+    let secondTab_Includes = {
+        "11": secondTabSameContent,
+        "12": secondTabSameContent,
+        "13": secondTabSameContent,
+        "14": secondTabSameContent,
+        "15": secondTabSameContent,
+        "21": "Our Flat Rate Legal Fee Includes One (1) Will And All Internal Disbursements Including All Copies And Paper Charges.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs. ",
+        "22": "Our Flat Rate Legal Fee Includes Two (2) Wills And All Internal Disbursements Including All Copies And Paper Charges.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs. ",
+        "23": "Our Flat Rate Legal Fee Includes One (1) Power Of Attorney For Personal Care And (1) Power Of Attorney For Personal Property And All Internal Disbursements Including All Copies And Paper Charges.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs.",
+        "24": "Our Flat Rate Legal Fee Includes All Court Paperwork And All Internal Disbursements Including All Copies.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs.  Note That The Government Probate Fees Are Extra.",
+        "31": "Our Legal Fee Includes All Paperwork Including By-Laws, Resolutions And Registers.  Note That The Minute Book, Corprate Seal, Couriers And Government Registration Fees Are Extra.",
+        "32": "Our Legal Fee Is Based On The Work Involved.  Please Contact Shayle Rothman At 1-855-466-3801 To Discuss Your Transaction At Which Time He Will Give You A Detailed Quote.",
+        "33": "",
+        "41": "Our Flat Rate Legal Fee Includes The Witnessing Of One Signature.  If You Have More Than One Document Please Speak To Our Office For A Flat Rate.",
+        "42": "Our Flat Rate Legal Fee Includes The Witnessing Of One Signature.  If You Have More Than One Document Please Speak To Our Office For A Flat Rate.",
+    }
+
+   let firstTab_Includes = {
+        "14": {
+            header: {
+                left: "MORTGAGE REFINANCE - FLAT RATE LEGAL FEE **INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW",
+                right: "$799.99*"
+            },
+            body: {
+                left: "Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*",
+                right: 
+                `
+                <ul class="tab-list list-unstyled">
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            HST
+                        </div>
+                        <div class="col-4 text-right">
+                            $117.00
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Government Registration Fee (77.31 Each) 
+                        </div>
+                        <div class="col-4 text-right">
+                            $154.62
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Total Taxes & Third Party Disbursements:
+                            <br> <br>
+                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance.
+                        </div>
+                        <div class="col-4 text-right">$271.62</div>
+                    </li>
+                </ul>
+                `
+            },
+            info: true
+        },
+        "15": {
+            header: {
+                left: "TITLE TRANSFER - FLAT RATE LEGAL FEE **INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW.",
+                right: "$799.99*"
+            },
+            body: {
+                left: "Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*",
+                right: 
+                `
+                <ul class="tab-list list-unstyled">
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            HST
+                        </div>
+                        <div class="col-4 text-right">
+                            $117.00
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Government Registration Fee (77.31 Each) 
+                        </div>
+                        <div class="col-4 text-right">
+                            $77.31
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Total Taxes & Third Party Disbursements:
+                            <br> <br>
+                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance.
+                        </div>
+                        <div class="col-4 text-right">$194.31</div>
+                    </li>
+                </ul>
+                `
+            },
+            info: true
+        },
+        "21": {
+            header: {
+                left: "SINGLE WILL - FLAT RATE LEGAL FEE",
+                right: "$500.00* <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "22": {
+            header: {
+                left: "COUPLES WILLS - FLAT RATE LEGAL FEE",
+                right: "$850.00* <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "23": {
+            header: {
+                left: "POWERS OF ATTORNEY - FLAT RATE LEGAL FEE",
+                right: "$200.00* <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "24": {
+            header: {
+                left: "PROBATE - FLAT RATE LEGAL FEE WITH A WILL <br> PROBATE - FLAT RATE LEGAL FEE WITHOUT A WILL",
+                right: "$1,799.00 + HST + disbursements <br> $1,999.00 plus disbursements"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "31": {
+            header: {
+                left: "ONTARIO NUMBERED CORPORATION - LEGAL FEE <br> ONTARIO NAMED CORPORATION - LEGAL FEE",
+                right: "$1,100.00 <br> $1,200.00"
+            },
+            body: {
+                left: "Taxes & Third Party Fees:*",
+                right: 
+                `
+                <ul class="tab-list list-unstyled">
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Government Registration Fee(S)
+                        </div>
+                        <div class="col-4 text-right">
+                            $360.00
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Minute Book And Seal 
+                        </div>
+                        <div class="col-4 text-right">
+                            $125.00
+                        </div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Couriers & All Other Disbursements
+                        </div>
+                        <div class="col-4 text-right">$50.00</div>
+                    </li>
+                </ul>
+                `
+            },
+            info: false
+        },
+        "32": {
+            header: {
+                left: "COMMERCIAL LEASE REVIEW/DRAFTING - FLAT RATE LEGAL FEE FROM",
+                right: "$995.00 <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "33": {
+            header: {
+                left: "CONTACT OUR OFFICE FOR A COMPLIMENTARY CONSULTATION",
+                right: "$0.00 <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "41": {
+            header: {
+                left: "NOTARIZING - FLAT RATE LEGAL FEE (PER SIGNATURE)",
+                right: "$80.00 <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
+        "42": {
+            header: {
+                left: "COMMISSIONING - FLAT RATE LEGAL FEE (PER SIGNATURE)",
+                right: "$80.00 <br> <small>Plus HST</small>"
+            },
+            body: {
+                left: "",
+                right: ""
+            },
+            info: false
+        },
    }
 
    
 
+   function showOtherTabs() {
+       let other = 
+       ` <div class="tab-container inner-other-tabs my-5">
+       <ul class="nav nav-tabs" id="myTab" role="tablist">
+           <li class="nav-item" role="presentation">
+               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#other_tab_1" role="tab"
+                   aria-controls="home" aria-selected="true">KNOW YOUR COMPLETE CLOSING COSTS</a>
+           </li>
+           <li class="nav-item" role="presentation">
+               <a class="nav-link" id="profile-tab" data-toggle="tab" href="#other_tab_2" role="tab"
+                   aria-controls="profile" aria-selected="false">WHAT OUR LEGAL FEE INCLUDES</a>
+           </li>
+       </ul>
+       <div class="tab-content" id="myTabContent">
+           <div class="tab-pane fade show active" id="other_tab_1" role="tabpanel" aria-labelledby="home-tab">
+               <!--Tab Head-->
+               <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
+                   <span>
+                        ${firstTab_Includes[''+ dataFRow + '' + dataSRow].header.left}
+                   </span>
+                   <div class="list-price ml-auto text-right">
+                       ${firstTab_Includes[''+ dataFRow + '' + dataSRow].header.right}
+                   </div>
+               </div>
+               <div class="tab-body px-3 py-2 ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.left && firstTab_Includes[''+ dataFRow + '' + dataSRow].body.right ? '': 'd-none'}">
+                   <div class="row align-items-center">
+                       <!--Left Text-->
+                       <div class="col-md-4">
+                           <p class="font-weight-bold h5">
+                                ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.left}
+                           </p>
+                       </div>
+                       <!--tab-list (right list)-->
+                       <div class="col-md-8">
+                           <ul class="tab-list list-unstyled">
+                                ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.right}
+                           </ul>
+                       </div>
+                   </div>
+                   <hr>
+                   <div class="row py-4">
+                       <div class="col-md-6 mx-auto d-flex justify-content-center">
+                           <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Get New Quote</a>
+                           <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Email Quote</a>
+                           <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Hire Us Now</a>
+                       </div>
+                   </div>
+                   <p class="pb-5 ${firstTab_Includes[''+ dataFRow + '' + dataSRow].info? '': 'd-none'}">
+                       *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1:  HST, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Mortgage Instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
+                       <br> <br>
+                       **Review Rewards Program <br>
+                       We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
+                       <br> <br>
+                       
+                       Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.        TITLE INSURANCE
+                       <br> <br>
+                       
+                       *** Lawyers do not determine the price of title insurance. The title insurance company exclusively determines the price of your title insurance premium based on their underwriting risk assessment based on factors such as:
+                       <br> <br>
+                       
+                       1. Property type; <br>
+                       2. Mortgage type; <br>
+                       3. Value of property <br>
+                       4. Mortgage amount; <br>
+                       5. Etc.
+                       <br> <br>
+                       The price of your title insurance premium will be provided to you with your closing costs breakdown when we receive the amount from the title insurance company prior to closing.
+                   </p>
+               </div>
+           </div>
+           <div class="tab-pane fade" id="other_tab_2" role="tabpanel" aria-labelledby="profile-tab">
+               <p class="p-2">
+                   ${secondTab_Includes['' + dataFRow + ''+dataSRow]} 
+               </p>
+           </div>
+       </div>
+   </div>`;
+
+   $('.tabs-container .other-tabs').html(other);
+   $('.tabs-container .inner-other-tabs').show();
+
+   }
 
 
+   function numToCurrency(num){
+       return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(num)
+   }
 
-   
-   
+   $('.quote-quote-section .price-input input').on('input', function() {
+       let val = $(this).val().replace(/,/g, '');
+       val = numToCurrency(val);
+       $(this).val(val);
+   });
+
 
     $('.first-time-btn').on("click", function() {
         let dataBtn = $(this).data("ft");
@@ -307,9 +614,8 @@ $(function () {
 
 
     $('.buying-input input').on('input', function() {
-        buy_inputPrice = parseFloat($(this).val());// 100,000
+        buy_inputPrice = parseFloat($(this).val().replace(/,/g, ''));
         buyCalc();
-        
     });
    
    
@@ -435,10 +741,10 @@ $(function () {
                         <!--Tab Head-->
                         <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
                             <span>
-                                Buying a home - flat rate legal fee ($${buy_inputPrice}) ** Includes $100 credit for feedback/review
+                                Buying a home - flat rate legal fee ($${numToCurrency(buy_inputPrice)}) ** Includes $100 credit for feedback/review
                             </span>
                             <div class="list-price ml-auto">
-                                $${buy_tab_head}*
+                                $${numToCurrency(buy_tab_head)}*
                             </div>
                         </div>
                         <div class="tab-body px-3 py-2">
@@ -458,7 +764,7 @@ $(function () {
                                                 HST
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_hst}
+                                                $${numToCurrency(buy_hst)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
@@ -466,7 +772,7 @@ $(function () {
                                                 Ontario Land Transfer Tax 
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_ont_trans_tax}
+                                                $${numToCurrency(buy_ont_trans_tax)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between red-color ${buy_first_time_btn && buy_less_ont_trans_tax != 0 ? '' : 'd-none'}">
@@ -474,7 +780,7 @@ $(function () {
                                                 Less ontario transfer tax rebate 
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_less_ont_trans_tax}
+                                                $${numToCurrency(buy_less_ont_trans_tax)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between ${buy_location_btn ? '' : 'd-none'} ">
@@ -482,7 +788,7 @@ $(function () {
                                                 Toronto Land Transfer Tax 
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_tor_trans_tax}
+                                                $${numToCurrency(buy_tor_trans_tax)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between red-color ${buy_location_btn && buy_less_tor_trans_tax != 0 ? '' : 'd-none'} ">
@@ -490,7 +796,7 @@ $(function () {
                                             Less Toronto Land Transfer Tax Rebate
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_less_tor_trans_tax}
+                                                $${numToCurrency(buy_less_tor_trans_tax)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between ${buy_location_btn ? '' : 'd-none'} ">
@@ -499,7 +805,7 @@ $(function () {
                                             (Effective April 1, 2016 - $75 Plus HST)
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_tor_admin_fee}
+                                                $${numToCurrency(buy_tor_admin_fee)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
@@ -507,7 +813,7 @@ $(function () {
                                                 Government Registration Fee (77.31 Each) 
                                             </div>
                                             <div class="col-4 text-right">
-                                                $${buy_fee}
+                                                $${numToCurrency(buy_fee)}
                                             </div>
                                         </li>
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
@@ -516,7 +822,7 @@ $(function () {
                                                 <br> <br>
                                                 Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
                                             </div>
-                                            <div class="col-4 text-right">$${buy_totalPrice}</div>
+                                            <div class="col-4 text-right">$${numToCurrency(buy_totalPrice)}</div>
                                         </li>
                                     </ul>
                                 </div>
@@ -554,7 +860,7 @@ $(function () {
                     </div>
                     <div class="tab-pane fade" id="buying_tab_2" role="tabpanel" aria-labelledby="profile-tab">
                         <p class="p-2">
-                            ${tabIncludes['' + dataFRow + ''+dataFRow]} 
+                            ${secondTab_Includes['' + dataFRow + ''+dataFRow]} 
                         </p>
                     </div>
                 </div>
@@ -573,7 +879,7 @@ $(function () {
 
 
     $('.selling-input input').on('input', function() {
-        selling_inputPrice = parseFloat($(this).val());// 100,000
+        selling_inputPrice = parseFloat($(this).val().replace(/,/g, ''));
         sellingCalc();
     });
 
@@ -628,10 +934,10 @@ $(function () {
                     <!--Tab Head-->
                     <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
                         <span>
-                            Selling a home - flat rate legal fee ($${selling_inputPrice}) ** Includes $100 credit for feedback/review
+                            Selling a home - flat rate legal fee ($${numToCurrency(selling_inputPrice)}) ** Includes $100 credit for feedback/review
                         </span>
                         <div class="list-price ml-auto">
-                            $${selling_tab_head}*
+                            $${numToCurrency(selling_tab_head)}*
                         </div>
                     </div>
                     <div class="tab-body px-3 py-2">
@@ -650,7 +956,7 @@ $(function () {
                                             HST
                                         </div>
                                         <div class="col-4 text-right">
-                                            $${selling_hst}
+                                            $${numToCurrency(selling_hst)}
                                         </div>
                                     </li>
                                     <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
@@ -658,7 +964,7 @@ $(function () {
                                             Law Society Levy
                                         </div>
                                         <div class="col-4 text-right">
-                                            $${selling_levy}
+                                            $${numToCurrency(selling_levy)}
                                         </div>
                                     </li>
                                     <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
@@ -667,7 +973,7 @@ $(function () {
                                             <br> <br>
                                             Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate And Lawyers Creditor's Letters.
                                         </div>
-                                        <div class="col-4 text-right">$${selling_totalPrice}</div>
+                                        <div class="col-4 text-right">$${numToCurrency(selling_totalPrice)}</div>
                                     </li>
                                 </ul>
                             </div>
@@ -676,7 +982,7 @@ $(function () {
                 </div>
                 <div class="tab-pane fade" id="selling_tab_2" role="tabpanel" aria-labelledby="profile-tab">
                     <p class="p-2">
-                        ${tabIncludes['' + dataFRow + ''+dataFRow]} 
+                        ${secondTab_Includes['' + dataFRow + ''+dataFRow]} 
                     </p>
                 </div>
             </div>
