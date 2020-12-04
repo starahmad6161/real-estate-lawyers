@@ -583,14 +583,13 @@ $(function () {
 
 
    function numToCurrency(num){
-       return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(num)
+       return new Intl.NumberFormat('en').format(num)
    }
-
    $('.quote-quote-section .price-input input').on('input', function() {
        let val = $(this).val().replace(/,/g, '');
        val = numToCurrency(val);
        $(this).val(val);
-   });
+    });
 
 
     $('.first-time-btn').on("click", function() {
