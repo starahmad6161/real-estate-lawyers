@@ -47,6 +47,34 @@ $(function () {
     let dataSRow;
     let progressBar = 0;
 
+    //For buying / selling
+    let buy_inputPrice = 0;
+    let buy_tab_head = 0;
+    let buy_hst = 143.00;
+    let buy_ont_trans_tax = 0;
+    let buy_less_ont_trans_tax = 0;
+
+    let buy_fee = 154.62;
+    let buy_tor_trans_tax = 0;
+    let buy_less_tor_trans_tax = 0;
+    let buy_tor_admin_fee = 89.84;
+
+    let buy_totalPrice = 0;
+    let buy_first_time_btn = false;
+    let buy_location_btn = false;
+
+
+    let selling_inputPrice;
+    let selling_tab_head = 0;
+    let selling_hst = 117.00;
+    let selling_levy = 73.45;
+    let selling_totalPrice = 0;
+
+    function resetPricesAndBtns() {
+        buy_first_time_btn = false;
+        buy_location_btn = false;
+    }
+
     
     //First Row
     $(".quote-quote-section .first-row .box-item").on('click', function() {
@@ -87,6 +115,7 @@ $(function () {
         dataSRow = $(this).data('s-row');
         //Reset all values
         reset();
+        resetPricesAndBtns();
         //bottom boxes `below second row` that contains more required steps like `price` 
         let numArr = ['11','12','13'];
         // if box id = 11 or 12 or 13 that mean it's include another required steps to increase progress bar width
@@ -195,30 +224,36 @@ $(function () {
      * For Price 
      * When price change
     */
+   let secondTabSameContent = 
+        `
+            <div class="pl-2">
+            <p><span style="font-size: 14pt;"><strong>What is included in our Flat Rate Legal Fee:</strong></span></p>
+            <ul class="list-unstyled">
+            <li><span style="font-size: 14pt;">One signing appointment anywhere in Southern Ontario including our mobile signing service where we come to you 7 days a week from 7am - midnight. We come to you at the time and location of your choice to sign your closing documents.&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of Agreement of Purchase &amp; Sale&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of Amendments and Waivers&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of Status Certificate, if applicable&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Unlimited access to your lawyer &amp; law clerk via phone and email&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of insurance binder&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Preparation of legal documentation for closing.&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of lender/bank first mortgage instructions&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Preparation of first mortgage legal documentation.&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Arranging Title Insurance&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of Title Search documents&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">Review of Writ search and documents&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">All internal disbursements such as paper, faxes, long distance charges, couriers etc.&nbsp;</span></li>
+            <li><span style="font-size: 14pt;">For purchase prices under $1,000,000</span></li>
+            </ul>
+            <p><span style="font-size: 14pt;"><strong>What is NOT included in our Flat Rate Legal Fee:</strong></span></p>
+            <p><span style="font-size: 14pt;">Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other&nbsp;encumbrances or liens on&nbsp;title.&nbsp; Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1: HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. </span><br><br><span style="font-size: 14pt;">The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and any mortgage documentation at least 5 business days prior to closing.&nbsp;If any unforeseen issues arise you will be notified immediately. Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, assignment of rents, bridgeloans and receiving the Agreement of Purchase and Sale and any mortgage documentation within 5 business days of closing or any other matter beyond the scope of a standard real estate transaction noted above.&nbsp;</span></p></li>
+            </div>
+            `
+    
    let tabIncludes = {
-       "11": `
-       <div class="pl-2">
-       <p><span style="font-size: 14pt;"><strong>What is included in our Flat Rate Legal Fee:</strong></span></p>
-       <ul class="list-unstyled">
-       <li><span style="font-size: 14pt;">One signing appointment anywhere in Southern Ontario including our mobile signing service where we come to you 7 days a week from 7am - midnight. We come to you at the time and location of your choice to sign your closing documents.&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of Agreement of Purchase &amp; Sale&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of Amendments and Waivers&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of Status Certificate, if applicable&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Unlimited access to your lawyer &amp; law clerk via phone and email&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of insurance binder&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Preparation of legal documentation for closing.&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of lender/bank first mortgage instructions&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Preparation of first mortgage legal documentation.&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Arranging Title Insurance&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of Title Search documents&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">Review of Writ search and documents&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">All internal disbursements such as paper, faxes, long distance charges, couriers etc.&nbsp;</span></li>
-       <li><span style="font-size: 14pt;">For purchase prices under $1,000,000</span></li>
-       </ul>
-       <p><span style="font-size: 14pt;"><strong>What is NOT included in our Flat Rate Legal Fee:</strong></span></p>
-       <p><span style="font-size: 14pt;">Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other&nbsp;encumbrances or liens on&nbsp;title.&nbsp; Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1: HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. </span><br><br><span style="font-size: 14pt;">The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and any mortgage documentation at least 5 business days prior to closing.&nbsp;If any unforeseen issues arise you will be notified immediately. Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, assignment of rents, bridgeloans and receiving the Agreement of Purchase and Sale and any mortgage documentation within 5 business days of closing or any other matter beyond the scope of a standard real estate transaction noted above.&nbsp;</span></p></li>
-       </div>
-       `
+       "11": secondTabSameContent,
+       "12": secondTabSameContent,
+       "13": secondTabSameContent,
+       "14": secondTabSameContent,
    }
 
    
@@ -228,27 +263,6 @@ $(function () {
 
    
    
-    let buy_inputPrice = 0;
-    let buy_tab_head = 0;
-    let buy_hst = 143.00;
-    let buy_ont_trans_tax = 0;
-    let buy_less_ont_trans_tax = 0;
-
-    let buy_fee = 154.62
-    let buy_tor_trans_tax = 0;
-    let buy_less_tor_trans_tax = 0;
-    let buy_tor_admin_fee = 89.84;
-
-    let buy_totalPrice = 0;
-    let buy_first_time_btn = false;
-    let buy_location_btn = false;
-
-
-    let sell_inputPrice = 0;
-    let sell_hst = 143.00;
-    let sell_tax = 0;
-    let sell_fee = 154.62
-    let sell_totalPrice = 0;
 
     $('.first-time-btn').on("click", function() {
         let dataBtn = $(this).data("ft");
@@ -304,7 +318,7 @@ $(function () {
                 parseFloat(calculatedTax);
             }
             //For HST calc
-            if (buy_inputPrice > 1000000) {
+            if (buy_inputPrice >= 1100000) {
                 buy_hst = ((buy_inputPrice - 1000000) * .000065) + 143;
             } else {
                 buy_hst = 143;
@@ -373,8 +387,8 @@ $(function () {
 
    
    function showBuyingTab() {
-    let buyingTabs = `
-    <div class="tab-container buying-tabs my-5">
+        let buyingTabs = 
+        ` <div class="tab-container buying-tabs my-5">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#buying_tab_1" role="tab"
@@ -509,261 +523,145 @@ $(function () {
                     </div>
                     <div class="tab-pane fade" id="buying_tab_2" role="tabpanel" aria-labelledby="profile-tab">
                         <p class="p-2">
-                           ${tabIncludes[`${dataFRow}${dataFRow}`]} 
+                            ${tabIncludes['' + dataFRow + ''+dataFRow]} 
                         </p>
                     </div>
                 </div>
-            </div>
-    `;
-    
-    
-    setTimeout( function() {
-        //hide loading 
-        $('.quote-quote-section .loading').css("display", "none");
-        $('.tabs-container').html(buyingTabs);
-        $('.tabs-container .buying-tabs').show();
-    } ,1000);
-   }
-
-
-   /*
-   $('.price-input').on('input', function() {
-
-       //show loading 
-        $('.quote-quote-section .loading').css("display", "block");
-        $('.tabs-container').html('');
-        /**
-         * remove `setTimeOut` function when you send the request
-         * it just for testing  
-         *
-        if (`${dataFRow}${dataSRow}` == "13") {
-            changePriceTable('buying-selling');
-        } else if (`${dataFRow}${dataSRow}` == "12") {
-            changePriceTable('selling');
-        } else if (`${dataFRow}${dataSRow}` == "11"){
-            changePriceTable('buying');
-            
-            inputPrice = $(this).find('input').val();
-            tax = inputPrice * .005;
-            totalPrice = hst + tax + fee;
-        } else {
-            changePriceTable();
-        }
-    });
-    
-
-    function changePriceTable(kind = null) {
-
-        //kind = selling  or buying   or   buying-selling
-        let sellingTabs = `<div class="tab-container selling-tabs my-5">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#selling_tab_1" role="tab"
-                    aria-controls="home" aria-selected="true">KNOW YOUR COMPLETE CLOSING COSTS</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#selling_tab_2" role="tab"
-                    aria-controls="profile" aria-selected="false">WHAT OUR LEGAL FEE INCLUDES</a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="selling_tab_1" role="tabpanel" aria-labelledby="home-tab">
-                <!--Tab Head-->
-                <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
-                    <span>
-                        Selling a home - flat rate legal fee ($200,000) ** Includes $100 credit for feedback/review
-                    </span>
-                    <div class="list-price ml-auto">
-                        $1,299.99*
-                    </div>
-                </div>
-                <div class="tab-body px-3 py-2">
-                    <div class="row align-items-center">
-                        <!--Left Text-->
-                        <div class="col-md-4">
-                            <p class="font-weight-bold h5">
-                                Permitted Disbursements In <br>
-                                Compliance With LSO Rule 4.2-2.1:*
-                            </p>
-                        </div>
-                        <!--tab-list (right list)-->
-                        <div class="col-md-8">
-                        <ul class="tab-list list-unstyled">
-                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                <div class="col-8">
-                                    HST
-                                </div>
-                                <div class="col-4 text-right">
-                                    $${hst}
-                                </div>
-                            </li>
-                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                <div class="col-8">
-                                    Ontario Land Transfer Tax 
-                                </div>
-                                <div class="col-4 text-right">
-                                    $${tax}
-                                </div>
-                            </li>
-                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between red-color">
-                                <div class="col-8">
-                                    Government Registration Fee (77.31 Each) 
-                                </div>
-                                <div class="col-4 text-right">
-                                    $${fee}
-                                </div>
-                            </li>
-                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                <div class="col-8">
-                                    Total Taxes & Third Party Disbursements:$298.12
-                                    <br> <br>
-                                    Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
-                                </div>
-                                <div class="col-4 text-right">$${totalPrice}</div>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="selling_tab_2" role="tabpanel" aria-labelledby="profile-tab">
-                <p class="p-2">
-                    Our Flat Rate Legal Fee Includes One (1) Will And All Internal Disbursements Including All Copies And Paper Charges.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs. 
-                </p>
-            </div>
-        </div>
-    </div>`;
-
-        let buyingTabs = `
-        <div class="tab-container buying-tabs my-5">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#buying_tab_1" role="tab"
-                                aria-controls="home" aria-selected="true">KNOW YOUR COMPLETE CLOSING COSTS</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#buying_tab_2" role="tab"
-                                aria-controls="profile" aria-selected="false">WHAT OUR LEGAL FEE INCLUDES</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="buying_tab_1" role="tabpanel" aria-labelledby="home-tab">
-                            <!--Tab Head-->
-                            <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
-                                <span>
-                                    Buying a home - flat rate legal fee ($100,000) ** Includes $100 credit for feedback/review
-                                </span>
-                                <div class="list-price ml-auto">
-                                    $999.99*
-                                </div>
-                            </div>
-                            <div class="tab-body px-3 py-2">
-                                <div class="row align-items-center">
-                                    <!--Left Text-->
-                                    <div class="col-md-4">
-                                        <p class="font-weight-bold h5">
-                                            Permitted Disbursements In <br>
-                                            Compliance With LSO Rule 4.2-2.1:*
-                                        </p>
-                                    </div>
-                                    <!--tab-list (right list)-->
-                                    <div class="col-md-8">
-                                        <ul class="tab-list list-unstyled">
-                                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                                <div class="col-8">
-                                                    HST
-                                                </div>
-                                                <div class="col-4 text-right">
-                                                    $${hst}
-                                                </div>
-                                            </li>
-                                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                                <div class="col-8">
-                                                    Ontario Land Transfer Tax 
-                                                </div>
-                                                <div class="col-4 text-right">
-                                                    $${tax}
-                                                </div>
-                                            </li>
-                                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between red-color">
-                                                <div class="col-8">
-                                                    Government Registration Fee (77.31 Each) 
-                                                </div>
-                                                <div class="col-4 text-right">
-                                                    $${fee}
-                                                </div>
-                                            </li>
-                                            <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
-                                                <div class="col-8">
-                                                    Total Taxes & Third Party Disbursements:$298.12
-                                                    <br> <br>
-                                                    Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
-                                                </div>
-                                                <div class="col-4 text-right">$${totalPrice}</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row py-4">
-                                    <div class="col-md-6 mx-auto d-flex justify-content-center">
-                                        <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Get New Quote</a>
-                                        <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Email Quote</a>
-                                        <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Hire Us Now</a>
-                                    </div>
-                                </div>
-                                <p class="pb-5">
-                                    *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1:  HST, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Mortgage Instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
-                                    <br> <br>
-                                    **Review Rewards Program <br>
-                                    We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
-                                    <br> <br>
-                                    
-                                    Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.        TITLE INSURANCE
-                                    <br> <br>
-                                    
-                                    *** Lawyers do not determine the price of title insurance. The title insurance company exclusively determines the price of your title insurance premium based on their underwriting risk assessment based on factors such as:
-                                    <br> <br>
-                                    
-                                    1. Property type; <br>
-                                    2. Mortgage type; <br>
-                                    3. Value of property <br>
-                                    4. Mortgage amount; <br>
-                                    5. Etc.
-                                    <br> <br>
-                                    The price of your title insurance premium will be provided to you with your closing costs breakdown when we receive the amount from the title insurance company prior to closing.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="buying_tab_2" role="tabpanel" aria-labelledby="profile-tab">
-                            <p class="p-2">
-                                Our Flat Rate Legal Fee Includes One (1) Will And All Internal Disbursements Including All Copies And Paper Charges.  If Any Unforeseen Issues Arrise You Will Be Notified Immediately Before You Incur Any Additional Costs. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        `;
-        $('.tabs-container').html('');
+            </div>`;
+        
+        
         setTimeout( function() {
             //hide loading 
             $('.quote-quote-section .loading').css("display", "none");
-            if (kind == null) {
-                
-            } else if (kind == 'selling') {
-                $('.tabs-container').html(sellingTabs);
-                //$('.quote-quote-section .selling-tabs').show();
-            } else if (kind == 'buying') {
-                $('.tabs-container').html(buyingTabs);
-                //$('.quote-quote-section .buying-tabs').show();
-            } else if (kind == 'buying-selling') {
-                $('.tabs-container').html(sellingTabs + buyingTabs);
-            }
-            $('.tabs-container .tab-container').show();
+            $('.tabs-container').html(buyingTabs);
+            $('.tabs-container .buying-tabs').show();
         } ,1000);
-        
     }
-    */
     
+
+
+
+    $('.selling-input input').on('input', function() {
+        selling_inputPrice = parseFloat($(this).val());// 100,000
+        sellingCalc();
+    });
+
+    function sellingCalc() {
+        if (selling_inputPrice && typeof selling_inputPrice == 'number' && selling_inputPrice > 0) {
+
+            //For HST calc
+            if (selling_inputPrice >= 1100000) {
+                selling_hst = ((selling_inputPrice - 1000000) * .000065) + 117.00;
+            } else {
+                selling_hst = 117.00;
+            }
+
+            /**
+             * For Tab header price
+             */
+            if (selling_inputPrice == 1100000) {
+                selling_tab_head =  (((selling_inputPrice - 1000000) * .0005) + 799.99).toFixed(2) 
+            } else if (selling_inputPrice > 1100000)  {
+                selling_tab_head =  (((selling_inputPrice - 1000000) * .0005) + 799.99).toFixed(2) 
+            } else {
+                selling_tab_head = 799.99;
+            }
+
+            
+            selling_totalPrice = (selling_hst + selling_levy).toFixed(2);
+            
+            $('.tabs-container').html('');
+            showSellingTab();
+        }
+    }
+
+
+    
+
+    function showSellingTab() {
+        let sellingTabs = 
+        `
+        <div class="tab-container selling-tabs my-5">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#selling_tab_1" role="tab"
+                        aria-controls="home" aria-selected="true">KNOW YOUR COMPLETE CLOSING COSTS</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#selling_tab_2" role="tab"
+                        aria-controls="profile" aria-selected="false">WHAT OUR LEGAL FEE INCLUDES</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="selling_tab_1" role="tabpanel" aria-labelledby="home-tab">
+                    <!--Tab Head-->
+                    <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
+                        <span>
+                            Selling a home - flat rate legal fee ($${selling_inputPrice}) ** Includes $100 credit for feedback/review
+                        </span>
+                        <div class="list-price ml-auto">
+                            $${selling_tab_head}*
+                        </div>
+                    </div>
+                    <div class="tab-body px-3 py-2">
+                        <div class="row align-items-center">
+                            <!--Left Text-->
+                            <div class="col-md-4">
+                                <p class="font-weight-bold h5">
+                                Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*
+                                </p>
+                            </div>
+                            <!--tab-list (right list)-->
+                            <div class="col-md-8">
+                                <ul class="tab-list list-unstyled">
+                                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                                        <div class="col-8">
+                                            HST
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            $${selling_hst}
+                                        </div>
+                                    </li>
+                                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                                        <div class="col-8">
+                                            Law Society Levy
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            $${selling_levy}
+                                        </div>
+                                    </li>
+                                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                                        <div class="col-8">
+                                            Total Taxes & Third Party Disbursements:
+                                            <br> <br>
+                                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate And Lawyers Creditor's Letters.
+                                        </div>
+                                        <div class="col-4 text-right">$${selling_totalPrice}</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="selling_tab_2" role="tabpanel" aria-labelledby="profile-tab">
+                    <p class="p-2">
+                        ${tabIncludes['' + dataFRow + ''+dataFRow]} 
+                    </p>
+                </div>
+            </div>
+        </div>
+        `;
+        
+        
+        setTimeout( function() {
+            //hide loading 
+            $('.quote-quote-section .loading').css("display", "none");
+            $('.tabs-container').html(sellingTabs);
+            $('.tabs-container .selling-tabs').show();
+        } ,1000);
+    }
+
+
     
     /*End Quote page */
 });
