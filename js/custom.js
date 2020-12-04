@@ -71,10 +71,30 @@ $(function () {
     let selling_totalPrice = 0;
 
     function resetPricesAndBtns() {
+        
+        //For buying / selling
+        buy_inputPrice = 0;
+        buy_tab_head = 0;
+        buy_hst = 143.00;
+        buy_ont_trans_tax = 0;
+        buy_less_ont_trans_tax = 0;
+
+        buy_fee = 154.62;
+        buy_tor_trans_tax = 0;
+        buy_less_tor_trans_tax = 0;
+        buy_tor_admin_fee = 89.84;
+
+        buy_totalPrice = 0;
         buy_first_time_btn = false;
         buy_location_btn = false;
-    }
 
+
+        selling_inputPrice;
+        selling_tab_head = 0;
+        selling_hst = 117.00;
+        selling_levy = 73.45;
+        selling_totalPrice = 0;
+    }
     
     //First Row
     $(".quote-quote-section .first-row .box-item").on('click', function() {
@@ -193,7 +213,6 @@ $(function () {
         progressBar += val;
         $(".quote-quote-progress .prog-bar").css('width', `${progressBar}%`);
     }
-    
     /**
      * Reset all 
      * to recalculate progress bar width
@@ -202,6 +221,9 @@ $(function () {
         $("input").val('');
         $(".fill-prog").parents('.btns').removeClass("done");
         $(".input-fill-prog").removeClass("done");
+        $($(".quote-quote-section .btns").find(".buy-location-btn")[1]).addClass('red-btn').siblings().removeClass("selected");
+        $($(".quote-quote-section .btns").find(".buy-location-btn")[3]).addClass('red-btn').siblings().removeClass("selected");
+        $($(".quote-quote-section .btns").find(".first-time-btn")[1]).addClass('red-btn').siblings().removeClass("selected");
         $('.quote-quote-section .tab-container').hide();
     }
 
@@ -360,15 +382,24 @@ $(function () {
             if (buy_location_btn) {//true (in);
                 buy_tor_admin_fee = 89.84;
                 buy_tor_trans_tax = buy_ont_trans_tax;
-                if (buy_first_time_btn) {
+                if (`${dataFRow}${dataSRow}` == '11') {
+                    if (buy_first_time_btn) {
+                        //If price > 400,000
+                        if (buy_inputPrice > 400000) {
+                            buy_less_tor_trans_tax = 4475.00;
+                        } else {
+                            buy_less_tor_trans_tax = 0;
+                        }
+                    } else {
+                        buy_less_tor_trans_tax = 0;
+                    }
+                } else {
                     //If price > 400,000
                     if (buy_inputPrice > 400000) {
                         buy_less_tor_trans_tax = 4475.00;
                     } else {
                         buy_less_tor_trans_tax = 0;
                     }
-                } else {
-                    buy_less_tor_trans_tax = 0;
                 }
             } else {
                 buy_tor_trans_tax = 0;
@@ -379,7 +410,7 @@ $(function () {
             
             buy_totalPrice = (buy_hst + buy_ont_trans_tax + buy_fee + buy_tor_trans_tax + buy_tor_admin_fee - buy_less_tor_trans_tax - buy_less_ont_trans_tax).toFixed(2);
             
-            $('.tabs-container').html('');
+            $('.tabs-container .buying-tabs').hide();
             showBuyingTab();
         }
    }
@@ -533,7 +564,7 @@ $(function () {
         setTimeout( function() {
             //hide loading 
             $('.quote-quote-section .loading').css("display", "none");
-            $('.tabs-container').html(buyingTabs);
+            $('.tabs-container .buying-tabs').html(buyingTabs);
             $('.tabs-container .buying-tabs').show();
         } ,1000);
     }
@@ -570,7 +601,7 @@ $(function () {
             
             selling_totalPrice = (selling_hst + selling_levy).toFixed(2);
             
-            $('.tabs-container').html('');
+            $('.tabs-container .selling-tabs').hide();
             showSellingTab();
         }
     }
@@ -656,7 +687,7 @@ $(function () {
         setTimeout( function() {
             //hide loading 
             $('.quote-quote-section .loading').css("display", "none");
-            $('.tabs-container').html(sellingTabs);
+            $('.tabs-container .selling-tabs').html(sellingTabs);
             $('.tabs-container .selling-tabs').show();
         } ,1000);
     }
