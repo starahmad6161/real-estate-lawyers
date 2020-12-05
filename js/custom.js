@@ -70,6 +70,10 @@ $(function () {
     let selling_levy = 73.45;
     let selling_totalPrice = 0;
 
+
+
+    
+
     function resetPricesAndBtns() {
         
         //For buying / selling
@@ -269,7 +273,7 @@ $(function () {
             <li><span style="font-size: 14pt;">For purchase prices under $1,000,000</span></li>
             </ul>
             <p><span style="font-size: 14pt;"><strong>What is NOT included in our Flat Rate Legal Fee:</strong></span></p>
-            <p><span style="font-size: 14pt;">Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other&nbsp;encumbrances or liens on&nbsp;title.&nbsp; Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1: HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. </span><br><br><span style="font-size: 14pt;">The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and any mortgage documentation at least 5 business days prior to closing.&nbsp;If any unforeseen issues arise you will be notified immediately. Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, assignment of rents, bridgeloans and receiving the Agreement of Purchase and Sale and any mortgage documentation within 5 business days of closing or any other matter beyond the scope of a standard real estate transaction noted above.&nbsp;</span></p></li>
+            <p><span style="font-size: 14pt;">Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other&nbsp;encumbrances or liens on&nbsp;title.&nbsp; Our disbursements (if applicable) comply with LSO Rule 4.2-2.1: HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. </span><br><br><span style="font-size: 14pt;">The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and any mortgage documentation at least 5 business days prior to closing.&nbsp;If any unforeseen issues arise you will be notified immediately. Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, assignment of rents, bridgeloans and receiving the Agreement of Purchase and Sale and any mortgage documentation within 5 business days of closing or any other matter beyond the scope of a standard real estate transaction noted above.&nbsp;</span></p></li>
             </div>
             `
     
@@ -297,7 +301,7 @@ $(function () {
                 right: "$799.99*"
             },
             body: {
-                left: "Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*",
+                left: "Third Party Disbursements In Compliance With LSO Rule 4.2-2.1:*",
                 right: 
                 `
                 <ul class="tab-list list-unstyled">
@@ -320,10 +324,13 @@ $(function () {
                     <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
                         <div class="col-8">
                             Total Taxes & Third Party Disbursements:
-                            <br> <br>
-                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance.
                         </div>
                         <div class="col-4 text-right">$271.62</div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
+                        </div>
                     </li>
                 </ul>
                 `
@@ -336,7 +343,7 @@ $(function () {
                 right: "$799.99*"
             },
             body: {
-                left: "Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*",
+                left: "Third Party Disbursements In Compliance With LSO Rule 4.2-2.1:*",
                 right: 
                 `
                 <ul class="tab-list list-unstyled">
@@ -359,10 +366,13 @@ $(function () {
                     <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
                         <div class="col-8">
                             Total Taxes & Third Party Disbursements:
-                            <br> <br>
-                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance.
                         </div>
                         <div class="col-4 text-right">$194.31</div>
+                    </li>
+                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                        <div class="col-8">
+                            Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
+                        </div>
                     </li>
                 </ul>
                 `
@@ -546,26 +556,27 @@ $(function () {
                        </div>
                    </div>
                    <p class="pb-5 ${firstTab_Includes[''+ dataFRow + '' + dataSRow].info? '': 'd-none'}">
-                       *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1:  HST, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Mortgage Instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
-                       <br> <br>
-                       **Review Rewards Program <br>
-                       We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
-                       <br> <br>
-                       
-                       Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.        TITLE INSURANCE
-                       <br> <br>
-                       
-                       *** Lawyers do not determine the price of title insurance. The title insurance company exclusively determines the price of your title insurance premium based on their underwriting risk assessment based on factors such as:
-                       <br> <br>
-                       
-                       1. Property type; <br>
-                       2. Mortgage type; <br>
-                       3. Value of property <br>
-                       4. Mortgage amount; <br>
-                       5. Etc.
-                       <br> <br>
-                       The price of your title insurance premium will be provided to you with your closing costs breakdown when we receive the amount from the title insurance company prior to closing.
-                   </p>
+                        *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSO Rule 4.2-2.1:  HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and mortgage instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
+                        <br><br><br>
+                        **Review Rewards Program<br>
+                        We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online. Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
+                        <br><br><br>
+                        Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.   
+                        <br><br><br>
+                        NON RESIDENTS<br>
+                        ** An additional tax of 15% of the purchase price will be applicable if one of the buyers is a FOREIGN NATIONAL (not a Canadian Citizen or Permanent Resident of Canada) for properties purchased in the Greater Golden Horseshoe area on the purchase price if Agreement accepted after April 20, 2017. If two buyers are purchasing the property jointly and are spouses of each other (or common law spouses), and will be living together at the property, the tax does not apply. If a Foreign National becomes a Canadian Citizen or Permanent Resident within 4 years of closing and qualifies the 15% tax is refundable.  
+                        <br><br><br>
+                        TITLE INSURANCE<br>
+                        *** Lawyers do not determine the price of title insurance. The title insurance company exclusively determines the price of your title insurance premium based on their underwriting risk assessment based on factors such as:
+                        <br><br><br>
+                        1. Property type;<br>
+                        2. Mortgage type;<br>
+                        3. Value of property<br>
+                        4. Mortgage amount;<br>
+                        5. Etc.
+                        <br><br><br>
+                        The price of your title insurance premium will be provided to you with your closing costs breakdown when we receive the amount from the title insurance company prior to closing.
+                    </p>
                </div>
            </div>
            <div class="tab-pane fade" id="other_tab_2" role="tabpanel" aria-labelledby="profile-tab">
@@ -586,9 +597,15 @@ $(function () {
        return new Intl.NumberFormat('en').format(num)
    }
    $('.quote-quote-section .price-input input').on('input', function() {
-       let val = $(this).val().replace(/,/g, '');
-       val = numToCurrency(val);
-       $(this).val(val);
+       let val = Number($(this).val().replace(/,/g, ''));
+       if (!isNaN(val)) {
+           val = numToCurrency(val);
+           $(this).val(val);
+        } else {
+            window.alert("Please Enter Valid Price.");
+            $(this).val('');
+            $('.quote-quote-section .tab-container').html('');
+       }
     });
 
 
@@ -818,10 +835,13 @@ $(function () {
                                         <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
                                             <div class="col-8">
                                                 Total Taxes & Third Party Disbursements:
-                                                <br> <br>
-                                                Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
                                             </div>
                                             <div class="col-4 text-right">$${numToCurrency(buy_totalPrice)}</div>
+                                        </li>
+                                        <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                                            <div class="col-8">
+                                                Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -835,24 +855,25 @@ $(function () {
                                 </div>
                             </div>
                             <p class="pb-5">
-                                *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSUC Rule 4.2-2.1:  HST, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Mortgage Instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
-                                <br> <br>
-                                **Review Rewards Program <br>
-                                We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
-                                <br> <br>
-                                
-                                Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.        TITLE INSURANCE
-                                <br> <br>
-                                
+                                *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSO Rule 4.2-2.1:  HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and mortgage instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
+                                <br><br><br>
+                                **Review Rewards Program<br>
+                                We value our client's feedback which is why we have launched our Review Rewards Program. The above noted quote has already been reduced and includes a $100 credit (HST inclusive) off your legal fee presuming you provide your feedback/review online. Cannot be combined with any other offer. Limit of one (1) $100 credit per Real Estate Transaction ONLY. No cash value. Only applicable after review verification. Visit www.RealEstateLawyers.ca/Review for more details.  
+                                <br><br><br>
+                                Signing Your Closing Documentation (One Mobile Signing Appointment):   Visit www.RealEstateLawyers.ca/Mobile for more details.   
+                                <br><br><br>
+                                NON RESIDENTS<br>
+                                ** An additional tax of 15% of the purchase price will be applicable if one of the buyers is a FOREIGN NATIONAL (not a Canadian Citizen or Permanent Resident of Canada) for properties purchased in the Greater Golden Horseshoe area on the purchase price if Agreement accepted after April 20, 2017. If two buyers are purchasing the property jointly and are spouses of each other (or common law spouses), and will be living together at the property, the tax does not apply. If a Foreign National becomes a Canadian Citizen or Permanent Resident within 4 years of closing and qualifies the 15% tax is refundable.  
+                                <br><br><br>
+                                TITLE INSURANCE<br>
                                 *** Lawyers do not determine the price of title insurance. The title insurance company exclusively determines the price of your title insurance premium based on their underwriting risk assessment based on factors such as:
-                                <br> <br>
-                                
-                                1. Property type; <br>
-                                2. Mortgage type; <br>
-                                3. Value of property <br>
-                                4. Mortgage amount; <br>
+                                <br><br><br>
+                                1. Property type;<br>
+                                2. Mortgage type;<br>
+                                3. Value of property<br>
+                                4. Mortgage amount;<br>
                                 5. Etc.
-                                <br> <br>
+                                <br><br><br>
                                 The price of your title insurance premium will be provided to you with your closing costs breakdown when we receive the amount from the title insurance company prior to closing.
                             </p>
                         </div>
@@ -944,7 +965,7 @@ $(function () {
                             <!--Left Text-->
                             <div class="col-md-4">
                                 <p class="font-weight-bold h5">
-                                Third Party Disbursements In Compliance With LSUC Rule 4.2-2.1:*
+                                Third Party Disbursements In Compliance With LSO Rule 4.2-2.1:*
                                 </p>
                             </div>
                             <!--tab-list (right list)-->
@@ -969,10 +990,13 @@ $(function () {
                                     <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
                                         <div class="col-8">
                                             Total Taxes & Third Party Disbursements:
-                                            <br> <br>
-                                            Other Disbursements (If Applicable): Govt. Document Registration Fees, Fees Charged By Govt., Teranet Fees, Costs Of Condo Status Certificate And Lawyers Creditor's Letters.
                                         </div>
                                         <div class="col-4 text-right">$${numToCurrency(selling_totalPrice)}</div>
+                                    </li>
+                                    <li class="list-item mb-2 p-2 rounded-lg row justify-content-between">
+                                        <div class="col-8">
+                                            Other Disbursements (If Applicable): Fees Changed By Govt, Teranet Fees, Costs Of Condo Status Certificate, Lawyers Creditor's Letters And Title Insurance
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -997,7 +1021,28 @@ $(function () {
         } ,1000);
     }
 
+    //get Hash From The link
+    let hash = location.hash.substr(1);
+    if (hash == "buying-a-home") {
+        $(".quote-quote-section .first-row .box-item[data-f-row='1']").trigger('click');
+        $(".quote-quote-section .second-row-box .box-item[data-s-row='1']").trigger('click');
+    } else if (hash == "selling-a-home") {
+        $(".quote-quote-section .first-row .box-item[data-f-row='1']").trigger('click');
+        $(".quote-quote-section .second-row-box .box-item[data-s-row='2']").trigger('click');
 
+    } else if (hash == "buying-selling-home") {
+        $(".quote-quote-section .first-row .box-item[data-f-row='1']").trigger('click');
+        $(".quote-quote-section .second-row-box .box-item[data-s-row='3']").trigger('click');
+
+    } else if (hash == "mortgage-refiance") {
+        $(".quote-quote-section .first-row .box-item[data-f-row='1']").trigger('click');
+        $(".quote-quote-section .second-row-box .box-item[data-s-row='4']").trigger('click');
+        
+    } else if (hash == "title-transfer") {
+        $(".quote-quote-section .first-row .box-item[data-f-row='1']").trigger('click');
+        $(".quote-quote-section .second-row-box .box-item[data-s-row='5']").trigger('click');
+
+    }
     
     /*End Quote page */
 });
