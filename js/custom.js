@@ -1043,6 +1043,24 @@ $(function () {
         $(".quote-quote-section .second-row-box .box-item[data-s-row='5']").trigger('click');
 
     }
+
+    if (hash == "hire-buying") {
+        let ele = $('.hire-us-section .box:eq(0)');
+        ele.addClass('selected');
+        ele.find('input[type="checkbox"]').attr('checked', 'checked');
+    } else if (hash == "hire-selling")  {
+        let ele = $('.hire-us-section .box:eq(1)');
+        ele.addClass('selected');
+        ele.find('input[type="checkbox"]').attr('checked', 'checked');
+    } else if (hash == "hire-ownership")  {
+        let ele = $('.hire-us-section .box:eq(3)');
+        ele.addClass('selected');
+        ele.find('input[type="checkbox"]').attr('checked', 'checked');
+    } else if (hash == "hire-mortgage")  {
+        let ele = $('.hire-us-section .box:eq(4)');
+        ele.addClass('selected');
+        ele.find('input[type="checkbox"]').attr('checked', 'checked');
+    }
     
     /*End Quote page */
 });
