@@ -1798,3 +1798,109 @@ input[type=number] {
 }
 
 /* hire end here  */
+
+
+
+.gray-color
+{
+    color: #555;
+}
+/***********Start mortgage page ********/
+/*Start Header*/
+.mortgage .header .subtitle
+{
+    line-height: 1.7;
+}
+.mortgage .header .inner-content
+{
+    border-left: .4rem solid #222;
+}
+.mortgage .header .inner-content .quote-icon
+{
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.mortgage .header .inner-content .txt
+{
+    z-index: 2;
+    font-size: 1.5rem;
+}
+/*End Header*/
+
+/*Start section_1*/
+.mortgage .section_1::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: #f3f4f8;
+    z-index: 1;
+}
+.mortgage .section_1 .content
+{
+    z-index: 2;
+}
+/*End section_1*/
+
+/*Start steps-section*/
+.mortgage .steps-section .left-content
+{
+    background-color: #f3f4f8;
+    width: 300px;
+    height: 200px;
+    margin-top: 2.5rem;
+}
+.mortgage .steps-section .left-content .icon
+{
+    width: 50px;
+}
+.mortgage .steps-section .right-content
+{
+    margin-left: -10rem;
+}
+.mortgage .steps-section .right-content .inner-box
+{
+    padding-left: 4.5rem;
+}
+.mortgage .steps-section .right-content .title::after
+{
+    content: "";
+    display: block;
+    width: 100px;
+    height: .2rem;
+    background-color: #f0474e;
+    margin-top: 1rem;
+}
+.mortgage .arrow-down
+{
+    width: 30px;
+}
+@media (max-width: 767px) {
+    
+    .mortgage .steps-section .left-content
+    {
+        height: 300px;
+    }
+    .mortgage .steps-section .right-content
+    {
+        margin-left: 0;
+        margin-top: -12rem;
+    }
+    .mortgage .steps-section .right-content .inner-box
+    {
+        padding-left: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .mortgage .steps-section .left-content
+    {
+        width: 100%;
+    }
+}
+/*End steps-section*/
+/***********End mortgage page ********/
