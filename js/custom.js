@@ -230,6 +230,9 @@ $(function () {
         $($(".quote-quote-section .btns").find(".buy-location-btn")[1]).addClass('red-btn').siblings().removeClass("selected");
         $($(".quote-quote-section .btns").find(".buy-location-btn")[3]).addClass('red-btn').siblings().removeClass("selected");
         $($(".quote-quote-section .btns").find(".first-time-btn")[1]).addClass('red-btn').siblings().removeClass("selected");
+        $('.quote-quote-section .selling-tabs').html('');
+        $('.quote-quote-section .buying-tabs').html('');
+        $('.quote-quote-section .other-tabs').html('');
         $('.quote-quote-section .tab-container').hide();
     }
 
@@ -526,36 +529,36 @@ $(function () {
                <!--Tab Head-->
                <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
                    <span>
-                        ${firstTab_Includes[''+ dataFRow + '' + dataSRow].header.left}
+                        ${firstTab_Includes['' + dataFRow + '' + dataSRow].header.left}
                    </span>
                    <div class="list-price ml-auto text-right">
-                       ${firstTab_Includes[''+ dataFRow + '' + dataSRow].header.right}
+                       ${firstTab_Includes['' + dataFRow + '' + dataSRow].header.right}
                    </div>
                </div>
-               <div class="tab-body px-3 py-2 ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.left && firstTab_Includes[''+ dataFRow + '' + dataSRow].body.right ? '': 'd-none'}">
-                   <div class="row align-items-center">
+               <div class="tab-body px-3 py-2">
+                   <div class="row align-items-center tab-body-content ${firstTab_Includes['' + dataFRow + '' + dataSRow].body.left && firstTab_Includes['' + dataFRow + '' + dataSRow].body.right ? '' : 'd-none'}">
                        <!--Left Text-->
                        <div class="col-md-4">
                            <p class="font-weight-bold h5">
-                                ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.left}
+                                ${firstTab_Includes['' + dataFRow + '' + dataSRow].body.left}
                            </p>
                        </div>
                        <!--tab-list (right list)-->
                        <div class="col-md-8">
                            <ul class="tab-list list-unstyled">
-                                ${firstTab_Includes[''+ dataFRow + '' + dataSRow].body.right}
+                                ${firstTab_Includes['' + dataFRow + '' + dataSRow].body.right}
                            </ul>
                        </div>
                    </div>
                    <hr>
-                   <div class="row py-4">
+                   <div class="row py-2">
                        <div class="col-md-6 mx-auto d-flex justify-content-center">
                            <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Get New Quote</a>
-                           <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Email Quote</a>
+                           <button class="btn tab-btn rounded-0 text-white mr-3" data-toggle="modal" data-target="#emailModal">Email Quote</button>
                            <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Hire Us Now</a>
                        </div>
                    </div>
-                   <p class="pb-5 ${firstTab_Includes[''+ dataFRow + '' + dataSRow].info? '': 'd-none'}">
+                   <p class="pb-5 ${firstTab_Includes['' + dataFRow + '' + dataSRow].info ? '' : 'd-none'}">
                         *Our flat rate legal fee applies to a residential single family dwelling on city services, being vacant on closing with one first mortgage and no other encumbrances or liens on title.  Our disbursements (if applicable) comply with LSO Rule 4.2-2.1:  HST, land transfer tax, govt. document registration fees, fees charged by govt., Teranet fees, costs of condo status certificate, lawyers creditor's letters and title insurance. The fee is valid if our firm is hired and receives the Agreement of Purchase and Sale and mortgage instructions at least 5 business days prior to closing.  If any unforeseen issues arise you will be notified immediately.  Note that additional charges apply to investment properties, commercial properties, occupancy closings, lines of credit or additional mortgages/lines of credit, bridegloans or any other matter beyond the scope of a standard real estate transaction.   This quote is valid for 30 days from the date provided.
                         <br><br><br>
                         **Review Rewards Program<br>
@@ -581,7 +584,7 @@ $(function () {
            </div>
            <div class="tab-pane fade" id="other_tab_2" role="tabpanel" aria-labelledby="profile-tab">
                <p class="p-2">
-                   ${secondTab_Includes['' + dataFRow + ''+dataSRow]} 
+                   ${secondTab_Includes['' + dataFRow + '' + dataSRow]} 
                </p>
            </div>
        </div>
@@ -757,14 +760,14 @@ $(function () {
                         <!--Tab Head-->
                         <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
                             <span>
-                                Buying a home - flat rate legal fee ($${numToCurrency(buy_inputPrice)}) ** Includes $100 credit for feedback/review
+                                Buying a home - flat rate legal fee ($${numToCurrency(buy_inputPrice)}) **INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW
                             </span>
                             <div class="list-price ml-auto">
                                 $${numToCurrency(buy_tab_head)}*
                             </div>
                         </div>
                         <div class="tab-body px-3 py-2">
-                            <div class="row align-items-center">
+                            <div class="row align-items-center tab-body-content">
                                 <!--Left Text-->
                                 <div class="col-md-4">
                                     <p class="font-weight-bold h5">
@@ -850,7 +853,7 @@ $(function () {
                             <div class="row py-4">
                                 <div class="col-md-6 mx-auto d-flex justify-content-center">
                                     <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Get New Quote</a>
-                                    <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Email Quote</a>
+                                    <button class="btn tab-btn rounded-0 text-white mr-3" data-toggle="modal" data-target="#emailModal">Email Quote</button>
                                     <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Hire Us Now</a>
                                 </div>
                             </div>
@@ -954,14 +957,14 @@ $(function () {
                     <!--Tab Head-->
                     <div class="tab-head d-flex py-4 px-2 h5 text-uppercase font-weight-bold">
                         <span>
-                            Selling a home - flat rate legal fee ($${numToCurrency(selling_inputPrice)}) ** Includes $100 credit for feedback/review
+                            Selling a home - flat rate legal fee ($${numToCurrency(selling_inputPrice)}) **INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW
                         </span>
                         <div class="list-price ml-auto">
                             $${numToCurrency(selling_tab_head)}*
                         </div>
                     </div>
                     <div class="tab-body px-3 py-2">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center tab-body-content">
                             <!--Left Text-->
                             <div class="col-md-4">
                                 <p class="font-weight-bold h5">
@@ -999,6 +1002,14 @@ $(function () {
                                         </div>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row py-4 ${(dataFRow+ '' + dataSRow == '13')? 'd-none': ''}">
+                            <div class="col-md-6 mx-auto d-flex justify-content-center">
+                                <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Get New Quote</a>
+                                <button class="btn tab-btn rounded-0 text-white mr-3" data-toggle="modal" data-target="#emailModal">Email Quote</button>
+                                <a href="#" class="btn tab-btn rounded-0 text-white mr-3">Hire Us Now</a>
                             </div>
                         </div>
                     </div>
@@ -1063,4 +1074,124 @@ $(function () {
     }
     
     /*End Quote page */
+
+
+    /*Start Submit Email quote*/
+    $(".submit-popup-btn").on("click", function() {
+        let email = $(this).parents('.emailForm').find('.email-id').val();
+        let subject = '';
+        let tabHead = $(".tab-head");
+        let bodyBody = $(".tab-body-content");
+        let bodyMsg = ``;
+
+        console.log(bodyBody.length);
+        
+        if (bodyBody.length == 1) {
+            bodyMsg = tabHead.html() + bodyBody.html();
+            subject = $('.tab-head').text().replace("**INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW", ' for');
+        } else {
+            bodyMsg = '';
+            for(let i = 0; i <tabHead.length; i++) {
+                bodyMsg += $(tabHead[i]).html() + $(bodyBody[i]).html();
+                subject += $(tabHead[i]).text().replace("**INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW", ' for');
+            }
+            console.log(subject);
+        }
+        $(".test").html(bodyMsg);
+
+        //Email Validation
+		if(email==""){
+			alert("Please Enter your email.");
+			$('#toemail').focus();
+			return false;
+		}else if (email != ""){
+		  if (email.indexOf("@")==-1 || email.indexOf(".")==-1 || email.indexOf(" ")!=-1 || email.length<6){
+			alert("Please Enter a valid email address");
+			$('#toemail').focus();
+			return false;
+		  }
+        }
+        
+
+
+
+        $('#emailhtml').val(bodyMsg);
+        $('#emailto').val(email);
+        $('#subject').val(subject);
+        $('#emailhtmlform').submit();
+        /*
+		$.post("email_quate.php",{"vercode2":captcha,"Submit":"yes"},function(res){
+
+			if(res=='error'){
+				alert("Please Select I am not a robot.");
+				//Recaptcha.reload();
+				return false;
+			}else{
+				//var con = $('#tabpage_1').html();
+				var con = $('#commonrequest').val();
+				/*$.post("sendmail.php",{"toemail":$('#toemail').val(),"con":con},function(res){			
+					//alert(res);
+					//closesharebox1();
+				});
+				alert("Message sent successfully");
+				closesharebox1();*
+				$('#emailhtml').val(bodyMsg);
+				$('#emailto').val(email);
+				$('#subject').val(subject);
+				$('#emailhtmlform').submit();
+			}
+        });
+        */
+
+
+    });
+
+
+
+
+
+    function sendmail() {
+		var email = $('#toemail').val();
+		var captcha = $('#g-recaptcha-response').val();
+		if(email==""){
+			alert("Please Enter your email.");
+			$('#toemail').focus();
+			return false;
+		}else if (email != ""){
+		  if (email.indexOf("@")==-1 || email.indexOf(".")==-1 || email.indexOf(" ")!=-1 || email.length<6){
+			alert("Please Enter a valid email address");
+			$('#toemail').focus();
+			return false;
+		  }
+		}
+		if(captcha=="" || captcha=="Enter answer"){
+			alert("Please Select I am not a robot.");
+			return false;
+		}
+		$.post("email_quate.php",{"vercode2":captcha,"Submit":"yes"},function(res){
+
+			if(res=='error'){
+				alert("Please Select I am not a robot.");
+				//Recaptcha.reload();
+				return false;
+			}else{
+				//var con = $('#tabpage_1').html();
+				var con = $('#commonrequest').val();
+				/*$.post("sendmail.php",{"toemail":$('#toemail').val(),"con":con},function(res){			
+					//alert(res);
+					//closesharebox1();
+				});
+				alert("Message sent successfully");
+				closesharebox1();*/
+				$('#emailhtml').val(con);
+				$('#emailto').val($('#toemail').val());
+				$('#emailtocc').val($('#toemail2').val());
+				$('#emailtobcc').val($('#toemail3').val());
+				$('#emailhtmlform').submit();
+			}
+		});
+    }
+    /*End Submit Email quote*/
+
+    
 });
