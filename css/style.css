@@ -1904,3 +1904,55 @@ input[type=number] {
 }
 /*End steps-section*/
 /***********End mortgage page ********/
+
+/***********Start mobile-signing ********/
+.mobile-signing .title
+{
+    color: #333333;
+}
+.mobile-signing .section_1 .image
+{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.mobile-signing .section_1 .title
+{
+    position: absolute;
+    top: 18%;
+    right: 0;
+    z-index: 2;
+}
+@media(max-width: 991px) {
+    .mobile-signing .section_1 .title
+    {
+        position: static;
+    }
+}
+
+.mobile-signing .section_3
+{
+    background-color: #232b3e;
+}
+.mobile-signing .section_4 ul li
+{
+    color: #333;
+}
+/***********End mobile-signing ********/
+
+/***********Start guarantee ********/
+.guarantee .obj-cover
+{
+    object-fit: cover;
+}
+.guarantee .section_1
+{
+    background-color: #f3f4f8;
+}
+@media (min-width: 992px) {
+    .guarantee .section_1 .title
+    {
+        font-size: 3rem;
+    }
+}
+/***********End guarantee ********/

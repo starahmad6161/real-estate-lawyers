@@ -54,25 +54,33 @@ $(function () {
     let buy_ont_trans_tax = 0;
     let buy_less_ont_trans_tax = 0;
 
-    let buy_fee = 154.62;
+    let buy_fee = 0;
     let buy_tor_trans_tax = 0;
     let buy_less_tor_trans_tax = 0;
-    let buy_tor_admin_fee = 89.84;
+    let buy_tor_admin_fee = 0;
 
     let buy_totalPrice = 0;
     let buy_first_time_btn = false;
     let buy_location_btn = false;
 
 
-    let selling_inputPrice;
+    let selling_inputPrice = 0;
     let selling_tab_head = 0;
-    let selling_hst = 117.00;
-    let selling_levy = 73.45;
+    let selling_hst = 0;
+    let selling_levy = 0;
     let selling_totalPrice = 0;
 
-
-
     
+    let other_tab_head_1 = 0;
+    let other_tab_head_2 = 0;
+    let other_hst = 0;
+    let other_Gov_Fee = 0;
+    let other_totalPrice = 0;
+    let other_min_book = 0;
+    let other_couriers = 0; 
+
+
+    let objMsg = {};
 
     function resetPricesAndBtns() {
         
@@ -83,21 +91,30 @@ $(function () {
         buy_ont_trans_tax = 0;
         buy_less_ont_trans_tax = 0;
 
-        buy_fee = 154.62;
+        buy_fee = 0;
         buy_tor_trans_tax = 0;
         buy_less_tor_trans_tax = 0;
-        buy_tor_admin_fee = 89.84;
+        buy_tor_admin_fee = 0;
 
         buy_totalPrice = 0;
         buy_first_time_btn = false;
         buy_location_btn = false;
 
 
-        selling_inputPrice;
+        selling_inputPrice = 0;
         selling_tab_head = 0;
-        selling_hst = 117.00;
-        selling_levy = 73.45;
+        selling_hst = 0;
+        selling_levy = 0;
         selling_totalPrice = 0;
+
+        //other
+        other_tab_head_1 = 0;
+        other_tab_head_2 = 0;
+        other_hst = 0;
+        other_Gov_Fee = 0;
+        other_totalPrice = 0;
+        other_min_book = 0;
+        other_couriers = 0; 
     }
     
     //First Row
@@ -141,6 +158,59 @@ $(function () {
         //Reset all values
         reset();
         resetPricesAndBtns();
+        //for buy fee
+        if (`${dataFRow}${dataSRow}` == '11' || `${dataFRow}${dataSRow}` == '13' || `${dataFRow}${dataSRow}` == '14') {
+            buy_fee =  154.62;
+        } else if (`${dataFRow}${dataSRow}` == '15') {
+            buy_fee =  77.31;
+        } else {
+            buy_fee = 0;
+        }
+
+        //for other tabs
+        if (`${dataFRow}${dataSRow}` =='14') {
+            other_tab_head_1 =  799.99;
+            other_hst = 117.00;
+            other_Gov_Fee = 154.62;
+            other_totalPrice = 271.62;
+        } else if (`${dataFRow}${dataSRow}` == '15') {
+            other_tab_head_1 =  799.99;
+            other_hst = 117.00;
+            other_Gov_Fee = 77.31;
+            other_totalPrice = 194.31;
+        }
+        else if (`${dataFRow}${dataSRow}` == '31') {
+            other_tab_head_1 = 1100.00;
+            other_tab_head_2 = 1200.00;
+            other_Gov_Fee = 360.00;
+            other_min_book = 125.00;
+            other_couriers = 50.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '21') {
+            other_tab_head_1 = 500.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '22') {
+            other_tab_head_1 = 850.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '23') {
+            other_tab_head_1 = 200.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '24') {
+            other_tab_head_1 = 200.00;
+            other_tab_head_2 = 1999.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '32') {
+            other_tab_head_1 = 995.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '33') {
+            other_tab_head_1 = 0.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '41') {
+            other_tab_head_1 = 80.00;
+        }
+        else if (`${dataFRow}${dataSRow}` == '42') {
+            other_tab_head_1 = 80.00;
+        }
         //bottom boxes `below second row` that contains more required steps like `price` 
         let numArr = ['11','12','13'];
         // if box id = 11 or 12 or 13 that mean it's include another required steps to increase progress bar width
@@ -156,6 +226,7 @@ $(function () {
         }
         //add class active to selected box at 'second row'
         $(this).addClass('active').siblings().removeClass('active');
+        
         
         /**
          * This trigger when select [1st row => 1st box] and [2nd row => 3rd item ] that mean box `13` will active
@@ -509,9 +580,10 @@ $(function () {
         },
    }
 
-   
+
 
    function showOtherTabs() {
+        calcToSendEmail();
        let other = 
        ` <div class="tab-container inner-other-tabs my-5">
        <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -637,11 +709,12 @@ $(function () {
         buyCalc();
     });
    
-   
 
 
    function buyCalc() {
+       
         if (buy_inputPrice && typeof buy_inputPrice == 'number' && buy_inputPrice > 0) {
+            
 
             if (0 < buy_inputPrice && buy_inputPrice < 55000) {
                 let calculatedTax = buy_inputPrice * 0.005;
@@ -729,17 +802,187 @@ $(function () {
             } else {
                 buy_tor_trans_tax = 0;
                 buy_tor_admin_fee = 0;
-                //buy_less_tor_trans_tax = 0;
+                buy_less_tor_trans_tax = 0;
             }
             
             
             buy_totalPrice = (buy_hst + buy_ont_trans_tax + buy_fee + buy_tor_trans_tax + buy_tor_admin_fee - buy_less_tor_trans_tax - buy_less_ont_trans_tax).toFixed(2);
             
-            $('.tabs-container .buying-tabs').hide();
+            calcToSendEmail();
+            
+
+
+            $('.tabs-container .buying-tabs').html('');
             showBuyingTab();
         }
    }
 
+   function calcToSendEmail() {
+
+       objMsg = {};
+       objMsg['type'] = dataFRow + ""+ dataSRow;
+
+        if(dataFRow +"" + dataSRow == "13") {
+
+
+            // Buying a home start Here
+            if (selling_inputPrice != 0) {
+                objMsg['p1'] = selling_inputPrice;//price
+            }
+            if (selling_tab_head != 0) {
+                objMsg['p2'] = selling_tab_head;//price
+            }
+            if (selling_hst != 0) {
+                objMsg['p3'] = selling_hst;//Head price
+            }
+            if (selling_levy != 0) {
+                objMsg['p4'] = selling_levy;//HST
+            }
+            if (selling_totalPrice != 0) {
+                objMsg['p5'] = selling_totalPrice;//Ontario Land Transfer Tax
+            }
+
+            if (buy_inputPrice != 0) {
+                objMsg['p6'] = buy_inputPrice;//Ontario Land Transfer Tax
+            }
+            if (buy_tab_head != 0) {
+                objMsg['p7'] = buy_tab_head;//Ontario Land Transfer Tax
+            }
+            if (buy_hst != 0) {
+                objMsg['p8'] = buy_hst;//Ontario Land Transfer Tax
+            }
+            if (buy_ont_trans_tax != 0) {
+                objMsg['p9'] = buy_ont_trans_tax;//Ontario Land Transfer Tax
+            }
+            if (buy_tor_trans_tax != 0) {
+                objMsg['p10'] = buy_tor_trans_tax;//Ontario Land Transfer Tax
+            }
+            if (buy_tor_trans_tax != 0) {
+                objMsg['p11'] = buy_less_tor_trans_tax;//Ontario Land Transfer Tax
+            }
+            if (buy_tor_admin_fee != 0) {
+                objMsg['p12'] = buy_tor_admin_fee;//Ontario Land Transfer Tax
+            }
+            if (buy_fee != 0) {
+                objMsg['p13'] = buy_fee;//Ontario Land Transfer Tax
+            }
+            if (buy_totalPrice != 0) {
+                objMsg['p14'] = buy_totalPrice;//Ontario Land Transfer Tax
+            }
+
+        } else if (dataFRow +"" + dataSRow == "11") {
+            // Buying a home start Here
+            if (buy_inputPrice != 0) {
+                objMsg['p1'] = buy_inputPrice;//price
+            }
+            if (buy_tab_head != 0) {
+                objMsg['p2'] = buy_tab_head;//Head price
+            }
+            if (buy_hst != 0) {
+                objMsg['p3'] = buy_hst;//HST
+            }
+            if (buy_ont_trans_tax != 0) {
+                objMsg['p4'] = buy_ont_trans_tax;//Ontario Land Transfer Tax
+            }
+            if (buy_less_ont_trans_tax != 0) {
+                objMsg['p5'] = buy_less_ont_trans_tax;//Less ontario transfer tax rebate
+            }
+            if (buy_tor_trans_tax != 0) {
+                objMsg['p6'] = buy_tor_trans_tax;//Toronto Land Transfer Tax
+            }
+            if (buy_less_tor_trans_tax != 0) {
+                objMsg['p7'] = buy_less_tor_trans_tax;//Less Toronto Land Transfer Tax Rebate
+            }
+            if (buy_tor_admin_fee != 0) {
+                objMsg['p8'] = buy_tor_admin_fee;//Toronto Municipality Admin Fee (Effective April 1, 2016 - $75 Plus HST)   
+            }
+            if (buy_fee != 0) {
+                objMsg['p9'] = buy_fee;//Government Registration Fee 
+            }
+            if (buy_totalPrice != 0) {
+                objMsg['p10'] = buy_totalPrice;//Total Taxes & Third 
+            }
+            //Buying a home end here
+
+            // Selling a home start Here
+            
+        } else if (dataFRow +"" + dataSRow == "12") {
+            if (selling_inputPrice != 0) {
+                objMsg['p1'] = selling_inputPrice;//price
+            }
+            if (selling_tab_head != 0) {
+                objMsg['p2'] = selling_tab_head;//price
+            }
+            if (selling_hst != 0) {
+                objMsg['p3'] = selling_hst;//Head price
+            }
+            if (selling_levy != 0) {
+                objMsg['p4'] = selling_levy;//HST
+            }
+            if (selling_totalPrice != 0) {
+                objMsg['p5'] = selling_totalPrice;//Ontario Land Transfer Tax
+            }
+            //Selling a home end here
+        }
+
+        else if (
+            dataFRow +"" + dataSRow == "21" ||
+            dataFRow +"" + dataSRow == "22" ||
+            dataFRow +"" + dataSRow == "23" ||
+            dataFRow +"" + dataSRow == "24" ||
+            dataFRow +"" + dataSRow == "32" ||
+            dataFRow +"" + dataSRow == "33" ||
+            dataFRow +"" + dataSRow == "41" ||
+            dataFRow +"" + dataSRow == "42"
+            ) 
+        {
+                if (dataFRow +"" + dataSRow == "33") {
+                    objMsg["p1"] = other_tab_head_1;
+                } else {
+                    if (other_tab_head_1 != 0) {
+                        objMsg["p1"] = other_tab_head_1;
+                    }
+                    if (other_tab_head_2 != 0) {
+                        objMsg["p2"] = other_tab_head_2;
+                    }
+                }
+        }
+        else if (dataFRow +"" + dataSRow == "31") {
+            if (other_tab_head_1 != 0) {
+                objMsg["p1"] = other_tab_head_1;
+            }
+            if (other_tab_head_2 != 0) {
+                objMsg["p2"] = other_tab_head_2;
+            }
+            if (other_Gov_Fee != 0) {
+                objMsg["p3"] = other_Gov_Fee;
+            }
+            if (other_min_book != 0) {
+                objMsg["p4"] = other_min_book;
+            }
+            if (other_couriers != 0) {
+                objMsg["p5"] = other_couriers;
+            }
+        }
+        
+        else if (dataFRow +"" + dataSRow == "14" || dataFRow +"" + dataSRow == "15") {
+
+            if (other_tab_head_1 != 0) {
+                objMsg["p1"] = other_tab_head_1;
+            }
+            if (other_hst != 0) {
+                objMsg["p2"] = other_hst;
+            }
+            if (other_Gov_Fee != 0) {
+                objMsg["p3"] = other_Gov_Fee;
+            }
+            if (other_totalPrice != 0) {
+                objMsg["p4"] = other_totalPrice;
+            }
+        }
+
+        console.log(objMsg);
+   }
 
    
    function showBuyingTab() {
@@ -926,10 +1169,11 @@ $(function () {
             } else {
                 selling_tab_head = 799.99;
             }
-
+            selling_levy = 73.45;
             
             selling_totalPrice = (selling_hst + selling_levy).toFixed(2);
             
+            calcToSendEmail();
             $('.tabs-container .selling-tabs').hide();
             showSellingTab();
         }
@@ -1080,24 +1324,8 @@ $(function () {
     $(".submit-popup-btn").on("click", function() {
         let email = $(this).parents('.emailForm').find('.email-id').val();
         let subject = '';
-        let tabHead = $(".tab-head");
-        let bodyBody = $(".tab-body-content");
-        let bodyMsg = ``;
+        let bodyMsg = objMsg;
 
-        console.log(bodyBody.length);
-        
-        if (bodyBody.length == 1) {
-            bodyMsg = tabHead.html() + bodyBody.html();
-            subject = $('.tab-head').text().replace("**INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW", ' for');
-        } else {
-            bodyMsg = '';
-            for(let i = 0; i <tabHead.length; i++) {
-                bodyMsg += $(tabHead[i]).html() + $(bodyBody[i]).html();
-                subject += $(tabHead[i]).text().replace("**INCLUDES $100 CREDIT FOR FEEDBACK/REVIEW", ' for');
-            }
-            console.log(subject);
-        }
-        $(".test").html(bodyMsg);
 
         //Email Validation
 		if(email==""){
@@ -1119,79 +1347,37 @@ $(function () {
         $('#emailto').val(email);
         $('#subject').val(subject);
         $('#emailhtmlform').submit();
-        /*
-		$.post("email_quate.php",{"vercode2":captcha,"Submit":"yes"},function(res){
-
-			if(res=='error'){
-				alert("Please Select I am not a robot.");
-				//Recaptcha.reload();
-				return false;
-			}else{
-				//var con = $('#tabpage_1').html();
-				var con = $('#commonrequest').val();
-				/*$.post("sendmail.php",{"toemail":$('#toemail').val(),"con":con},function(res){			
-					//alert(res);
-					//closesharebox1();
-				});
-				alert("Message sent successfully");
-				closesharebox1();*
-				$('#emailhtml').val(bodyMsg);
-				$('#emailto').val(email);
-				$('#subject').val(subject);
-				$('#emailhtmlform').submit();
-			}
-        });
-        */
 
 
     });
 
-
-
-
-
-    function sendmail() {
-		var email = $('#toemail').val();
-		var captcha = $('#g-recaptcha-response').val();
-		if(email==""){
-			alert("Please Enter your email.");
-			$('#toemail').focus();
-			return false;
-		}else if (email != ""){
-		  if (email.indexOf("@")==-1 || email.indexOf(".")==-1 || email.indexOf(" ")!=-1 || email.length<6){
-			alert("Please Enter a valid email address");
-			$('#toemail').focus();
-			return false;
-		  }
-		}
-		if(captcha=="" || captcha=="Enter answer"){
-			alert("Please Select I am not a robot.");
-			return false;
-		}
-		$.post("email_quate.php",{"vercode2":captcha,"Submit":"yes"},function(res){
-
-			if(res=='error'){
-				alert("Please Select I am not a robot.");
-				//Recaptcha.reload();
-				return false;
-			}else{
-				//var con = $('#tabpage_1').html();
-				var con = $('#commonrequest').val();
-				/*$.post("sendmail.php",{"toemail":$('#toemail').val(),"con":con},function(res){			
-					//alert(res);
-					//closesharebox1();
-				});
-				alert("Message sent successfully");
-				closesharebox1();*/
-				$('#emailhtml').val(con);
-				$('#emailto').val($('#toemail').val());
-				$('#emailtocc').val($('#toemail2').val());
-				$('#emailtobcc').val($('#toemail3').val());
-				$('#emailhtmlform').submit();
-			}
-		});
-    }
     /*End Submit Email quote*/
 
     
+    /*
+    {
+        type: "11", // buying a home
+        p1: "$10,000,000",
+        p2: "$5,499.99",
+        p3: "728",
+        p4: "236,475",
+        p5: "4,000",
+        p6: "236,475",
+        p7: "4,475",
+        p8: "89.84",
+        p9": "154.62",
+        p10: "465,447.46"
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    */
+
+
 });

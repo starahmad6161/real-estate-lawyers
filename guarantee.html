@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="css/libs/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <!--Start global search box-->
+    <div class="search-box-overlay">
+        <div class="container-fluid pt-5">
+            <div class="in-group d-flex align-items-center position-relative">
+                <input class="form-control py-4 mr-2" type="text" placeholder="Enter postal code or enter your city">
+                <label class="search-txt font-weight-bold pointer position-absolute px-2 bg-white">
+                    Search
+                    <span class="fas fa-arrow-right"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <!--End global search box-->
+
+
+
+    <!--Start Home-->
+    <div class="home">
+        <!--Start Navbar-->
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-md-3 d-flex justify-content-between align-items-center align-items-md-start">
+                    <a class="navbar-brand" href="#">
+                        <img class="w-100" src="imgs/Logo PDF 2.png" alt="logo">
+                    </a>
+                    <div>
+                        <!--
+                            UpperBar 
+                            Show only at mobile (Less than medium screens)
+                        -->
+                        <div class="d-flex px-0 justify-content-end d-md-none">
+                            <div class="btn-group mt-auto mr-3">
+                                <button type="button" class="btn p-0 border-0 dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    EN
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <button class="dropdown-item" type="button">EN</button>
+                                    <button class="dropdown-item" type="button">EN</button>
+                                    <button class="dropdown-item" type="button">EN</button>
+                                </div>
+                            </div>
+                            <a href="./locations.html#search_input">
+                                <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!--Start UpperBar-->
+                    <div class="upper-nav py-lg-2 d-none d-md-block">
+                        <div class="row no-gutters">
+                            <div class="col-4 col-xl-3 mb-2">
+                                Call Us
+                                <div class="main-color font-weight-bold"><a href="tel:+1 (855) 466-3801">1 (855)
+                                        466-3801</a> </div>
+                            </div>
+                            <div class="col-4 col-xl-3 mb-2">
+                                Fax Us
+                                <div class="main-color font-weight-bold">+1 (855) 466-3803</div>
+                            </div>
+                            <div class="col-4 col-xl-3 mb-2">
+                                Email Us
+                                <div class="main-color font-weight-bold text-wrap"> <a
+                                        href="mailto:info@RealEstateLawyers.ca">info@RealEstateLawyers.ca</a> </div>
+                            </div>
+                            <div class="col-6 col-xl-2 my-3 d-flex">
+                                <ul class="list-unstyled social-media d-flex mb-0 mt-auto">
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-google"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-linkedin-in"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-youtube"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-twitter"></span>
+                                        </a>
+                                    </li>
+                                    <li class="social-item mr-3">
+                                        <a class="main-color" href="#">
+                                            <span class="fab fa-facebook-f"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-xl-1 my-3 d-flex px-0 justify-content-end">
+                                <div class="btn-group mt-auto mr-3">
+                                    <button type="button" class="btn p-0 border-0 dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        EN
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button">EN</button>
+                                        <button class="dropdown-item" type="button">EN</button>
+                                        <button class="dropdown-item" type="button">EN</button>
+                                    </div>
+                                </div>
+                                <a href="./locations.html#search_input">
+                                    <span class="fas fa-search main-color mt-auto mr-2 mb-1 pointer search-icon"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-1 d-none d-md-block">
+                    <!--End UpperBar-->
+
+
+                    <!--Start Navbar-->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto font-weight-bold justify-content-between w-100">
+                                <li class="nav-item mb-2 mb-md-0 active">
+                                    <a class="nav-link p-0" href="./hire-us.html">Hire Us</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Free Quote</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="./about-us.html">About</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Services</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="./locations.html">Locations</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Resources</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0">
+                                    <a class="nav-link p-0" href="#">Make a Payment</a>
+                                </li>
+                                <li class="nav-item mb-2 mb-md-0 d-flex align-items-center">
+                                    <span class="fas fa-user main-color mr-1"></span>
+                                    <a class="nav-link p-0" href="#">Client Login</a>
+                                </li>
+                                <!--
+                                    UpperBar 
+                                    Show only at mobile (Less than medium screens)
+                                -->
+                                <li class="nav-item mt-4 mb-md-0 d-flex align-items-center d-md-none">
+                                    <div class="row font-weight-normal">
+                                        <div class="col-6 col-sm-4 col-xl-3 mb-2">
+                                            Call Us
+                                            <div class="contact-info main-color font-weight-bold">+1 (855) 466-3801
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-4 col-xl-3 mb-2">
+                                            Fax Us
+                                            <div class="contact-info main-color font-weight-bold">+1 (855) 466-3803
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-xl-3 mb-2">
+                                            Email Us
+                                            <div class="contact-info main-color font-weight-bold">
+                                                info@RealEstateLawyers.ca</div>
+                                        </div>
+                                        <div class="col-6 mx-auto">
+                                            <ul
+                                                class="list-unstyled social-media d-flex justify-content-center mb-0 mt-auto">
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-google"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-linkedin-in"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-youtube"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-twitter"></span>
+                                                    </a>
+                                                </li>
+                                                <li class="social-item mr-3">
+                                                    <a class="main-color" href="#">
+                                                        <span class="fab fa-facebook-f"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--End Navbar-->
+                </div>
+            </div>
+        </div>
+        <!--End Navbar-->
+    </div>
+    <!--End Home-->
+
+    <!--Start guarantee-->
+    <div class="guarantee">
+        <section class="section_1 my-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <!--Left content-->
+                    <div class="col-lg-6 py-5">
+                        <div class="py-5 px-4">
+                            <h1 class="title font-weight-bold mb-5">Our Guarantee</h1>
+                            <p>
+                                Real Estate Lawyers.ca LLP (aka Parnes Rothman LLP) is proud to
+                                oer its clients a 100% legal price match guarantee. We will match
+                                any law firm’s quote of the exact kind of service as quoted by our
+                                online legal fee quotation provided their legal fee pricing complies
+                                with LSUC Rule 4.2-2.1.
+                                Real Estate Lawyers.ca LLP will honour our quote provided within 30
+                                days of the date such quote was provided to you and prior to the
+                                closing date. Please contact us if you have any further questions
+                            </p>
+                        </div>
+                    </div>
+                    <!--Right content-->
+                    <div class="col-lg-6">
+                        <div class="image w-100 h-100">
+                            <img class="w-100 h-100 obj-cover" src="./imgs/guarantee/unnamed.jpg" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--End guarantee-->
+
+
+
+    <!--Start upper-footer-->
+    <section class="upper-footer-section py-4">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <!--Col #1-->
+                <div class="col-6 col-lg-3 mb-3">
+                    <img class="brand-img w-100" src="imgs/Logo PDF 2.png" alt="brand">
+                    <ul class="list-unstyled social-media mt-2 mt-sm-5 d-flex justify-content-between">
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-linkedin-in"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-youtube"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-twitter"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-facebook-f"></span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="#">
+                                <span class="fab fa-lg fa-google"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Col #2-->
+                <div class="col-sm-6 col-lg-3 col-xl-2 mb-3">
+                    <h3 class="mb-3 mb-lg-5">Navigation</h3>
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-2">
+                            <a href="#">Contact Us</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">
+                                Site Map
+                            </a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Join Us</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Real Estate Agents</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Terms of Use & Disclaimer</a>
+                        </li>
+                        <li class="list-item mb-2">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Col #3-->
+                <div class="col-lg-5 col-xl-6 mb-3 text-center text-lg-left">
+                    <h3 class="mb-3 mb-lg-5">Find an office near you</h3>
+                    <ul class="list-unstyled list-items">
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Toronto</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Etobicoke</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">North York</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Scarborought</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Markham</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Richmond Hill</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Mississauga</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Vaughan</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Brampton</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Oakville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Burlington</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ottawa</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Aurora</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Barrie</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Picking</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Ajax</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Kitchener</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">London</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="office-list-item d-inline-block position-relative px-1 mb-2">
+                            <a href="#">Windsor</a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-10 mx-auto mx-lg-0">
+                            <div class="in-group d-flex align-items-center">
+                                <input class="form-control py-4 mr-2" type="text"
+                                    placeholder="Enter postal code or enter your city">
+                                <label class="search-txt font-weight-bold pointer">
+                                    Search
+                                    <span class="fas fa-arrow-right"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Start footer-->
+    <footer class="footer pt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Ajax</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Aurora</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Peterborough</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Barrie</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Bowmanville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brampton</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brantford</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Brantford</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Burlington</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Chatham</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Cambridge</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Clarington</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Cooksville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Durham Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">GTA</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Guelph</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Halton Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Hamilton</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Charham</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Kingston</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Kitchener</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">London</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Markham Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Milton</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Mississauga</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Muskoka</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Newmarket</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Niagara</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">North York</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Oakville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ottawa</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Peel Region</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Pickering</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Richmond</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Hill</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sault</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ste Marie</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Scarborought</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Saint Catherines</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Stouffville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Sudbury</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Thunder Bay</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Toronto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 md-4">
+                    <ul class="list-unstyled list-items text-muted">
+                        <li class="list-item mb-3">
+                            <a href="#">Unionville</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Uxbridge</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Vaughan</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Waterloo</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Whitby</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Windsor</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">York</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">Ontario</a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="#">International</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--bottom-bar (Copyrights)-->
+        <div class="bottom-bar py-3 text-white bg-dark mt-4">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="row w-100">
+                    <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+                        &copy; 2020 Real Estate Lawyers LLP. All Rights Reserved
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        created by "<span class="font-weight-bold">Art of energy from Roman Budaev</span>"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End footer-->
+
+
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/all.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
