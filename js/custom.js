@@ -981,7 +981,6 @@ $(function () {
             }
         }
 
-        console.log(objMsg);
    }
 
    
@@ -1342,8 +1341,9 @@ $(function () {
         
 
 
+        console.log(objMsg);
 
-        $('#emailhtml').val(bodyMsg);
+        $('#emailhtml').val(JSON.stringify(bodyMsg));
         $('#emailto').val(email);
         $('#subject').val(subject);
         $('#emailhtmlform').submit();
@@ -1353,31 +1353,6 @@ $(function () {
 
     /*End Submit Email quote*/
 
-    
-    /*
-    {
-        type: "11", // buying a home
-        p1: "$10,000,000",
-        p2: "$5,499.99",
-        p3: "728",
-        p4: "236,475",
-        p5: "4,000",
-        p6: "236,475",
-        p7: "4,475",
-        p8: "89.84",
-        p9": "154.62",
-        p10: "465,447.46"
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    */
 
 
 });
